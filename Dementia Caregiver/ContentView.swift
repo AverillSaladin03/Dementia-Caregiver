@@ -28,6 +28,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .navigationTitle("Tes Commit")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
