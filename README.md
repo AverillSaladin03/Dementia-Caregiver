@@ -2,13 +2,14 @@
 Mini Challenge 2 - Apple Developer Academy @ UC
 
 Created by : 
+
 Project Manager : 
 Reyner Fernaldi
 
-Designer
+Designer :
 Kezia Angelina
 
-Coder
+Coder :
 Averill Saladin
 Yusron Alfauzi
 Zefanya Oktaviana
