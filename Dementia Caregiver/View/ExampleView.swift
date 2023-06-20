@@ -28,7 +28,7 @@ struct ExampleView: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-            .navigationTitle("Tes Commit")
+            .navigationTitle("COBA UBAH")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
