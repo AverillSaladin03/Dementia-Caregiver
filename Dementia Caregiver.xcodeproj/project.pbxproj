@@ -16,6 +16,15 @@
 		84C73E4E2A4136BD00512DD9 /* Dementia_CaregiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E4D2A4136BD00512DD9 /* Dementia_CaregiverTests.swift */; };
 		84C73E582A4136BD00512DD9 /* Dementia_CaregiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */; };
 		84C73E5A2A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */; };
+		A1E32F7A2A41C7FB00978E11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F792A41C7FB00978E11 /* ContentView.swift */; };
+		A1E32F7C2A41C93900978E11 /* JadwalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F7B2A41C93900978E11 /* JadwalList.swift */; };
+		A1E32F7E2A41C95200978E11 /* AktivitasHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F7D2A41C95200978E11 /* AktivitasHome.swift */; };
+		A1E32F822A41CBD300978E11 /* Aktivitas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F812A41CBD300978E11 /* Aktivitas.swift */; };
+		A1E32F852A41CC2C00978E11 /* AktivitasItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F842A41CC2C00978E11 /* AktivitasItem.swift */; };
+		A1E32F872A41CCA500978E11 /* aktivitasData.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E32F862A41CCA500978E11 /* aktivitasData.json */; };
+		A1E32F892A41D6AE00978E11 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F882A41D6AE00978E11 /* ModelData.swift */; };
+		A1E32F8B2A41D8CA00978E11 /* AktivitasRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F8A2A41D8CA00978E11 /* AktivitasRow.swift */; };
+		A1E32F8D2A41DCDF00978E11 /* AktivitasDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E32F8C2A41DCDF00978E11 /* AktivitasDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		84C73E532A4136BD00512DD9 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITests.swift; sourceTree = "<group>"; };
 		84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A1E32F792A41C7FB00978E11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A1E32F7B2A41C93900978E11 /* JadwalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalList.swift; sourceTree = "<group>"; };
+		A1E32F7D2A41C95200978E11 /* AktivitasHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasHome.swift; sourceTree = "<group>"; };
+		A1E32F812A41CBD300978E11 /* Aktivitas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Aktivitas.swift; path = "Dementia Caregiver/View/Aktivitas.swift"; sourceTree = SOURCE_ROOT; };
+		A1E32F842A41CC2C00978E11 /* AktivitasItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasItem.swift; sourceTree = "<group>"; };
+		A1E32F862A41CCA500978E11 /* aktivitasData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aktivitasData.json; sourceTree = "<group>"; };
+		A1E32F882A41D6AE00978E11 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelData.swift; path = "Dementia Caregiver/View/Aktivitas/ModelData.swift"; sourceTree = SOURCE_ROOT; };
+		A1E32F8A2A41D8CA00978E11 /* AktivitasRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasRow.swift; sourceTree = "<group>"; };
+		A1E32F8C2A41DCDF00978E11 /* AktivitasDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +119,7 @@
 			children = (
 				84C73E672A41446900512DD9 /* Model */,
 				84C73E662A41446400512DD9 /* View */,
+				A1E32F832A41CBF800978E11 /* Resources */,
 				84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */,
 				84C73E3A2A4136BC00512DD9 /* Assets.xcassets */,
 				84C73E3F2A4136BC00512DD9 /* Persistence.swift */,
@@ -140,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				84C73E382A4136BB00512DD9 /* ExampleView.swift */,
+				A1E32F792A41C7FB00978E11 /* ContentView.swift */,
+				A1E32F802A41C96300978E11 /* Jadwal */,
+				A1E32F7F2A41C95A00978E11 /* Aktivitas */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,8 +169,37 @@
 		84C73E672A41446900512DD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A1E32F812A41CBD300978E11 /* Aktivitas.swift */,
+				A1E32F882A41D6AE00978E11 /* ModelData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A1E32F7F2A41C95A00978E11 /* Aktivitas */ = {
+			isa = PBXGroup;
+			children = (
+				A1E32F7D2A41C95200978E11 /* AktivitasHome.swift */,
+				A1E32F842A41CC2C00978E11 /* AktivitasItem.swift */,
+				A1E32F8A2A41D8CA00978E11 /* AktivitasRow.swift */,
+				A1E32F8C2A41DCDF00978E11 /* AktivitasDetail.swift */,
+			);
+			path = Aktivitas;
+			sourceTree = "<group>";
+		};
+		A1E32F802A41C96300978E11 /* Jadwal */ = {
+			isa = PBXGroup;
+			children = (
+				A1E32F7B2A41C93900978E11 /* JadwalList.swift */,
+			);
+			path = Jadwal;
+			sourceTree = "<group>";
+		};
+		A1E32F832A41CBF800978E11 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1E32F862A41CCA500978E11 /* aktivitasData.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +308,7 @@
 			files = (
 				84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */,
 				84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */,
+				A1E32F872A41CCA500978E11 /* aktivitasData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +334,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C73E402A4136BC00512DD9 /* Persistence.swift in Sources */,
+				A1E32F7A2A41C7FB00978E11 /* ContentView.swift in Sources */,
+				A1E32F822A41CBD300978E11 /* Aktivitas.swift in Sources */,
+				A1E32F7C2A41C93900978E11 /* JadwalList.swift in Sources */,
+				A1E32F7E2A41C95200978E11 /* AktivitasHome.swift in Sources */,
 				84C73E432A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
+				A1E32F8B2A41D8CA00978E11 /* AktivitasRow.swift in Sources */,
 				84C73E392A4136BB00512DD9 /* ExampleView.swift in Sources */,
+				A1E32F892A41D6AE00978E11 /* ModelData.swift in Sources */,
 				84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */,
+				A1E32F852A41CC2C00978E11 /* AktivitasItem.swift in Sources */,
+				A1E32F8D2A41DCDF00978E11 /* AktivitasDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
