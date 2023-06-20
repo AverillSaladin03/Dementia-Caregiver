@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DCA57082A415EA000579ED9 /* TesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA57072A415EA000579ED9 /* TesView.swift */; };
 		84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */; };
 		84C73E392A4136BB00512DD9 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E382A4136BB00512DD9 /* ExampleView.swift */; };
 		84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3A2A4136BC00512DD9 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6DCA57072A415EA000579ED9 /* TesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesView.swift; sourceTree = "<group>"; };
 		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
 		84C73E382A4136BB00512DD9 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				84C73E382A4136BB00512DD9 /* ExampleView.swift */,
+				6DCA57072A415EA000579ED9 /* TesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				84C73E432A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
 				84C73E392A4136BB00512DD9 /* ExampleView.swift in Sources */,
 				84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */,
+				6DCA57082A415EA000579ED9 /* TesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
