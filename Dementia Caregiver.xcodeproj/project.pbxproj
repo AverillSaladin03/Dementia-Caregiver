@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */; };
+		84C73E392A4136BB00512DD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E382A4136BB00512DD9 /* ContentView.swift */; };
+		84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3A2A4136BC00512DD9 /* Assets.xcassets */; };
+		84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */; };
+		84C73E402A4136BC00512DD9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E3F2A4136BC00512DD9 /* Persistence.swift */; };
+		84C73E432A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E412A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld */; };
+		84C73E4E2A4136BD00512DD9 /* Dementia_CaregiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E4D2A4136BD00512DD9 /* Dementia_CaregiverTests.swift */; };
+		84C73E582A4136BD00512DD9 /* Dementia_CaregiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */; };
+		84C73E5A2A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84C73E4A2A4136BD00512DD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C73E2B2A4136BB00512DD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C73E322A4136BB00512DD9;
+			remoteInfo = "Dementia Caregiver";
+		};
+		84C73E542A4136BD00512DD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C73E2B2A4136BB00512DD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C73E322A4136BB00512DD9;
+			remoteInfo = "Dementia Caregiver";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
+		84C73E382A4136BB00512DD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84C73E3A2A4136BC00512DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84C73E3F2A4136BC00512DD9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		84C73E422A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dementia_Caregiver.xcdatamodel; sourceTree = "<group>"; };
+		84C73E442A4136BC00512DD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C73E492A4136BD00512DD9 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C73E4D2A4136BD00512DD9 /* Dementia_CaregiverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverTests.swift; sourceTree = "<group>"; };
+		84C73E532A4136BD00512DD9 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITests.swift; sourceTree = "<group>"; };
+		84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84C73E302A4136BB00512DD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C73E462A4136BD00512DD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C73E502A4136BD00512DD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84C73E2A2A4136BB00512DD9 = {
+			isa = PBXGroup;
+			children = (
+				84C73E352A4136BB00512DD9 /* Dementia Caregiver */,
+				84C73E4C2A4136BD00512DD9 /* Dementia CaregiverTests */,
+				84C73E562A4136BD00512DD9 /* Dementia CaregiverUITests */,
+				84C73E342A4136BB00512DD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84C73E342A4136BB00512DD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */,
+				84C73E492A4136BD00512DD9 /* Dementia CaregiverTests.xctest */,
+				84C73E532A4136BD00512DD9 /* Dementia CaregiverUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84C73E352A4136BB00512DD9 /* Dementia Caregiver */ = {
+			isa = PBXGroup;
+			children = (
+				84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */,
+				84C73E382A4136BB00512DD9 /* ContentView.swift */,
+				84C73E3A2A4136BC00512DD9 /* Assets.xcassets */,
+				84C73E3F2A4136BC00512DD9 /* Persistence.swift */,
+				84C73E442A4136BC00512DD9 /* Info.plist */,
+				84C73E412A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld */,
+				84C73E3C2A4136BC00512DD9 /* Preview Content */,
+			);
+			path = "Dementia Caregiver";
+			sourceTree = "<group>";
+		};
+		84C73E3C2A4136BC00512DD9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84C73E4C2A4136BD00512DD9 /* Dementia CaregiverTests */ = {
+			isa = PBXGroup;
+			children = (
+				84C73E4D2A4136BD00512DD9 /* Dementia_CaregiverTests.swift */,
+			);
+			path = "Dementia CaregiverTests";
+			sourceTree = "<group>";
+		};
+		84C73E562A4136BD00512DD9 /* Dementia CaregiverUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */,
+				84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */,
+			);
+			path = "Dementia CaregiverUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84C73E322A4136BB00512DD9 /* Dementia Caregiver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C73E5D2A4136BD00512DD9 /* Build configuration list for PBXNativeTarget "Dementia Caregiver" */;
+			buildPhases = (
+				84C73E2F2A4136BB00512DD9 /* Sources */,
+				84C73E302A4136BB00512DD9 /* Frameworks */,
+				84C73E312A4136BB00512DD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dementia Caregiver";
+			productName = "Dementia Caregiver";
+			productReference = 84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84C73E482A4136BD00512DD9 /* Dementia CaregiverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C73E602A4136BD00512DD9 /* Build configuration list for PBXNativeTarget "Dementia CaregiverTests" */;
+			buildPhases = (
+				84C73E452A4136BD00512DD9 /* Sources */,
+				84C73E462A4136BD00512DD9 /* Frameworks */,
+				84C73E472A4136BD00512DD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84C73E4B2A4136BD00512DD9 /* PBXTargetDependency */,
+			);
+			name = "Dementia CaregiverTests";
+			productName = "Dementia CaregiverTests";
+			productReference = 84C73E492A4136BD00512DD9 /* Dementia CaregiverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84C73E522A4136BD00512DD9 /* Dementia CaregiverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C73E632A4136BD00512DD9 /* Build configuration list for PBXNativeTarget "Dementia CaregiverUITests" */;
+			buildPhases = (
+				84C73E4F2A4136BD00512DD9 /* Sources */,
+				84C73E502A4136BD00512DD9 /* Frameworks */,
+				84C73E512A4136BD00512DD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84C73E552A4136BD00512DD9 /* PBXTargetDependency */,
+			);
+			name = "Dementia CaregiverUITests";
+			productName = "Dementia CaregiverUITests";
+			productReference = 84C73E532A4136BD00512DD9 /* Dementia CaregiverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84C73E2B2A4136BB00512DD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					84C73E322A4136BB00512DD9 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					84C73E482A4136BD00512DD9 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 84C73E322A4136BB00512DD9;
+					};
+					84C73E522A4136BD00512DD9 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 84C73E322A4136BB00512DD9;
+					};
+				};
+			};
+			buildConfigurationList = 84C73E2E2A4136BB00512DD9 /* Build configuration list for PBXProject "Dementia Caregiver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84C73E2A2A4136BB00512DD9;
+			productRefGroup = 84C73E342A4136BB00512DD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84C73E322A4136BB00512DD9 /* Dementia Caregiver */,
+				84C73E482A4136BD00512DD9 /* Dementia CaregiverTests */,
+				84C73E522A4136BD00512DD9 /* Dementia CaregiverUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84C73E312A4136BB00512DD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */,
+				84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C73E472A4136BD00512DD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C73E512A4136BD00512DD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84C73E2F2A4136BB00512DD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C73E402A4136BC00512DD9 /* Persistence.swift in Sources */,
+				84C73E432A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
+				84C73E392A4136BB00512DD9 /* ContentView.swift in Sources */,
+				84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C73E452A4136BD00512DD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C73E4E2A4136BD00512DD9 /* Dementia_CaregiverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C73E4F2A4136BD00512DD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C73E5A2A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift in Sources */,
+				84C73E582A4136BD00512DD9 /* Dementia_CaregiverUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84C73E4B2A4136BD00512DD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C73E322A4136BB00512DD9 /* Dementia Caregiver */;
+			targetProxy = 84C73E4A2A4136BD00512DD9 /* PBXContainerItemProxy */;
+		};
+		84C73E552A4136BD00512DD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C73E322A4136BB00512DD9 /* Dementia Caregiver */;
+			targetProxy = 84C73E542A4136BD00512DD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		84C73E5B2A4136BD00512DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84C73E5C2A4136BD00512DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84C73E5E2A4136BD00512DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dementia Caregiver/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.MC2.Dementia-Caregiver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84C73E5F2A4136BD00512DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dementia Caregiver/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.MC2.Dementia-Caregiver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84C73E612A4136BD00512DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.MC2.Dementia-CaregiverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dementia Caregiver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dementia Caregiver";
+			};
+			name = Debug;
+		};
+		84C73E622A4136BD00512DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.MC2.Dementia-CaregiverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dementia Caregiver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dementia Caregiver";
+			};
+			name = Release;
+		};
+		84C73E642A4136BD00512DD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.MC2.Dementia-CaregiverUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dementia Caregiver";
+			};
+			name = Debug;
+		};
+		84C73E652A4136BD00512DD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADA.MC2.Dementia-CaregiverUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dementia Caregiver";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84C73E2E2A4136BB00512DD9 /* Build configuration list for PBXProject "Dementia Caregiver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C73E5B2A4136BD00512DD9 /* Debug */,
+				84C73E5C2A4136BD00512DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C73E5D2A4136BD00512DD9 /* Build configuration list for PBXNativeTarget "Dementia Caregiver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C73E5E2A4136BD00512DD9 /* Debug */,
+				84C73E5F2A4136BD00512DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C73E602A4136BD00512DD9 /* Build configuration list for PBXNativeTarget "Dementia CaregiverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C73E612A4136BD00512DD9 /* Debug */,
+				84C73E622A4136BD00512DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C73E632A4136BD00512DD9 /* Build configuration list for PBXNativeTarget "Dementia CaregiverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C73E642A4136BD00512DD9 /* Debug */,
+				84C73E652A4136BD00512DD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84C73E412A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84C73E422A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodel */,
+			);
+			currentVersion = 84C73E422A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodel */;
+			path = Dementia_Caregiver.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84C73E2B2A4136BB00512DD9 /* Project object */;
+}
