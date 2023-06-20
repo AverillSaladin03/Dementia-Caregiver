@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */; };
-		84C73E392A4136BB00512DD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E382A4136BB00512DD9 /* ContentView.swift */; };
+		84C73E392A4136BB00512DD9 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E382A4136BB00512DD9 /* ExampleView.swift */; };
 		84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3A2A4136BC00512DD9 /* Assets.xcassets */; };
 		84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */; };
 		84C73E402A4136BC00512DD9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E3F2A4136BC00512DD9 /* Persistence.swift */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
-		84C73E382A4136BB00512DD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84C73E382A4136BB00512DD9 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		84C73E3A2A4136BC00512DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84C73E3F2A4136BC00512DD9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -99,8 +99,9 @@
 		84C73E352A4136BB00512DD9 /* Dementia Caregiver */ = {
 			isa = PBXGroup;
 			children = (
+				84C73E672A41446900512DD9 /* Model */,
+				84C73E662A41446400512DD9 /* View */,
 				84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */,
-				84C73E382A4136BB00512DD9 /* ContentView.swift */,
 				84C73E3A2A4136BC00512DD9 /* Assets.xcassets */,
 				84C73E3F2A4136BC00512DD9 /* Persistence.swift */,
 				84C73E442A4136BC00512DD9 /* Info.plist */,
@@ -133,6 +134,21 @@
 				84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */,
 			);
 			path = "Dementia CaregiverUITests";
+			sourceTree = "<group>";
+		};
+		84C73E662A41446400512DD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84C73E382A4136BB00512DD9 /* ExampleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84C73E672A41446900512DD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +283,7 @@
 			files = (
 				84C73E402A4136BC00512DD9 /* Persistence.swift in Sources */,
 				84C73E432A4136BC00512DD9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
-				84C73E392A4136BB00512DD9 /* ContentView.swift in Sources */,
+				84C73E392A4136BB00512DD9 /* ExampleView.swift in Sources */,
 				84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
