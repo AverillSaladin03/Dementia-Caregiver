@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Data_odd" representedClassName="Data_odd" syncable="YES" codeGenerationType="class">
+        <attribute name="date_of_birth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dementia_level" optional="YES" attributeType="String"/>
+        <attribute name="disabilities" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Odd_hobby" inverseName="belongs" inverseEntity="Odd_hobby"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="Odd_hobby" representedClassName="Odd_hobby" syncable="YES" codeGenerationType="class">
+        <attribute name="hobby" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id_odd" optional="YES" attributeType="String"/>
+        <relationship name="belongs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Data_odd" inverseName="detail" inverseEntity="Data_odd"/>
+    </entity>
 </model>
