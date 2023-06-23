@@ -79,7 +79,7 @@ struct ScheduleHome: View {
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .sheet(isPresented: $showSheet) {
-                ScheduleAdd()
+                ScheduleNew()
             }
         }
         .padding()

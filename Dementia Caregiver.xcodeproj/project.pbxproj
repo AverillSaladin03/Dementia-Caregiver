@@ -22,7 +22,9 @@
 		A149644B2A43CA7100C62D06 /* ActivityHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644A2A43CA7100C62D06 /* ActivityHome.swift */; };
 		A149644F2A43CB3100C62D06 /* ScheduleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644E2A43CB3100C62D06 /* ScheduleHome.swift */; };
 		A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964502A43CE7600C62D06 /* TaskModel.swift */; };
-		A14964532A43EADE00C62D06 /* ScheduleAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964522A43EADE00C62D06 /* ScheduleAdd.swift */; };
+		A14964532A43EADE00C62D06 /* ScheduleNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964522A43EADE00C62D06 /* ScheduleNew.swift */; };
+		A1C093092A444B800037429A /* ScheduleAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C093082A444B800037429A /* ScheduleAdd.swift */; };
+		A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +64,9 @@
 		A149644A2A43CA7100C62D06 /* ActivityHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHome.swift; sourceTree = "<group>"; };
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
 		A14964502A43CE7600C62D06 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		A14964522A43EADE00C62D06 /* ScheduleAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAdd.swift; sourceTree = "<group>"; };
+		A14964522A43EADE00C62D06 /* ScheduleNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNew.swift; sourceTree = "<group>"; };
+		A1C093082A444B800037429A /* ScheduleAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAdd.swift; sourceTree = "<group>"; };
+		A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddManual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +187,9 @@
 			children = (
 				A149644E2A43CB3100C62D06 /* ScheduleHome.swift */,
 				A14964482A43CA5900C62D06 /* ScheduleList.swift */,
-				A14964522A43EADE00C62D06 /* ScheduleAdd.swift */,
+				A14964522A43EADE00C62D06 /* ScheduleNew.swift */,
+				A1C093082A444B800037429A /* ScheduleAdd.swift */,
+				A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -318,7 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14964532A43EADE00C62D06 /* ScheduleAdd.swift in Sources */,
+				A14964532A43EADE00C62D06 /* ScheduleNew.swift in Sources */,
+				A1C093092A444B800037429A /* ScheduleAdd.swift in Sources */,
+				A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */,
 				84C73E402A4136BC00512DD9 /* Persistence.swift in Sources */,
 				A14964492A43CA5900C62D06 /* ScheduleList.swift in Sources */,
 				A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */,
