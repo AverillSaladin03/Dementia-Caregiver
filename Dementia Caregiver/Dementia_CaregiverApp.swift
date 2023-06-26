@@ -13,9 +13,8 @@ struct Dementia_CaregiverApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ExampleView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            FormView()
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
