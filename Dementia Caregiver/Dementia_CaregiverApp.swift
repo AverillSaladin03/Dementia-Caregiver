@@ -11,7 +11,7 @@ import SwiftUI
 struct Dementia_CaregiverApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AktivitasLuang()
         }
     }
 }
