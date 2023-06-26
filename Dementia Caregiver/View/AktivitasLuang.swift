@@ -15,7 +15,7 @@ struct AktivitasLuang: View {
     @State var startTime:Date = Date.now
     @State var endTime:Date = Date.now
     @State var activityCount: Int = 1
-    @State private var listSpareTimes: [SpareTime] = listSpareTime
+    @State private var listSpareTimes: [Spares] = listSpareTime
     @State var spareTimeCount: Int = 1
     
     let dateFormatter = DateFormatter()
@@ -116,7 +116,7 @@ struct AktivitasLuang: View {
     //Fungsi Nambah List SpareTime
     func addSpareTime(){
         spareTimeCount += 1
-        let newSpareTime = SpareTime(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
+        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
         listSpareTimes.append(newSpareTime)
     }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct SpareTime: Hashable{
+struct Spares: Hashable{
     var startTime: Date
     var endTime: Date
     var name: String
 }
 
-var listSpareTime: [SpareTime] = [
-    SpareTime(startTime: Date.now, endTime: Date.now, name: "Aktivitas 1")
+var listSpareTime: [Spares] = [
+    Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas 1")
 ]

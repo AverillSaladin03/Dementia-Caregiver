@@ -43,8 +43,8 @@
         <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="schedule_activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="schedule" inverseEntity="Activity"/>
     </entity>
-    <entity name="SpareTime" representedClassName="SpareTime" syncable="YES" codeGenerationType="class">
-        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+    <entity name="Spare" representedClassName="Spare" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
