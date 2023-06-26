@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
+        <attribute name="deskripsi" optional="YES" attributeType="String"/>
+        <attribute name="durasi" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id_aktivitas" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="link" optional="YES" attributeType="URI"/>
+        <attribute name="nama" optional="YES" attributeType="String"/>
+        <attribute name="tips" optional="YES" attributeType="String"/>
+        <relationship name="activity_dementia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DementiaLevel" inverseName="dementia_activity" inverseEntity="DementiaLevel"/>
+        <relationship name="activity_disability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Disability" inverseName="disability_activity" inverseEntity="Disability"/>
+        <relationship name="category_activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="category_activity" inverseEntity="Category"/>
+        <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="schedule_activity" inverseEntity="Schedule"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="icon" optional="YES" attributeType="URI"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="category_activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="category_activity" inverseEntity="Activity"/>
+    </entity>
+    <entity name="DementiaLevel" representedClassName="DementiaLevel" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="dementia_activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="activity_dementia" inverseEntity="Activity"/>
+        <relationship name="dementia_odd" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ODD" inverseName="dementia_lv" inverseEntity="ODD"/>
+    </entity>
+    <entity name="Disability" representedClassName="Disability" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="disability_activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="activity_disability" inverseEntity="Activity"/>
+        <relationship name="disability_odd" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ODD" inverseName="disability_lv" inverseEntity="ODD"/>
+    </entity>
+    <entity name="ODD" representedClassName="ODD" syncable="YES" codeGenerationType="class">
+        <attribute name="birth_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="hobbies" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="dementia_lv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DementiaLevel" inverseName="dementia_odd" inverseEntity="DementiaLevel"/>
+        <relationship name="disability_lv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Disability" inverseName="disability_odd" inverseEntity="Disability"/>
+    </entity>
+    <entity name="Schedule" representedClassName="Schedule" syncable="YES" codeGenerationType="class">
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="schedule_activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="schedule" inverseEntity="Activity"/>
+    </entity>
+    <entity name="SpareTime" representedClassName="SpareTime" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
 </model>
+
