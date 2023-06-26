@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct Dementia_CaregiverApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
-            AktivitasLuang()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView()
         }
     }
 }
