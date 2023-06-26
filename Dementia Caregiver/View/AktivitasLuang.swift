@@ -71,6 +71,8 @@ struct AktivitasLuang: View {
                     //Button Tambah Aktivitas Luang
                     Button{
                         addSpareTime()
+                        submitSpareTime()
+                        print("jml list \(listSpareTimes.count)")
                     }label: {
                         HStack (alignment: .center){
                             Spacer()
@@ -84,17 +86,17 @@ struct AktivitasLuang: View {
                 }
                 .padding(.vertical)
                 
-                //Button Submit
-                Button{
-                    submitSpareTime()
-                }label: {
+                //Button Submit -> ke dashboard
+                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), label: {
                     HStack (alignment: .center){
                         Spacer()
+                        
                         Text("Selesai")
                             .fontWeight(.bold)
+                        
                         Spacer()
                     }
-                }
+                })
                 .frame(height: 41)
                 .background(Color("ButtonColor"))
                 .foregroundColor(.white)
@@ -109,9 +111,9 @@ struct AktivitasLuang: View {
     }
     
     //Fungsi Delete Spare Time
-        func deleteSpareTime(at offsets: IndexSet) {
-                listSpareTimes.remove(atOffsets: offsets)
-            }
+    func deleteSpareTime(at offsets: IndexSet) {
+        listSpareTimes.remove(atOffsets: offsets)
+    }
     
     //Fungsi Nambah List SpareTime
     func addSpareTime(){
