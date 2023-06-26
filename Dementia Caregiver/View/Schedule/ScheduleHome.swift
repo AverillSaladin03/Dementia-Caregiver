@@ -12,6 +12,7 @@ struct ScheduleHome: View {
     @StateObject var taskModel: TaskModel = TaskModel()
     @Namespace var animation
     @State private var showSheet = false
+    @Binding var listSpareTimes: [SpareTime]
 
     var body: some View {
         ScrollView(.vertical)
@@ -36,7 +37,7 @@ struct ScheduleHome: View {
                                     ZStack{
                                         if taskModel.isToday(date: day){
                                             RoundedRectangle(cornerRadius: 15)
-                                                .fill(.blue)
+                                                .fill(Color("ButtonColor"))
                                                 .matchedGeometryEffect(id: "", in: animation)
                                         }
                                     }
@@ -50,8 +51,11 @@ struct ScheduleHome: View {
                             }
                         }
                         .padding(.horizontal)
+                        .padding(.bottom)
                     }
-                    ScheduleList()
+                    VStack(spacing: 16){
+                        ScheduleList(listSpareTimes: $listSpareTimes)
+                    }
                 } header: {
                     HeaderView()
                 }
@@ -76,6 +80,7 @@ struct ScheduleHome: View {
                 showSheet.toggle()
             } label: {
                 Image(systemName: "plus")
+                    .foregroundColor(Color("ButtonColor"))
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .sheet(isPresented: $showSheet) {
@@ -103,6 +108,6 @@ struct ScheduleHome: View {
 
 struct ScheduleHome_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleHome()
+        ScheduleHome(listSpareTimes: .constant(listSpareTime))
     }
 }
