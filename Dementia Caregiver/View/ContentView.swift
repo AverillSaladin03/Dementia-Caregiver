@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection: Tab = .schedule
-    @Binding var listSpareTimes:[Spares]
+
     enum Tab {
         case schedule
         case activity
     }
     
+    @ObservedObject var cardView: CardViewModel
+    
     var body: some View {
         TabView(selection: $selection) {
-            ScheduleHome( listSpareTimes: $listSpareTimes)
+            ScheduleHome(cardView: cardView)
                 .tabItem {
                     Label("Jadwal", systemImage: "calendar")
                 }
@@ -34,6 +36,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(listSpareTimes: .constant(listSpareTime))
-    }
+        let cardView = CardViewModel() // Buat instance CardViewModel
+               
+               return ContentView(cardView: cardView)
+                   .environmentObject(cardView) // Berikan environment object jika diperlukan
+           }
 }

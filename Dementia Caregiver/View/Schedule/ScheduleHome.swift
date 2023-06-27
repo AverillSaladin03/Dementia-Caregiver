@@ -12,7 +12,7 @@ struct ScheduleHome: View {
     @StateObject var taskModel: TaskModel = TaskModel()
     @Namespace var animation
     @State private var showSheet = false
-    @Binding var listSpareTimes: [Spares]
+    @ObservedObject var cardView: CardViewModel
 
     var body: some View {
         ScrollView(.vertical)
@@ -54,7 +54,11 @@ struct ScheduleHome: View {
                         .padding(.bottom)
                     }
                     VStack(spacing: 16){
-                        ScheduleList(listSpareTimes: $listSpareTimes)
+                        ScheduleList(cardView: cardView)
+                        
+//                        ForEach(cardView.listSpareTime.indices, id: \.self){ item in
+//                            ScheduleList(cardView: cardView.listSpareTime[item])
+//                        }
                     }
                 } header: {
                     HeaderView()
@@ -108,6 +112,9 @@ struct ScheduleHome: View {
 
 struct ScheduleHome_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleHome(listSpareTimes: .constant(listSpareTime))
+        let cardView = CardViewModel() // Buat instance CardViewModel
+        
+        return ScheduleList(cardView: cardView)
+            .environmentObject(cardView) // Berikan environment object jika diperlukan
     }
 }
