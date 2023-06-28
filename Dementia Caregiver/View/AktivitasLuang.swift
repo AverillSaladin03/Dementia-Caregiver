@@ -11,12 +11,12 @@ let pageDescription = "Aktivitas luang adalah aktivitas apa saja yang dimiliki O
 
 
 struct AktivitasLuang: View {
+    @Environment(\.managedObjectContext) var managedObjectContex
     
-    @State var startTime:Date = Date.now
-    @State var endTime:Date = Date.now
     @State var activityCount: Int = 1
     @State private var listSpareTimes: [Spares] = listSpareTime
     @State var spareTimeCount: Int = 1
+    @State var isSaved = false
     
     let dateFormatter = DateFormatter()
     
@@ -31,7 +31,7 @@ struct AktivitasLuang: View {
                     .multilineTextAlignment(TextAlignment.leading)
                 
                 //Scroll with For Loop Activities
-                ScrollView {
+                List {
                     ForEach(listSpareTimes.indices, id: \.self) { i in
                         HStack (spacing: 20){
                             Text(listSpareTimes[i].name)
@@ -62,17 +62,30 @@ struct AktivitasLuang: View {
                             }
                         }
                         .padding([.horizontal], 16)
+                        .listRowSeparator(.hidden)
+                        .swipeActions(allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                listSpareTimes.remove(at: i)
+                            } label: {
+                                Label("Delete", systemImage: "trash.fill")
+                            }
+                        }
+                        
                     }
+                    //                                            .onDelete { indexSet in
+                    //                                                listSpareTimes.remove(atOffsets: indexSet)
+                    //                                            }
                     .padding([.vertical], 12)
                     .background(Color("GreyColor"))
                     .mask(RoundedRectangle(cornerRadius: 8))
-                    .padding(.bottom)
+                    //                    .padding(.bottom)
+                    
                     
                     //Button Tambah Aktivitas Luang
                     Button{
                         addSpareTime()
-                        submitSpareTime()
-                        print("jml list \(listSpareTimes.count)")
+                        //                        submitSpareTime()
+                        //                        print("jml list \(listSpareTimes.count)")
                     }label: {
                         HStack (alignment: .center){
                             Spacer()
@@ -83,27 +96,59 @@ struct AktivitasLuang: View {
                             Spacer()
                         }
                     }
+                    .listRowSeparator(.hidden)
                 }
                 .padding(.vertical)
+                .listStyle(PlainListStyle())
+                
+                Button("Selesai"){
+                    for i in listSpareTimes{
+                        SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
+                    }
+                    isSaved = true
+                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                    
+                }
+                
+                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    EmptyView()
+                }
+                
+                //                    NavigationLink(
+                //                        value: $isSaved,
+                //                        label: {
+                //                            EmptyView()
+                //                        },
+                //                        destination: {
+                //                            ContentView(listSpareTimes: $listSpareTimes)
+                //                                .navigationBarBackButtonHidden()
+                //                        }
+                //                    )
+                
                 
                 //Button Submit -> ke dashboard
-                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), label: {
-                    HStack (alignment: .center){
-                        Spacer()
-                        
-                        Text("Selesai")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                    }
-                })
-                .frame(height: 41)
-                .background(Color("ButtonColor"))
-                .foregroundColor(.white)
-                .mask {
-                    RoundedRectangle(cornerRadius: 8)
-                }
-                .padding(.horizontal, 16)
+                //                ForEach(listSpareTimes) { index in
+                //
+                //                }
+                
+                //                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), label: {
+                //                    HStack (alignment: .center){
+                //                        Spacer()
+                //
+                //                        Text("Selesai")
+                //                            .fontWeight(.bold)
+                //
+                //
+                //                        Spacer()
+                //                    }
+                //                })
+                //                .frame(height: 41)
+                //                .background(Color("ButtonColor"))
+                //                .foregroundColor(.white)
+                //                .mask {
+                //                    RoundedRectangle(cornerRadius: 8)
+                //                }
+                //                .padding(.horizontal, 16)
             }
             .navigationTitle(Text("Aktivitas Luang"))
             .padding(.bottom, 8)
@@ -121,20 +166,20 @@ struct AktivitasLuang: View {
         let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
         listSpareTimes.append(newSpareTime)
-    }
-    
-    func submitSpareTime(){
-        VStack{
-            Text("Activities : \(activityCount)")
-            Text("List Spare Time : ")
-            ForEach(listSpareTimes, id: \.self) { i in
-                Text ("Nama: \(i.name)")
-                Text ("Start: \(i.startTime)")
-                Text ("End: \(i.endTime)")
-            }
-        }
         
     }
+    
+    //    func submitSpareTime(){
+    //        VStack{
+    //            Text("Activities : \(activityCount)")
+    //            Text("List Spare Time : ")
+    //            ForEach(listSpareTimes, id: \.self) { i in
+    //                Text ("Nama: \(i.name)")
+    //                Text ("Start: \(i.startTime)")
+    //                Text ("End: \(i.endTime)")
+    //            }
+    //        }
+    //    }
     
     struct AktivitasLuang_Previews: PreviewProvider {
         static var previews: some View {
