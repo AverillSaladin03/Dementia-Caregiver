@@ -73,8 +73,6 @@ struct ScheduleAddManual: View {
                         }
                     }
                 }
-                
-                
                 Spacer()
             }
             .padding()

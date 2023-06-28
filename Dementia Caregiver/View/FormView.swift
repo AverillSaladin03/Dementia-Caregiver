@@ -146,7 +146,7 @@ struct FormView: View {
                             Text("**Lumpuh**: Tidak dapat bergerak dan membutuhkan bantuan orang lain").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                                
+                         
                                 ForEach(0..<disabilities.count, id: \.self) { button in
                                     Button(action: {
                                         self.selectedDisability = button
