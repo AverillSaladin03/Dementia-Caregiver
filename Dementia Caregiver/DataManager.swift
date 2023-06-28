@@ -11,7 +11,7 @@ import CoreData
 class DataManager: ObservableObject{
     let shared = DataManager()
     let container = NSPersistentContainer(name: "Dementia_Caregiver")
-    let context = NSManagedObjectContext
+    let context = NSManagedObjectContext()
     
     init(){
         container.loadPersistentStores { description, error in

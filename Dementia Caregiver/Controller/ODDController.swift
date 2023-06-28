@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class ODDController{
-    let dataManager = DataController.shared
+    let dataManager = DataManager().shared
     
     func addODD () {
         //Isi addmu disini Reyner

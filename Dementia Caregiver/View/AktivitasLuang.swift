@@ -103,7 +103,7 @@ struct AktivitasLuang: View {
                 
                 Button("Selesai"){
                     for i in listSpareTimes{
-                        DataController().addActivityLuang(start: i.startTime, end: i.endTime, contex: managedObjectContex)
+                        SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
                     }
                     isSaved = true
                     print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
