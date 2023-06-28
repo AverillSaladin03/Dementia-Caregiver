@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 let pageDescription = "Aktivitas luang adalah aktivitas apa saja yang dimiliki ODD diluar rutinitas harian ODD seperti makan dan tidur. Aktivitas luang dapat berupa berkebun atau bermain."
 
@@ -15,8 +16,10 @@ struct AktivitasLuang: View {
     @State var startTime:Date = Date.now
     @State var endTime:Date = Date.now
     @State var activityCount: Int = 1
-    @State private var listSpareTimes: [Spares] = listSpareTime
+    @State private var listSpareTimes: [SpareTime] = listSpareTime
     @State var spareTimeCount: Int = 1
+    
+//    @StateObject private var spareTimeController: SpareTimeController()
     
     let dateFormatter = DateFormatter()
     
@@ -31,15 +34,15 @@ struct AktivitasLuang: View {
                     .multilineTextAlignment(TextAlignment.leading)
                 
                 //Scroll with For Loop Activities
-                ScrollView {
+                List {
                     ForEach(listSpareTimes.indices, id: \.self) { i in
                         HStack (spacing: 20){
                             Text(listSpareTimes[i].name)
                                 .fontWeight(.bold)
-                                .font(.system(size: 17))
+                                .font(.body)
                             VStack {
                                 DatePicker(
-                                    "Tes",
+                                    "Mulai",
                                     selection: $listSpareTimes[i].startTime,
                                     displayedComponents: .hourAndMinute
                                 )
@@ -61,12 +64,11 @@ struct AktivitasLuang: View {
                                     .font(.system(size: 13))
                             }
                         }
+                        .listRowSeparator(.hidden)
                         .padding([.horizontal], 16)
                     }
+                    .onDelete(perform: deleteSpareTime)
                     .padding([.vertical], 12)
-                    .background(Color("GreyColor"))
-                    .mask(RoundedRectangle(cornerRadius: 8))
-                    .padding(.bottom)
                     
                     //Button Tambah Aktivitas Luang
                     Button{
@@ -83,8 +85,9 @@ struct AktivitasLuang: View {
                             Spacer()
                         }
                     }
+                    .listRowSeparator(.hidden)
                 }
-                .padding(.vertical)
+                .listStyle(.plain)
                 
                 //Button Submit -> ke dashboard
                 NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), label: {
@@ -118,21 +121,14 @@ struct AktivitasLuang: View {
     //Fungsi Nambah List SpareTime
     func addSpareTime(){
         spareTimeCount += 1
-        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
+        let newSpareTime = SpareTime(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
         listSpareTimes.append(newSpareTime)
     }
     
     func submitSpareTime(){
-        VStack{
-            Text("Activities : \(activityCount)")
-            Text("List Spare Time : ")
-            ForEach(listSpareTimes, id: \.self) { i in
-                Text ("Nama: \(i.name)")
-                Text ("Start: \(i.startTime)")
-                Text ("End: \(i.endTime)")
-            }
-        }
+        //Input to Core Date
+        
         
     }
     

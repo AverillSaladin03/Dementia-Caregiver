@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScheduleList: View {
     
-    @Binding var listSpareTimes: [Spares]
+    @Binding var listSpareTimes: [SpareTime]
     
     var body: some View {
         ForEach(listSpareTimes.indices, id: \.self) { index in

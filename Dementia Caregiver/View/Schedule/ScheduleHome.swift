@@ -12,7 +12,7 @@ struct ScheduleHome: View {
     @StateObject var taskModel: TaskModel = TaskModel()
     @Namespace var animation
     @State private var showSheet = false
-    @Binding var listSpareTimes: [Spares]
+    @Binding var listSpareTimes: [SpareTime]
 
     var body: some View {
         ScrollView(.vertical)
