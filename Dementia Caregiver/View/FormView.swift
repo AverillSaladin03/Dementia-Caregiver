@@ -147,7 +147,7 @@ struct FormView: View {
                             
                             HStack{
                                 
-                                ForEach(0..<disabilities.count) { button in
+                                ForEach(0..<disabilities.count, id:\.self) { button in
                                     Button(action: {
                                         self.selectedDisability = button
                                     }) {
@@ -184,7 +184,7 @@ struct FormView: View {
                             Text("**Berat**: Hilangnya kemampuan berkomunikasi atau hilangnya kemampuan fisik ").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                                ForEach(0..<levels.count) { button in
+                                ForEach(0..<levels.count, id:\.self) { button in
                                     Button(action: {
                                         self.selectedLevel = button
                                     }) {

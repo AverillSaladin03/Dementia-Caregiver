@@ -72,13 +72,13 @@ struct AktivitasLuang: View {
                         }
                         
                     }
-//                                            .onDelete { indexSet in
-//                                                listSpareTimes.remove(atOffsets: indexSet)
-//                                            }
+                    //                                            .onDelete { indexSet in
+                    //                                                listSpareTimes.remove(atOffsets: indexSet)
+                    //                                            }
                     .padding([.vertical], 12)
                     .background(Color("GreyColor"))
                     .mask(RoundedRectangle(cornerRadius: 8))
-//                    .padding(.bottom)
+                    //                    .padding(.bottom)
                     
                     
                     //Button Tambah Aktivitas Luang
@@ -106,13 +106,26 @@ struct AktivitasLuang: View {
                         DataController().addActivityLuang(start: i.startTime, end: i.endTime, contex: managedObjectContex)
                     }
                     isSaved = true
-                    //                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
                 }
                 
                 NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
                     EmptyView()
                 }
+                
+                //                    NavigationLink(
+                //                        value: $isSaved,
+                //                        label: {
+                //                            EmptyView()
+                //                        },
+                //                        destination: {
+                //                            ContentView(listSpareTimes: $listSpareTimes)
+                //                                .navigationBarBackButtonHidden()
+                //                        }
+                //                    )
+                
+                
                 //Button Submit -> ke dashboard
                 //                ForEach(listSpareTimes) { index in
                 //
