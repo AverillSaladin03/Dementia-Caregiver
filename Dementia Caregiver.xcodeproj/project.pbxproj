@@ -13,6 +13,10 @@
 		6D91A32D2A49284C0034B0A3 /* ActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D91A32C2A49284C0034B0A3 /* ActivityList.swift */; };
 		6D91A32F2A4941CC0034B0A3 /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D91A32E2A4941CC0034B0A3 /* ActivityDetail.swift */; };
 		8408DBF72A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8408DBF52A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld */; };
+		8408DC6D2A4BCE8B00EF7EC9 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC6C2A4BCE8B00EF7EC9 /* ActivityController.swift */; };
+		8408DC6F2A4BCE9800EF7EC9 /* ODDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC6E2A4BCE9800EF7EC9 /* ODDController.swift */; };
+		8408DC712A4BCEA200EF7EC9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */; };
+		8408DC732A4BD0BF00EF7EC9 /* SpareTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */; };
 		84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */; };
 		84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3A2A4136BC00512DD9 /* Assets.xcassets */; };
 		84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */; };
@@ -21,13 +25,13 @@
 		84C73E5A2A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */; };
 		84E535E42A43E22E00FF119F /* AktivitasLuang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E535E32A43E22E00FF119F /* AktivitasLuang.swift */; };
 		84E535E62A43FFAF00FF119F /* Spares.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E535E52A43FFAF00FF119F /* Spares.swift */; };
-		A143F9FB2A4A89BB0020C592 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143F9FA2A4A89BB0020C592 /* DataController.swift */; };
 		A14964472A43CA4300C62D06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964462A43CA4300C62D06 /* ContentView.swift */; };
 		A14964492A43CA5900C62D06 /* ScheduleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964482A43CA5900C62D06 /* ScheduleList.swift */; };
 		A149644B2A43CA7100C62D06 /* ActivityHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644A2A43CA7100C62D06 /* ActivityHome.swift */; };
 		A149644F2A43CB3100C62D06 /* ScheduleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644E2A43CB3100C62D06 /* ScheduleHome.swift */; };
 		A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964502A43CE7600C62D06 /* TaskModel.swift */; };
 		A14964532A43EADE00C62D06 /* ScheduleNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964522A43EADE00C62D06 /* ScheduleNew.swift */; };
+		A19FAC882A4BF1A300B4904B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FAC872A4BF1A300B4904B /* DataManager.swift */; };
 		A1C093092A444B800037429A /* ScheduleAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C093082A444B800037429A /* ScheduleAdd.swift */; };
 		A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,10 @@
 		6D91A32C2A49284C0034B0A3 /* ActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityList.swift; sourceTree = "<group>"; };
 		6D91A32E2A4941CC0034B0A3 /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		8408DBF62A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dementia_Caregiver.xcdatamodel; sourceTree = "<group>"; };
+		8408DC6C2A4BCE8B00EF7EC9 /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		8408DC6E2A4BCE9800EF7EC9 /* ODDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODDController.swift; sourceTree = "<group>"; };
+		8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareTimeController.swift; sourceTree = "<group>"; };
 		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
 		84C73E3A2A4136BC00512DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,13 +76,13 @@
 		84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84E535E32A43E22E00FF119F /* AktivitasLuang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitasLuang.swift; sourceTree = "<group>"; };
 		84E535E52A43FFAF00FF119F /* Spares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spares.swift; sourceTree = "<group>"; };
-		A143F9FA2A4A89BB0020C592 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		A14964462A43CA4300C62D06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A14964482A43CA5900C62D06 /* ScheduleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleList.swift; sourceTree = "<group>"; };
 		A149644A2A43CA7100C62D06 /* ActivityHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHome.swift; sourceTree = "<group>"; };
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
 		A14964502A43CE7600C62D06 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		A14964522A43EADE00C62D06 /* ScheduleNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNew.swift; sourceTree = "<group>"; };
+		A19FAC872A4BF1A300B4904B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A1C093082A444B800037429A /* ScheduleAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAdd.swift; sourceTree = "<group>"; };
 		A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddManual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +112,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8408DC6B2A4BCE7C00EF7EC9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8408DC6C2A4BCE8B00EF7EC9 /* ActivityController.swift */,
+				8408DC6E2A4BCE9800EF7EC9 /* ODDController.swift */,
+				8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */,
+				8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		84C73E2A2A4136BB00512DD9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,13 +147,14 @@
 			isa = PBXGroup;
 			children = (
 				84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */,
+				8408DC6B2A4BCE7C00EF7EC9 /* Controller */,
 				A14964452A43C9D300C62D06 /* Model */,
 				84C73E662A41446400512DD9 /* View */,
 				84C73E3A2A4136BC00512DD9 /* Assets.xcassets */,
 				84C73E442A4136BC00512DD9 /* Info.plist */,
 				84C73E3C2A4136BC00512DD9 /* Preview Content */,
 				8408DBF52A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld */,
-				A143F9FA2A4A89BB0020C592 /* DataController.swift */,
+				A19FAC872A4BF1A300B4904B /* DataManager.swift */,
 			);
 			path = "Dementia Caregiver";
 			sourceTree = "<group>";
@@ -341,18 +361,22 @@
 			files = (
 				6178F9FF2A43FC6C00CBAB1D /* FormView.swift in Sources */,
 				6122826F2A456C77003FAD92 /* DummyView.swift in Sources */,
+				8408DC6D2A4BCE8B00EF7EC9 /* ActivityController.swift in Sources */,
 				84E535E42A43E22E00FF119F /* AktivitasLuang.swift in Sources */,
 				84E535E62A43FFAF00FF119F /* Spares.swift in Sources */,
+				8408DC6F2A4BCE9800EF7EC9 /* ODDController.swift in Sources */,
 				A14964532A43EADE00C62D06 /* ScheduleNew.swift in Sources */,
+				A19FAC882A4BF1A300B4904B /* DataManager.swift in Sources */,
 				A1C093092A444B800037429A /* ScheduleAdd.swift in Sources */,
 				A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */,
 				8408DBF72A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
+				8408DC732A4BD0BF00EF7EC9 /* SpareTimeController.swift in Sources */,
 				A14964492A43CA5900C62D06 /* ScheduleList.swift in Sources */,
+				8408DC712A4BCEA200EF7EC9 /* ScheduleController.swift in Sources */,
 				6D91A32D2A49284C0034B0A3 /* ActivityList.swift in Sources */,
 				A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */,
 				A149644B2A43CA7100C62D06 /* ActivityHome.swift in Sources */,
 				A14964472A43CA4300C62D06 /* ContentView.swift in Sources */,
-				A143F9FB2A4A89BB0020C592 /* DataController.swift in Sources */,
 				6D91A32F2A4941CC0034B0A3 /* ActivityDetail.swift in Sources */,
 				6D91A32B2A4587E30034B0A3 /* ActivityCategory.swift in Sources */,
 				84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */,

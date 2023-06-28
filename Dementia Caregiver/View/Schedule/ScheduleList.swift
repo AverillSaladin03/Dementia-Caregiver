@@ -85,7 +85,7 @@ struct ScheduleList: View {
                 .forEach(managedObjectContex.delete)
             
             // Saves to our database
-            DataController().save(contex: managedObjectContex)
+            DataManager().save()
         }
     }
     

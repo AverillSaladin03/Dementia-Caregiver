@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Dementia_CaregiverApp: App {
-    @StateObject private var dataController = DataController()
+    @StateObject private var dataController = DataManager()
     
     var body: some Scene {
         WindowGroup {
