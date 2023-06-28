@@ -57,7 +57,7 @@ struct ScheduleList: View {
                     .tint(.indigo)
                     
                     Button(role: .destructive) {
-                        
+//                        deleteSpareIndex(i: index)
                     } label: {
                         Label("Delete", systemImage: "trash.fill")
                     }
@@ -77,6 +77,11 @@ struct ScheduleList: View {
         formatter.dateFormat = "HH:mm" // Menetapkan format jam
         
         return formatter.string(from: time)
+    }
+    
+    func deleteSpareIndex(i: Int){
+        managedObjectContex.delete(spare[i])
+        DataManager().save()
     }
     
     private func deleteSpare(offsets: IndexSet) {
