@@ -32,6 +32,7 @@
 		A149644F2A43CB3100C62D06 /* ScheduleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644E2A43CB3100C62D06 /* ScheduleHome.swift */; };
 		A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964502A43CE7600C62D06 /* TaskModel.swift */; };
 		A14964532A43EADE00C62D06 /* ScheduleNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964522A43EADE00C62D06 /* ScheduleNew.swift */; };
+		A19FAC882A4BF1A300B4904B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FAC872A4BF1A300B4904B /* DataManager.swift */; };
 		A1C093092A444B800037429A /* ScheduleAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C093082A444B800037429A /* ScheduleAdd.swift */; };
 		A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
 		A14964502A43CE7600C62D06 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		A14964522A43EADE00C62D06 /* ScheduleNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNew.swift; sourceTree = "<group>"; };
+		A19FAC872A4BF1A300B4904B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A1C093082A444B800037429A /* ScheduleAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAdd.swift; sourceTree = "<group>"; };
 		A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddManual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +368,7 @@
 				84E535E62A43FFAF00FF119F /* Spares.swift in Sources */,
 				8408DC6F2A4BCE9800EF7EC9 /* ODDController.swift in Sources */,
 				A14964532A43EADE00C62D06 /* ScheduleNew.swift in Sources */,
+				A19FAC882A4BF1A300B4904B /* DataManager.swift in Sources */,
 				A1C093092A444B800037429A /* ScheduleAdd.swift in Sources */,
 				A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */,
 				8408DBF72A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
