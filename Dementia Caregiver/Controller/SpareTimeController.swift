@@ -10,7 +10,7 @@ import CoreData
 
 class SpareTimeController {
     
-    let dataManager = DataManager.shared
+    let dataManager = DataManager().shared
     
     func addActivityLuang(start: Date, end:Date){
         let spare = Spare(context: dataManager.context)
