@@ -8,8 +8,10 @@
 import Foundation
 import CoreData
 
-class DataController: ObservableObject{
+class DataManager: ObservableObject{
+    let shared = DataManager()
     let container = NSPersistentContainer(name: "Dementia_Caregiver")
+    let context = NSManagedObjectContext
     
     init(){
         container.loadPersistentStores { description, error in
@@ -19,23 +21,12 @@ class DataController: ObservableObject{
         }
     }
     
-    func save(contex: NSManagedObjectContext){
+    func save(){
         do{
-            try contex.save()
+            try context.save()
             print("data saved")
         } catch{
             print("we couldn't save the data")
         }
     }
-    
-    func addActivityLuang(start: Date, end:Date, contex: NSManagedObjectContext){
-        let spare = Spare(context: contex)
-        spare.id = UUID()
-        spare.start = start
-        spare.end = end
-        spare.name = String()
-        
-        save(contex: contex)
-    }
-    
 }
