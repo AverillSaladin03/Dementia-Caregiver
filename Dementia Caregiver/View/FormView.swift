@@ -4,7 +4,7 @@
 //
 //  Created by Reyner Fernaldi on 22/06/23.
 //
-
+import CoreData
 import SwiftUI
 
 enum Items: String, CaseIterable, Equatable {
@@ -94,11 +94,20 @@ struct GridColumn:View {
 
 
 struct FormView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    let newODDController = ODDController()
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
+        animation: .default)
+    private var ODDs: FetchedResults<ODD>
+    
     init(){
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(hex: "#4FACC9")
     }
     
-    let data = ["Olahraga", "Berkebun", "Seni", "Memasak", "Musik", "Bepergian", "Game", "Film", "Memancing", "Membaca", "Fotografi", "Menggambar", "Teknologi", "Otomotif"]
     let layout = Array(repeating: GridItem(.adaptive(minimum:50)), count: 4)
     @State var selections: [String] = []
     
@@ -112,6 +121,7 @@ struct FormView: View {
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 4)
     
     @State  var selectedItems: [Items] = []
+    
     
     
     
@@ -146,8 +156,8 @@ struct FormView: View {
                             Text("**Lumpuh**: Tidak dapat bergerak dan membutuhkan bantuan orang lain").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                         
-                                ForEach(0..<disabilities.count, id: \.self) { button in
+                                
+                                ForEach(0..<disabilities.count) { button in
                                     Button(action: {
                                         self.selectedDisability = button
                                     }) {
@@ -184,7 +194,7 @@ struct FormView: View {
                             Text("**Berat**: Hilangnya kemampuan berkomunikasi atau hilangnya kemampuan fisik ").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                                ForEach(0..<levels.count, id: \.self) { button in
+                                ForEach(0..<levels.count) { button in
                                     Button(action: {
                                         self.selectedLevel = button
                                     }) {
@@ -224,20 +234,34 @@ struct FormView: View {
                             .frame(height: 200)
                         }
                         
-                        
                         Spacer()
-                        let selectedItemsString = selectedItems.map { $0.rawValue }.joined(separator: ", ")
-                        Text("\(selectedItemsString)")
+//                        let selectedItemsString = selectedItems.map { $0.rawValue }.joined(separator: ", ")
+//                        Text("\(selectedItemsString)")
                         
                     }
                     
-                    NavigationLink(destination: DummyView()) {
-                        Text("Selanjutnya")
-                            .frame(maxWidth:340, maxHeight:30)
-                            .fontWeight(.bold)
-                           
+                    Button(action: {
+                        newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        
+//                        addODD(selectedHobi: selectedItems, ttl: birthDate, kelumpuhan: selectedDisability, lvl: selectedLevel)
+                    }) {
+                        Label("Add Odd", systemImage: "plus")
                     }
-                    .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
+                    
+                    Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                    
+                        ForEach(ODDs, id: \.self) { item in
+                            Text("Item at \(item.hobbies!)")
+                        }
+
+                    
+//                    NavigationLink(destination: DummyView()) {
+//                        Text("Selanjutnya")
+//                            .frame(maxWidth:340, maxHeight:30)
+//                            .fontWeight(.bold)
+//
+//                    }
+//                    .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
                     
                 }
                 .padding(.leading, 20)
@@ -250,6 +274,25 @@ struct FormView: View {
         }
 
     }
+    
+//    private func addODD(selectedHobi : [Items], ttl: Date, kelumpuhan: Int, lvl: Int) {
+//        let selectedItemsString = selectedItems.map { $0.rawValue }.joined(separator: ", ")
+//        withAnimation {
+//            let newOdd = Odd(context: viewContext)
+//            newOdd.hobi = selectedItemsString
+//            newOdd.ttl = ttl
+//            newOdd.kelumpuhan = Int64(kelumpuhan)
+//            newOdd.level_demensia = Int64(lvl)
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 }
 
 struct FormView_Previews: PreviewProvider {

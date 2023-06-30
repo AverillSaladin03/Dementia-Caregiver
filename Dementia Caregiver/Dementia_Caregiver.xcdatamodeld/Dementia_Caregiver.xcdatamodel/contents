@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
         <attribute name="dementia_lv" optional="YES" attributeType="String"/>
         <attribute name="deskripsi" optional="YES" attributeType="String"/>
@@ -20,8 +20,8 @@
     </entity>
     <entity name="ODD" representedClassName="ODD" syncable="YES" codeGenerationType="class">
         <attribute name="birth_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="dementia_lv" optional="YES" attributeType="String"/>
-        <attribute name="disability_lv" optional="YES" attributeType="String"/>
+        <attribute name="dementia_lv" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="disability_lv" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="hobbies" optional="YES" attributeType="String" customClassName="[String]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>

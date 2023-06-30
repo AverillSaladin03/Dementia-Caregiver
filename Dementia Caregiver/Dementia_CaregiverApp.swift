@@ -13,7 +13,7 @@ struct Dementia_CaregiverApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AktivitasLuang()
+            FormView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
