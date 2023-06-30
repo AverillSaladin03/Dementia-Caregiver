@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ActivityHome: View {
+    
+    @FetchRequest(sortDescriptors: []) var activity: FetchedResults<Activity>
+    
     let activityName = ["Menyiram", "Senam", "Berlari", "Asik!", "Asik!"]
     
     var body: some View {
@@ -58,11 +61,11 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(0 ..< 5) {item in
+                                ForEach(activity, id:\.self) {element in
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
                                             List1CardView(image: Image("contoh2"))
-                                            Text(activityName[item])
+                                            Text(element.nama!)
                                                 .font(.system(size: 13))
                                                 .foregroundColor(.black)
                                                 .frame(maxWidth: .infinity, alignment: .leading)

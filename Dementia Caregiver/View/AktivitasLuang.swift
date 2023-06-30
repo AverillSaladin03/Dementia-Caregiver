@@ -106,6 +106,7 @@ struct AktivitasLuang: View {
                         SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
                     }
                     isSaved = true
+                    ActivityController().addActivity()
                     print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
                 }
