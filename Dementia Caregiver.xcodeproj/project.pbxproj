@@ -83,6 +83,7 @@
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
 		A14964502A43CE7600C62D06 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		A14964522A43EADE00C62D06 /* ScheduleNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNew.swift; sourceTree = "<group>"; };
+		A19FAC872A4BF1A300B4904B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A1C093082A444B800037429A /* ScheduleAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAdd.swift; sourceTree = "<group>"; };
 		A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddManual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +131,7 @@
 				84C73E4C2A4136BD00512DD9 /* Dementia CaregiverTests */,
 				84C73E562A4136BD00512DD9 /* Dementia CaregiverUITests */,
 				84C73E342A4136BB00512DD9 /* Products */,
+				A1282F592A4BF99200A2FC4C /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +197,14 @@
 				A149644C2A43CA7700C62D06 /* Activity */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A1282F592A4BF99200A2FC4C /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A19FAC872A4BF1A300B4904B /* DataManager.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		A14964452A43C9D300C62D06 /* Model */ = {

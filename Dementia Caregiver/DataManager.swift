@@ -9,9 +9,9 @@ import Foundation
 import CoreData
 
 class DataManager: ObservableObject{
-    let shared = DataManager()
+    static let shared = DataManager()
     let container = NSPersistentContainer(name: "Dementia_Caregiver")
-    let context = NSManagedObjectContext()
+    let context: NSManagedObjectContext
     
     init(){
         container.loadPersistentStores { description, error in
@@ -19,6 +19,8 @@ class DataManager: ObservableObject{
                 print("core data failed to load: \(error.localizedDescription)")
             }
         }
+        
+        context = container.viewContext
     }
     
     func save(){
