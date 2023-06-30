@@ -4,7 +4,7 @@
 //
 //  Created by Reyner Fernaldi on 22/06/23.
 //
-
+import CoreData
 import SwiftUI
 
 enum Items: String, CaseIterable, Equatable {
@@ -94,11 +94,20 @@ struct GridColumn:View {
 
 
 struct FormView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    let newODDController = ODDController()
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
+        animation: .default)
+    private var ODDs: FetchedResults<ODD>
+    
     init(){
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(hex: "#4FACC9")
     }
     
-    let data = ["Olahraga", "Berkebun", "Seni", "Memasak", "Musik", "Bepergian", "Game", "Film", "Memancing", "Membaca", "Fotografi", "Menggambar", "Teknologi", "Otomotif"]
     let layout = Array(repeating: GridItem(.adaptive(minimum:50)), count: 4)
     @State var selections: [String] = []
     
@@ -112,6 +121,8 @@ struct FormView: View {
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 4)
     
     @State  var selectedItems: [Items] = []
+    
+    @State private var isActive = false
     
     
     
@@ -146,8 +157,8 @@ struct FormView: View {
                             Text("**Lumpuh**: Tidak dapat bergerak dan membutuhkan bantuan orang lain").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                         
-                                ForEach(0..<disabilities.count, id: \.self) { button in
+                                
+                                ForEach(0..<disabilities.count) { button in
                                     Button(action: {
                                         self.selectedDisability = button
                                     }) {
@@ -184,7 +195,7 @@ struct FormView: View {
                             Text("**Berat**: Hilangnya kemampuan berkomunikasi atau hilangnya kemampuan fisik ").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                                ForEach(0..<levels.count, id: \.self) { button in
+                                ForEach(0..<levels.count) { button in
                                     Button(action: {
                                         self.selectedLevel = button
                                     }) {
@@ -214,6 +225,7 @@ struct FormView: View {
                             Text("Hobi")
                                 .padding(.bottom, 5)
                                 .fontWeight(.semibold)
+                            Text("Silahkan Pilih Minimal **3**").font(.caption).foregroundColor(.secondary)
                             ScrollView(.horizontal) {
                                 LazyHGrid(rows: rows) {
                                     ForEach(Items.allCases, id: \.self) { item in
@@ -224,20 +236,32 @@ struct FormView: View {
                             .frame(height: 200)
                         }
                         
-                        
                         Spacer()
-                        let selectedItemsString = selectedItems.map { $0.rawValue }.joined(separator: ", ")
-                        Text("\(selectedItemsString)")
-                        
                     }
                     
-                    NavigationLink(destination: DummyView()) {
-                        Text("Selanjutnya")
-                            .frame(maxWidth:340, maxHeight:30)
-                            .fontWeight(.bold)
-                           
+                    NavigationLink(destination: AktivitasLuang(), isActive: $isActive) {
+                        Button {
+                            // run your code
+                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                            // then set
+                            isActive = true
+
+                        } label: {
+                            Text("Selanjutnya")
+                                .frame(maxWidth:340, maxHeight:30)
+                                .fontWeight(.bold)
+                                
+                        }
+                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
                     }
-                    .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
+                    .padding(.top, 20)
+                    
+                    Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                    
+                        ForEach(ODDs, id: \.self) { item in
+                            Text("Item at \(item.hobbies!)")
+                            Text("\(item.birth_date!)")
+                        }
                     
                 }
                 .padding(.leading, 20)
