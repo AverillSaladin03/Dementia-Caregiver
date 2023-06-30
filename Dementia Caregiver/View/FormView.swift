@@ -122,6 +122,7 @@ struct FormView: View {
     
     @State  var selectedItems: [Items] = []
     
+    @State private var isActive = false
     
     
     
@@ -224,6 +225,7 @@ struct FormView: View {
                             Text("Hobi")
                                 .padding(.bottom, 5)
                                 .fontWeight(.semibold)
+                            Text("Silahkan Pilih Minimal **3**").font(.caption).foregroundColor(.secondary)
                             ScrollView(.horizontal) {
                                 LazyHGrid(rows: rows) {
                                     ForEach(Items.allCases, id: \.self) { item in
@@ -235,33 +237,31 @@ struct FormView: View {
                         }
                         
                         Spacer()
-//                        let selectedItemsString = selectedItems.map { $0.rawValue }.joined(separator: ", ")
-//                        Text("\(selectedItemsString)")
-                        
                     }
                     
-                    Button(action: {
-                        newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        
-//                        addODD(selectedHobi: selectedItems, ttl: birthDate, kelumpuhan: selectedDisability, lvl: selectedLevel)
-                    }) {
-                        Label("Add Odd", systemImage: "plus")
+                    NavigationLink(destination: AktivitasLuang(), isActive: $isActive) {
+                        Button {
+                            // run your code
+                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                            // then set
+                            isActive = true
+
+                        } label: {
+                            Text("Selanjutnya")
+                                .frame(maxWidth:340, maxHeight:30)
+                                .fontWeight(.bold)
+                                
+                        }
+                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
                     }
+                    .padding(.top, 20)
                     
                     Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
                         ForEach(ODDs, id: \.self) { item in
                             Text("Item at \(item.hobbies!)")
+                            Text("\(item.birth_date!)")
                         }
-
-                    
-//                    NavigationLink(destination: DummyView()) {
-//                        Text("Selanjutnya")
-//                            .frame(maxWidth:340, maxHeight:30)
-//                            .fontWeight(.bold)
-//
-//                    }
-//                    .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
                     
                 }
                 .padding(.leading, 20)
@@ -274,25 +274,6 @@ struct FormView: View {
         }
 
     }
-    
-//    private func addODD(selectedHobi : [Items], ttl: Date, kelumpuhan: Int, lvl: Int) {
-//        let selectedItemsString = selectedItems.map { $0.rawValue }.joined(separator: ", ")
-//        withAnimation {
-//            let newOdd = Odd(context: viewContext)
-//            newOdd.hobi = selectedItemsString
-//            newOdd.ttl = ttl
-//            newOdd.kelumpuhan = Int64(kelumpuhan)
-//            newOdd.level_demensia = Int64(lvl)
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
 }
 
 struct FormView_Previews: PreviewProvider {
