@@ -98,6 +98,8 @@ struct FormView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     let newODDController = ODDController()
+    
+    let newActivityContoller = ActivityContoller2()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
@@ -243,6 +245,8 @@ struct FormView: View {
                         Button {
                             // run your code
                             newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                            
+//                            newActivityContoller.addActivity()
                             // then set
                             isActive = true
 
