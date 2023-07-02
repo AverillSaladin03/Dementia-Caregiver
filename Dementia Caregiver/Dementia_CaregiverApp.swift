@@ -15,6 +15,7 @@ struct Dementia_CaregiverApp: App {
         WindowGroup {
             SpareTimeView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                
         }
     }
 }
