@@ -11,7 +11,12 @@ struct ScheduleNew: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var currentDate = Date()
+    @State private var startTime = Date()
+    @State private var endTime = Date()
+    @State private var selectedActivity = Activity()
     @State private var showSheet = false
+    
+    var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]
     
     var body: some View {
         NavigationStack {
@@ -33,9 +38,9 @@ struct ScheduleNew: View {
                 
                 DatePicker("Tanggal:", selection: $currentDate, displayedComponents: .date)
                 Divider()
-                DatePicker("Mulai:", selection: $currentDate, displayedComponents: .hourAndMinute)
+                DatePicker("Mulai:", selection: $startTime, displayedComponents: .hourAndMinute)
                 Divider()
-                DatePicker("Berakhir:", selection: $currentDate, displayedComponents: .hourAndMinute)
+                DatePicker("Berakhir:", selection: $endTime, displayedComponents: .hourAndMinute)
                 
                 Button {
                     showSheet.toggle()
@@ -44,8 +49,14 @@ struct ScheduleNew: View {
                         Text("Aktivitas")
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Image(systemName: "chevron.forward")
+                        Picker(selection: $selectedActivity, label: Text("")){
+                            ForEach(frameworks, id: \.self) { activity in
+                                Text(activity)
+                            }
+                            NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden()) {
+                                Text("Tambah Aktivitas")
+                            }
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
@@ -58,9 +69,11 @@ struct ScheduleNew: View {
             }
             .padding()
         }
-        
-        
     }
+}
+
+func addNewSchedule (){
+    
 }
 
 struct ScheduleNew_Previews: PreviewProvider {

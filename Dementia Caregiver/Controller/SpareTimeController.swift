@@ -12,7 +12,7 @@ class SpareTimeController {
     
     let dataManager = DataManager.shared
     
-    func addActivityLuang(start: Date, end:Date){
+    func addSpareTime(start: Date, end:Date){
         let spare = Spare(context: dataManager.context)
         spare.id = UUID()
         spare.start = start
@@ -22,4 +22,7 @@ class SpareTimeController {
         dataManager.save()
     }
     
+    func addSpareTimetoSchedule(){
+        
+    }
 }

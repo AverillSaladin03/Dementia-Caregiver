@@ -239,7 +239,7 @@ struct FormView: View {
                         Spacer()
                     }
                     
-                    NavigationLink(destination: AktivitasLuang(), isActive: $isActive) {
+                    NavigationLink(destination: SpareTimeView(), isActive: $isActive) {
                         Button {
                             // run your code
                             newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
