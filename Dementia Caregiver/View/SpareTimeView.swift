@@ -20,6 +20,8 @@ struct SpareTimeView: View {
     
     let dateFormatter = DateFormatter()
     
+    let newActivityContoller = ActivityContoller2()
+    
     var body: some View {
         NavigationStack{
             VStack{

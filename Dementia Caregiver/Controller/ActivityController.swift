@@ -1,8 +1,14 @@
+////
+////  ActivityController.swift
+////  Dementia Caregiver
+////
+////  Created by Averill Saladin Atma Setiawan on 28/06/23.
+////
 //
-//  ActivityController.swift
-//  Dementia Caregiver
+//import Foundation
+//import CoreData
 //
-//  Created by Averill Saladin Atma Setiawan on 28/06/23.
+//class ActivityController {
 //
 
 import Foundation
