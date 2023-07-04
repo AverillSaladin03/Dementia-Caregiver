@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ScheduleAdd: View {
+struct ScheduleChooseActivityView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showSheet = false
     
     @State private var searchField : String = ""
     @State private var showCancelButton: Bool = false
+    let activities = ActivityController2().getActivity()
     
     var body: some View {
         NavigationStack {
@@ -50,6 +51,12 @@ struct ScheduleAdd: View {
                 .background(Color("GrayColor"))
                 .padding(.bottom)
                 
+                List{
+                    ForEach (activities, id: \.self) { activity in
+                        Text(activity.name ?? "Not Found")
+                    }
+                }
+                
                 Button {
                     showSheet.toggle()
                 } label: {
@@ -70,12 +77,11 @@ struct ScheduleAdd: View {
             }
             .padding()
         }
-        .padding()
     }
 }
 
 struct ScheduleAdd_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleAdd()
+        ScheduleChooseActivityView()
     }
 }

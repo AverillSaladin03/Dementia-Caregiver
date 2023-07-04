@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScheduleNew: View {
+struct ScheduleAddView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var currentDate = Date()
@@ -61,7 +61,7 @@ struct ScheduleNew: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .sheet(isPresented: $showSheet) {
-                    ScheduleAdd()
+                    ScheduleChooseActivityView()
                 }
                 .padding(.top, 30)
                 
@@ -76,8 +76,8 @@ func addNewSchedule (){
     
 }
 
-struct ScheduleNew_Previews: PreviewProvider {
+struct ScheduleAddView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleNew()
+        ScheduleAddView()
     }
 }

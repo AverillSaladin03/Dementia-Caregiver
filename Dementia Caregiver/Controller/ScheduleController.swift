@@ -33,4 +33,5 @@ class ScheduleController: ObservableObject{
         
         newSchedule.addToSchedule_activity(activity)
         dataManager.save()
+    }
 }

@@ -99,7 +99,7 @@ struct FormView: View {
     
     let newODDController = ODDController()
     
-    let newActivityContoller = ActivityContoller2()
+    let newActivityController = ActivityController2()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
@@ -245,7 +245,7 @@ struct FormView: View {
                     Button(action: {
                         isActive = true
                         newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        ActivityContoller2().addActivity()
+                        ActivityController2().addActivity()
                     }) {
                         HStack (alignment: .center){
                             Spacer()
@@ -264,7 +264,7 @@ struct FormView: View {
                         .padding(.horizontal, 16)
                     }
                     
-                    NavigationLink(destination: AktivitasLuang().navigationBarBackButtonHidden(), isActive: $isActive) {
+                    NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden(), isActive: $isActive) {
                         EmptyView()
                     }
                     

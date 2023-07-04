@@ -37,13 +37,11 @@ func loadJson(filename fileName: String) -> [Activitty]? {
 }
 
 
-class ActivityContoller2{
+class ActivityController2{
     let dataManager = DataManager.shared
-//    @Published var activities: [Activity] = []
+    @Published var activities: [Activity] = []
 //
-//    init(){
-//        getActivity()
-//    }
+    
     
     func addActivity() {
         if let activityJson = loadJson(filename: "Reyner") {
@@ -63,16 +61,16 @@ class ActivityContoller2{
         }
     }
     
-//    func getActivity(){
-//        let request = NSFetchRequest<Activity>(entityName: "Activity")
-//
-//        do{
-//            activities = try dataManager.context.fetch(request)
-//        }catch let error{
-//            print("error fetching core data. \(error.localizedDescription)")
-//        }
-//    }
+    func getActivity() -> [Activity]{
+        let request = NSFetchRequest<Activity>(entityName: "Activity")
 
-    
+        do{
+            activities = try dataManager.context.fetch(request)
+        }catch let error{
+            print("error fetching core data. \(error.localizedDescription)")
+        }
+        return activities
+    }
+
 }
 
