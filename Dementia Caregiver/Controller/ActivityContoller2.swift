@@ -36,8 +36,13 @@ func loadJson(filename fileName: String) -> [Activitty]? {
 }
 
 
-class ActivityContoller2{
+class ActivityContoller2: ObservableObject{
     let dataManager = DataManager.shared
+    @Published var activities: [Activity] = []
+    
+    init(){
+        getActivity()
+    }
     
     func addActivity() {
         let newActivity = Activity(context: dataManager.context)
@@ -54,6 +59,16 @@ class ActivityContoller2{
                 // Save the new activity to Core Data
                 dataManager.save()
             }
+        }
+    }
+    
+    func getActivity(){
+        let request = NSFetchRequest<Activity>(entityName: "Activity")
+        
+        do{
+            activities = try dataManager.context.fetch(request)
+        }catch let error{
+            print("error fetching core data. \(error.localizedDescription)")
         }
     }
 

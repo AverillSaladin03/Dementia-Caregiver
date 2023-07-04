@@ -35,7 +35,8 @@ struct ScheduleList: View {
                             Rectangle()
                                 .fill(.white)
                                 .frame(width: 1, height: 25)
-                            Text(formatTime(index.end!))                                .font(.system(size: 11).monospaced())
+                            Text(formatTime(index.end!))
+                                .font(.system(size: 11).monospaced())
                         }
                         Spacer()
                         Text("Bermain Lego lego")
