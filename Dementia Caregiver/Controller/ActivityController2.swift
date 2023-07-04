@@ -44,7 +44,7 @@ class ActivityController2{
     
     
     func addActivity() {
-        if let activityJson = loadJson(filename: "Reyner") {
+        if let activityJson = loadJson(filename: "ActivityData") {
             for activityData in activityJson {
                 let newActivity = Activity(context: dataManager.context)
                 newActivity.name = activityData.nama

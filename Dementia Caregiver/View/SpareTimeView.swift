@@ -137,8 +137,6 @@ struct SpareTimeView: View {
         let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
         listSpareTimes.append(newSpareTime)
-        
-//        ActivityController2().addActivity()
     }
     
     func submitSpareTime(){

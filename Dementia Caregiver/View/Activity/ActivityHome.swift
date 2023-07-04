@@ -13,6 +13,8 @@ struct ActivityHome: View {
     
     let activityName = ["Menyiram", "Senam", "Berlari", "Asik!", "Asik!"]
     
+    let activities = ActivityController2().getActivity()
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -61,7 +63,7 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(activity, id:\.self) {element in
+                                ForEach(activities, id:\.self) {element in
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
                                             List1CardView(image: Image("contoh2"))
