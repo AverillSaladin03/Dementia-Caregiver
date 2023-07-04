@@ -160,7 +160,7 @@ struct FormView: View {
                             
                             HStack{
                                 
-                                ForEach(0..<disabilities.count) { button in
+                                ForEach(0..<disabilities.count, id: \.self) { button in
                                     Button(action: {
                                         self.selectedDisability = button
                                     }) {
@@ -197,7 +197,7 @@ struct FormView: View {
                             Text("**Berat**: Hilangnya kemampuan berkomunikasi atau hilangnya kemampuan fisik ").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                                ForEach(0..<levels.count) { button in
+                                ForEach(0..<levels.count, id: \.self) { button in
                                     Button(action: {
                                         self.selectedLevel = button
                                     }) {
@@ -241,24 +241,51 @@ struct FormView: View {
                         Spacer()
                     }
                     
-                    NavigationLink(destination: SpareTimeView(), isActive: $isActive) {
-                        Button {
-                            // run your code
-                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                            
-//                            newActivityContoller.addActivity()
-                            // then set
-                            isActive = true
+                    
+                    Button(action: {
+                        isActive = true
+                        newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        ActivityContoller2().addActivity()
+                    }) {
+                        HStack (alignment: .center){
+                            Spacer()
 
-                        } label: {
-                            Text("Selanjutnya")
-                                .frame(maxWidth:340, maxHeight:30)
+                            Text("Selesai")
                                 .fontWeight(.bold)
-                                
+
+                            Spacer()
                         }
-                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
+                        .frame(height: 41)
+                        .background(Color("ButtonColor"))
+                        .foregroundColor(.white)
+                        .mask {
+                            RoundedRectangle(cornerRadius: 8)
+                        }
+                        .padding(.horizontal, 16)
                     }
-                    .padding(.top, 20)
+                    
+                    NavigationLink(destination: AktivitasLuang().navigationBarBackButtonHidden(), isActive: $isActive) {
+                        EmptyView()
+                    }
+                    
+//                    NavigationLink(destination: AktivitasLuang().navigationBarBackButtonHidden(), isActive: $isActive) {
+//                        Button {
+//                            // run your code
+//                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+//
+////                            newActivityContoller.addActivity()
+//                            // then set
+//                            isActive = true
+//
+//                        } label: {
+//                            Text("Selanjutnya")
+//                                .frame(maxWidth:340, maxHeight:30)
+//                                .fontWeight(.bold)
+//
+//                        }
+//                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
+//                    }
+//                    .padding(.top, 20)
                     
                     Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     

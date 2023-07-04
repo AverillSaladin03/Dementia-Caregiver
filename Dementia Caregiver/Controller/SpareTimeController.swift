@@ -18,6 +18,7 @@ class SpareTimeController {
         spare.start = start
         spare.end = end
         spare.name = String()
+        spare.duration = Int16()
         
         dataManager.save()
     }
