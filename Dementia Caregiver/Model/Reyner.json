@@ -228,9 +228,9 @@
         },
         {
             "nama": "Menulis Jurnal",
-            "deskripsi": "ODD dapat menghabiskan 15 menit untuk menulis jurnal harian mereka. Hal ini dapat membantu mereka mengungkapkan diri, merangsang ingatan, dan meningkatkan kesejahteraan emosional. ",
+            "deskripsi": "ODD dapat menghabiskan 15 menit untuk menulis jurnal harian mereka. Hal ini dapat membantu mereka mengungkapkan diri, merangsang ingatan, dan meningkatkan kesejahteraan emosional.",
             "durasi": 30,
-            "tips": "- Tentukan waktu yang konsisten untuk menulis jurnal, misalnya setiap pagi atau sebelum tidur. -  Untuk membantu memulai, berikan pertanyaan atau promp kepada ODD. Misalnya, Anda dapat memberikan pertanyaan seperti ""Apa yang Anda nikmati hari ini?"" atau ""Apa yang paling membuat Anda bahagia saat ini?"". Pertanyaan ini dapat membantu memfokuskan pikiran mereka dan memberikan arah dalam menulis.",
+            "tips": "- Tentukan waktu yang konsisten untuk menulis jurnal, misalnya setiap pagi atau sebelum tidur. -  Untuk membantu memulai, berikan pertanyaan atau promp kepada ODD. Misalnya, Anda dapat memberikan pertanyaan seperti Apa yang Anda nikmati hari ini? atau Apa yang paling membuat Anda bahagia saat ini?. Pertanyaan ini dapat membantu memfokuskan pikiran mereka dan memberikan arah dalam menulis.",
             "disability_lv": 2,
             "dementia_lv": 3,
             "hobby": "membaca, menggambar, seni"
@@ -320,7 +320,7 @@
             "nama": "Permainan Kartu",
             "deskripsi": "Aktivitas mengasah otak bisa membantu meningkatkan fungsi kognitif ODD yang perlahan menurun",
             "durasi": 60,
-            "tips": "- Pilih kartu yang sesuai: Gunakan kartu berukuran besar dengan gambar yang jelas dan mudah dikenali. Pastikan kartu tersebut nyaman dipegang oleh ODD. - Pilih permainan yang sederhana: Pilih permainan kartu yang sederhana dan mudah dipahami, seperti ""Snap"" atau ""Matching Pairs"". Hindari permainan yang membutuhkan aturan yang rumit atau strategi yang kompleks.",
+            "tips": "- Pilih kartu yang sesuai: Gunakan kartu berukuran besar dengan gambar yang jelas dan mudah dikenali. Pastikan kartu tersebut nyaman dipegang oleh ODD. - Pilih permainan yang sederhana: Pilih permainan kartu yang sederhana dan mudah dipahami, seperti Snap atau Matching Pairs. Hindari permainan yang membutuhkan aturan yang rumit atau strategi yang kompleks.",
             "disability_lv": 2,
             "dementia_lv": 3,
             "hobby": "game, teknologi"

@@ -16,7 +16,6 @@ class ScheduleController: ObservableObject{
     
     func getSchedule() -> [Schedule] {
         let request = NSFetchRequest<Schedule>(entityName: "Schedule")
-        
         do {
             scheduleArray = try dataManager.context.fetch(request)
         }catch {

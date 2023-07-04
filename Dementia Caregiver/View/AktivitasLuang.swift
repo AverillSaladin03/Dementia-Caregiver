@@ -117,11 +117,12 @@ struct AktivitasLuang: View {
                         SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
                     }
                     isSaved = true
-                    //                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+
+                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                 }) {
                     HStack (alignment: .center){
                         Spacer()
-                        
+
                         Text("Selesai")
                             .fontWeight(.bold)
 
@@ -134,9 +135,6 @@ struct AktivitasLuang: View {
                         RoundedRectangle(cornerRadius: 8)
                     }
                     .padding(.horizontal, 16)
-                    newActivityContoller.addActivity()
-                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-                    
                 }
                 
                 NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
