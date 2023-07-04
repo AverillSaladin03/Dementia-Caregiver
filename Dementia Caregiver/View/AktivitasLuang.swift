@@ -11,7 +11,7 @@ let pageDescription = "Aktivitas luang adalah aktivitas apa saja yang dimiliki O
 
 
 struct AktivitasLuang: View {
-    @Environment(\.managedObjectContext) var managedObjectContex
+    //    @Environment(\.managedObjectContext) var managedObjectContex
     
     @State var activityCount: Int = 1
     @State private var listSpareTimes: [Spares] = listSpareTime
@@ -103,14 +103,38 @@ struct AktivitasLuang: View {
                 .padding(.vertical)
                 .listStyle(PlainListStyle())
                 
-                Button("Selesai"){
+                //                Button("Selesai"){
+                //                    for i in listSpareTimes{
+                //                        SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
+                //                    }
+                //                    isSaved = true
+                ////                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                //
+                //                }
+                
+                Button(action: {
                     for i in listSpareTimes{
                         SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
                     }
                     isSaved = true
-                    newActivityContoller.addActivity()
+
                     print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-                    
+                }) {
+                    HStack (alignment: .center){
+                        Spacer()
+
+                        Text("Selesai")
+                            .fontWeight(.bold)
+
+                        Spacer()
+                    }
+                    .frame(height: 41)
+                    .background(Color("ButtonColor"))
+                    .foregroundColor(.white)
+                    .mask {
+                        RoundedRectangle(cornerRadius: 8)
+                    }
+                    .padding(.horizontal, 16)
                 }
                 
                 NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {

@@ -39,12 +39,16 @@ func loadJson(filename fileName: String) -> [Activitty]? {
 
 class ActivityContoller2{
     let dataManager = DataManager.shared
+//    @Published var activities: [Activity] = []
+//
+//    init(){
+//        getActivity()
+//    }
     
     func addActivity() {
-        let newActivity = Activity(context: dataManager.context)
-        
         if let activityJson = loadJson(filename: "Reyner") {
             for activityData in activityJson {
+                let newActivity = Activity(context: dataManager.context)
                 newActivity.name = activityData.nama
                 newActivity.descriptionActivity = activityData.deskripsi
                 newActivity.duration = Int64(activityData.durasi)
@@ -52,12 +56,22 @@ class ActivityContoller2{
                 newActivity.disabilityLevel = Int64(activityData.disability_lv)
                 newActivity.dementiaLevel = Int64(activityData.dementia_lv)
                 newActivity.hobby = activityData.hobby
-                
+
                 // Save the new activity to Core Data
                 dataManager.save()
             }
         }
     }
+    
+//    func getActivity(){
+//        let request = NSFetchRequest<Activity>(entityName: "Activity")
+//
+//        do{
+//            activities = try dataManager.context.fetch(request)
+//        }catch let error{
+//            print("error fetching core data. \(error.localizedDescription)")
+//        }
+//    }
 
     
 }

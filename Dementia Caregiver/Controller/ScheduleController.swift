@@ -8,6 +8,21 @@
 import Foundation
 import CoreData
 
-class ScheduleController{
+class ScheduleController: ObservableObject{
+    
+    static var shared = ScheduleController()
+    let dataManager = DataManager.shared
+    @Published var scheduleArray: [Schedule] = []
+    
+    func getSchedule() -> [Schedule] {
+        let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+        do {
+            scheduleArray = try dataManager.context.fetch(request)
+        }catch {
+            print("DEBUG: Some error occured while fetching")
+        }
+        
+        return scheduleArray
+    }
     
 }
