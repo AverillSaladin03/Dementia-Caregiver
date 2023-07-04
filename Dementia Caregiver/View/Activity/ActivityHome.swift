@@ -65,7 +65,7 @@ struct ActivityHome: View {
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
                                             List1CardView(image: Image("contoh2"))
-                                            Text(element.nama!)
+                                            Text(element.name!)
                                                 .font(.system(size: 13))
                                                 .foregroundColor(.black)
                                                 .frame(maxWidth: .infinity, alignment: .leading)

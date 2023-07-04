@@ -19,6 +19,7 @@ struct Activitty : Decodable {
     var tips : String
     var disability_lv : Int
     var dementia_lv : Int
+    var hobby : String
 }
 
 func loadJson(filename fileName: String) -> [Activitty]? {
@@ -44,12 +45,13 @@ class ActivityContoller2{
         
         if let activityJson = loadJson(filename: "Reyner") {
             for activityData in activityJson {
-                newActivity.nama = activityData.nama
-                newActivity.deskripsi = activityData.deskripsi
-                newActivity.durasi = Int64(activityData.durasi)
+                newActivity.name = activityData.nama
+                newActivity.descriptionActivity = activityData.deskripsi
+                newActivity.duration = Int64(activityData.durasi)
                 newActivity.tips = activityData.tips
-                newActivity.disability_lv = Int64(activityData.disability_lv)
-                newActivity.dementia_lv = Int64(activityData.dementia_lv)
+                newActivity.disabilityLevel = Int64(activityData.disability_lv)
+                newActivity.dementiaLevel = Int64(activityData.dementia_lv)
+                newActivity.hobby = activityData.hobby
                 
                 // Save the new activity to Core Data
                 dataManager.save()
