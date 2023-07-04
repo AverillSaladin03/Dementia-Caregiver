@@ -20,6 +20,8 @@ struct AktivitasLuang: View {
     
     let dateFormatter = DateFormatter()
     
+    let newActivityContoller = ActivityContoller2()
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -106,7 +108,7 @@ struct AktivitasLuang: View {
                         SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
                     }
                     isSaved = true
-                    ActivityController().addActivity()
+                    newActivityContoller.addActivity()
                     print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
                 }

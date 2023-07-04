@@ -142,7 +142,7 @@ struct AktivitasTerbaruCardView: View{
     var body: some View {
         image
             .resizable()
-            .frame(width: 350, height: 230, alignment: .leading)
+            .frame(width: 350, height: 210, alignment: .leading)
             .cornerRadius(10)
     }
 }
