@@ -20,6 +20,8 @@ struct AktivitasLuang: View {
     
     let dateFormatter = DateFormatter()
     
+    let newActivityContoller = ActivityContoller2()
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -132,6 +134,9 @@ struct AktivitasLuang: View {
                         RoundedRectangle(cornerRadius: 8)
                     }
                     .padding(.horizontal, 16)
+                    newActivityContoller.addActivity()
+                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                    
                 }
                 
                 NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {

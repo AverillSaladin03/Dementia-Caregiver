@@ -25,6 +25,7 @@
 //        activity.dementia_lv = "3"
 ////        activity.link = nil
 //
+//        let activity2 = Activity(context: dataManager.context)
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Menyiram Tanaman"
 //        activity.deskripsi = "Aktivitas menyiram tanaman menjadi latihan yang bagus untuk dilakukan setiap hari karena mendatangkan manfaat seolah sedang berolahraga."
@@ -117,5 +118,7 @@
 //        // Aktivitas  mengasah otak
 //
 //        // Aktivitas
+//
+//        dataManager.save()
 //    }
 //}
