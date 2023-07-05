@@ -137,20 +137,6 @@ struct FormView: View {
                 ScrollView{
                     VStack(alignment: .leading){
                         Group{
-                            Text("Tanggal lahir")
-                                .padding(.bottom, 5)
-                                .fontWeight(.semibold)
-                            HStack {
-                                DatePicker(selection: $birthDate, in: ...Date.now, displayedComponents: .date){
-                                }
-                                .frame(maxWidth: 110)
-                                
-                            }
-                            .padding(.top, 5)
-                            .padding(.bottom)
-                        }
-                        
-                        Group{
                             Text("Kelumpuhan")
                                 .padding(.bottom, 5)
                                 .fontWeight(.semibold)
@@ -246,7 +232,7 @@ struct FormView: View {
                             // run your code
                             newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
                             
-//                            newActivityContoller.addActivity()
+                            newActivityContoller.addActivity()
                             // then set
                             isActive = true
 
@@ -264,7 +250,6 @@ struct FormView: View {
                     
                         ForEach(ODDs, id: \.self) { item in
                             Text("Item at \(item.hobbies!)")
-                            Text("\(item.birth_date!)")
                         }
                     
                 }
@@ -275,6 +260,10 @@ struct FormView: View {
             .navigationTitle("Data Orang dengan Demensia")
             .navigationBarTitleDisplayMode(.inline)
             
+        }
+        .task {
+            let tes = ActivityContoller2()
+            let haha = tes.addActivity()
         }
 
     }

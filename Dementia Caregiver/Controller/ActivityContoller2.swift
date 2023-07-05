@@ -27,6 +27,7 @@ func loadJson(filename fileName: String) -> [Activitty]? {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
             let jsonData = try decoder.decode(ResponseData.self, from: data)
+            print(jsonData.activity)
             return jsonData.activity
         } catch {
             print("error:\(error)")
@@ -43,17 +44,17 @@ class ActivityContoller2{
         let newActivity = Activity(context: dataManager.context)
         
         if let activityJson = loadJson(filename: "Reyner") {
-            for activityData in activityJson {
-                newActivity.nama = activityData.nama
-                newActivity.deskripsi = activityData.deskripsi
-                newActivity.durasi = Int64(activityData.durasi)
-                newActivity.tips = activityData.tips
-                newActivity.disability_lv = Int64(activityData.disability_lv)
-                newActivity.dementia_lv = Int64(activityData.dementia_lv)
-                
-                // Save the new activity to Core Data
-                dataManager.save()
-            }
+//            for activityData in activityJson {
+//                newActivity.nama = activityData.nama
+//                newActivity.deskripsi = activityData.deskripsi
+//                newActivity.durasi = Int64(activityData.durasi)
+//                newActivity.tips = activityData.tips
+//                newActivity.disability_lv = Int64(activityData.disability_lv)
+//                newActivity.dementia_lv = Int64(activityData.dementia_lv)
+//                
+//                // Save the new activity to Core Data
+//                dataManager.save()
+//            }
         }
     }
 
