@@ -2,49 +2,81 @@
 //  CategoryController.swift
 //  Dementia Caregiver
 //
-//  Created by Averill Saladin Atma Setiawan on 05/07/23.
+//  Created by Zefanya Oktaviana Indrasanti on 06/07/23.
 //
 
 import Foundation
 import CoreData
 
-struct Cattegories: Decodable {
-    var category: [Cattegory]
+struct CategoryModel: Decodable {
+    var category: [Categorry]
 }
-struct Cattegory : Decodable {
-    var id: Int
-    var nama: String
+struct Categorry : Decodable {
+    var idCategory: String
+    var name: String
+}
+
+func loadCategory(filename fileName: String) -> [Categorry]? {
+    if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let jsonData = try decoder.decode(CategoryModel.self, from: data)
+            return jsonData.category
+        } catch {
+            print("error:\(error)")
+        }
+    }
+    return nil
 }
 
 class CategoryController{
-    
     let dataManager = DataManager.shared
+//    static var shared = CategoryController()
     @Published var categories: [Category] = []
+//    let getActivity = ActivityController2().activities
     
-    func loadJson(filename fileName: String) -> [Cattegory]? {
-        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(Cattegories.self, from: data)
-                return jsonData.category
-            } catch {
-                print("error:\(error)")
-            }
-        }
-        return nil
-    }
     
+//    func addCategory(activity: Activity) {
     func addCategory() {
-        if let categoryJson = loadJson(filename: "CategoryData") {
+        if let categoryJson = loadCategory(filename: "CategoryData") {
             for categoryData in categoryJson {
                 let newCategory = Category(context: dataManager.context)
                 newCategory.id = UUID()
-                newCategory.name = categoryData.nama
-
+                newCategory.idCategory = categoryData.idCategory
+                newCategory.name = categoryData.name
+//                newCategory.addToCategory_activity(activity)
+             
                 // Save the new category to Core Data
                 dataManager.save()
             }
         }
     }
+    
+    func getCategory(idCategories: [String]) -> [Category] {
+        var categories: [Category] = []
+        let request = NSFetchRequest<Category>(entityName: "Category")
+
+        let filter = NSPredicate(format: "idCategory IN %@", idCategories)
+        request.predicate = filter
+
+        do {
+            categories = try dataManager.context.fetch(request)
+        } catch let error{
+            print("Error fetching. \(error.localizedDescription)")
+        }
+        return categories
+    }
+    
+    func getAllCategory() -> [Category]{
+        let request = NSFetchRequest<Category>(entityName: "Category")
+
+        do{
+            categories = try dataManager.context.fetch(request)
+        }catch let error{
+            print("error fetching core data. \(error.localizedDescription)")
+        }
+        return categories
+    }
+    
 }
