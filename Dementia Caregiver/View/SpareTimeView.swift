@@ -103,10 +103,10 @@ struct SpareTimeView: View {
                 .padding(.vertical)
                 .listStyle(PlainListStyle())
                 
-                Button{
-                    submitSpareTime()
-                }label:{
-                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    Button{
+                        submitSpareTime()
+                    }label:{
                         Spacer()
                         Text("Selesai")
                             .fontWeight(.bold)

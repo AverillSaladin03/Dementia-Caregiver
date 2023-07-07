@@ -13,7 +13,7 @@ struct Dementia_CaregiverApp: App {
     
     var body: some Scene {
         WindowGroup {
-           ContentView()
+           FormView()
                 .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
