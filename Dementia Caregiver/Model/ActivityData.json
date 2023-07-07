@@ -1,0 +1,375 @@
+{
+    "activity":[
+        
+        {
+            "nama": "Jalan Pagi",
+            "deskripsi": "Aktivitas fisik, seperti jalan pagi, bisa melepaskan hormon endorfin yang bertindak sebagai pereda stres dan memunculkan perasaan bahagia.",
+            "durasi": 60,
+            "tips": "Jenis olahraga ini sangat baik dilakukan selama 25 menit per hari sebagai aktivitas fisik dengan intensitas sedang. Jika dilakukan secara rutin, kebiasaan ini akan membantu tubuh lebih kuat dan mencegah berbagai risiko penyakit yang mengancam. ODD dapat melakukan aktivitas ini bersama pasangan, anggota keluarga lain, atau teman sehingga meningkatkan interaksi sosial yang mendukung kesejahteraan dan kesehatan mental.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga, bepergian"
+        },
+        {
+            "nama": "Menyiram Tanaman",
+            "deskripsi": "Aktivitas menyiram tanaman menjadi latihan yang bagus untuk dilakukan setiap hari karena mendatangkan manfaat seolah sedang berolahraga.",
+            "durasi": 30,
+            "tips": "Kegiatan menyiram tanaman dapat dilakukan pada pagi hari. Paparan sinar matahari pagi selama beberapa jam (8-10) akan memberi lebih banyak vitamin D daripada segelas susu setiap malam. ODD bisa memulai berkebun dengan memanfaatkan lahan kecil di sekitar rumah. Tumbuhan yang mudah dirawat dan diawasi untuk pemula bisa berupa sayuran seperti timun dan kubis.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "berkebun, olahraga"
+        },
+        {
+            "nama": "Belanja",
+            "deskripsi": "Belanja memberikan kesempatan untuk berinteraksi secara sosial dan juga aktivitas fisik saat berkeliling dari satu toko ke toko lain. Membeli bahan pangan yang segar setiap hari juga diyakini membuat para ODD makan lebih sehat.",
+            "durasi": 60,
+            "tips": "- Buatlah daftar belanja untuk persiapan makan selama beberapa hari. - Catat merek favorit ODD di daftar belanja agar tidak bingung dengan pilihan lain yang tak terhitung jumlahnya di lorong. - Berbelanja di toko yang besar untuk memudahkan pergerakan.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "bepergian, olahraga, memasak"
+        },
+        {
+            "nama": "Mengajak jalan hewan peliharaan",
+            "deskripsi": "Mengajak jalan hewan peliharaan dapat menjadi kegiatan yang menyenangkan sekaligus menyehatkan. ODD yang menemani anjing berjalan-jalan menjadi termotivasi untuk berjalan meski hanya jarak pendek",
+            "durasi": 30,
+            "tips": "Mengajak hewan peliharaan jalan-jalan secara rutin juga bisa membakar kalori sebagai terapi penurunan berat badan.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga, bepergian"
+        },
+        {
+            "nama": "Menanam",
+            "deskripsi": "Aktivitas berkebun seperti menanam menjadi latihan yang bagus untuk dilakukan setiap hari karena mendatangkan manfaat seolah sedang berolahraga.",
+            "durasi": 60,
+            "tips": "Kegiatan menanam dapat dilakukan pada pagi hari. Paparan sinar matahari pagi selama beberapa jam (8-10) akan memberi lebih banyak vitamin D daripada segelas susu setiap malam. ODD bisa memulai berkebun dengan memanfaatkan lahan kecil di sekitar rumah. Tumbuhan yang mudah dirawat dan diawasi untuk pemula bisa berupa sayuran seperti timun dan kubis.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "berkebun"
+        },
+        {
+            "nama": "Meditasi",
+            "deskripsi": "Selain berfungsi menenangkan diri, meditasi dapat memperlambat penuaan otak. Meditasi melatih pikiran untuk fokus, rileks, juga dapat meningkatkan kesadaran dan refleksi diri, bersama dengan meningkatkan kebiasaan dan hubungan perawatan diri.",
+            "durasi": 60,
+            "tips": "Jenis meditasi ada bermacam-macam seperti meditasi cinta kasih, meditasi mantra, meditasi kesadaran, dan lain-lain. Semua gaya meditasi ini sangat membantu kesehatan mental ODD. Karena praktik ini membutuhkan keterampilan dan pola pikir yang berbeda, Anda harus mempertimbangkan kebutuhan dan kepribadian ODD untuk menemukan yang paling sesuai dengan gaya hidup ODD.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Menulis",
+            "deskripsi": "Menulis bisa menjadi alternatif ODD yang suka bercerita dan bermanfaat untuk mengasah kemampuan berpikir serta kreativitasnya. Beberapa sumber menyebutkan aktivitas menulis dapat meminimalisir risiko pikun.",
+            "durasi": 30,
+            "tips": "Ada banyak hal yang dapat menjadi bahan tulisan ODD di masa pensiun. Salah satu hal yang paling mudah adalah dengan menuliskan pengalaman-pengalaman di masa lalu. Pengalaman tidak harus melulu soal kesuksesan pekerjaan atau kegemilangan prestasi akademik. Lansia bisa juga menulis beragam kegagalan hidup atau peluang-peluang yang mereka lewatkan semasa muda.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Memasak",
+            "deskripsi": "Aktivitas masak bisa menjadi solusi yang menyenangkan, terlebih jika dapat berkreasi membuat berbagai menu makanan sehat ODD untuk menunjang kebutuhan gizinya.",
+            "durasi": 60,
+            "tips": "Memasak bisa jadi kegiatan ODD yang menyenangkan. Anda bisa mengajak orang tua atau anggota keluarga yang sudah berusia lanjut untuk melakukan kegiatan ini secara rutin. Selain mengisi waktu luang, memasak juga bisa menjadi sarana agar ODD dapat memasak makanan sehat untuk ia konsumsi guna mencukupi asupan gizinya setiap hari.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "memasak"
+        },
+        {
+            "nama": "Bermain Musik",
+            "deskripsi": "Penelitian jurnal Frontiers in Psychology menyatakan bahwa musik dapat membantu meningkatkan kemampuan kognitif lansia di rentang usia 60-90 tahun.",
+            "durasi": 30,
+            "tips": "- Bermain musik secara rutin, apalagi bila sudah dilakukan dari kecil diketahui bagus untuk fungsi otak, yakni mencegah demensia. - Cobalah kuasai lagu-lagu yang mudah, misalnya “Bintang Kecil”. Dari situ, perlahan pembelajaran mungkin bisa ditingkatkan. Dengan begitu akan tercipta rasa puas dan kebanggaan pribadi.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "musik, seni"
+        },
+        {
+            "nama": "Menonton Film",
+            "deskripsi": "Menonton film di platform streaming dapat dengan mudah dilakukan di dalam ruangan. ODD tetap berada dalam kehangatan, keamanan, dan kenyamanan rumah saat mereka menyaksikan film",
+            "durasi": 30,
+            "tips": "- Ajak ODD berdiskusi mengenai film yang diputar. - Menonton film yang diperankan oleh aktor favorit ODD. - Untuk ODD, film yang menyenangkan dan ceria sangat ideal. - Film di bawah dua jam juga merupakan pilihan yang baik untuk ODD. - Film yang menampilkan plot sederhana dan jumlah karakter yang terbatas akan diterima dengan lebih baik oleh ODD.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "seni, film"
+        },
+        {
+            "nama": "Menari",
+            "deskripsi": "Menari bisa menjadi salah satu aktivitas menyenangkan. Selain menyenangkan, menari juga memberikan manfaat yang baik bagi ODD seperti meningkatkan daya ingat, melatih keseimbangan, meningkatkan kelenturan, dan menurunkan berat badan. ",
+            "durasi": 30,
+            "tips": "- Lakukan gerakan tarian yang melibatkan keseimbangan dengan satu kaki, menopang pada ujung jari kaki, atau posisi yang membutuhkan banyak keseimbangan. Dengan demikian, kekuatan otot akan terbangun dan keseimbangan dapat terjaga. - Pemanasan panjang yang cenderung terdiri dari banyak peregangan akan membantu meringankan nyeri sendi, menghindari berbagai cedera dan rasa sakit seusai olahraga. - Jika dilakukan secara rutin, menari sama dengan olahraga secara rutin. Dengan begitu, tubuh akan lebih bugar.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "seni, musik"
+        },
+        {
+            "nama": "Menyapu",
+            "deskripsi": "Sebuah studi menyebutkan bahwa membersihkan rumah dapat membantu ODD merasa lebih sehat secara fisik. Secara mental, ODD pun menjadi lebih nyaman karena tinggal di lingkungan yang bersih.",
+            "durasi": 30,
+            "tips": "Ketika melakukannya, ODD sebaiknya tetap didampingi. Ketika ODD sudah terlihat kelelahan, Anda sebaiknya menyarankan untuk segera istirahat.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Membaca Buku",
+            "deskripsi": "Untuk mengasah kemampuan berpikir ODD, membaca buku bisa jadi pilihan kegiatan yang tepat.",
+            "durasi": 30,
+            "tips": "- Memotivasi diri dan menanamkan dalam diri bahwa membaca adalah hal yang menyenangkan. - Pilih buku-buku yang sesuai dengan.  - Buat jadwal membaca agar menjadi sebuah kebiasaan.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Mewarnai",
+            "deskripsi": "Selain mengusir rasa jenuh, kegiatan mewarnai juga dapat membantu mengasah kemampuan artistik ODD.",
+            "durasi": 30,
+            "tips": "- Membeli buku-buku mewarnai untuk orang dewasa. - Pilih warna-warna yang disukai untuk menimbulkan rasa senang dan melatih keseimbangan otak kanan dan kiri saat memilih warna yang selaras.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Menggambar",
+            "deskripsi": "Selain mengusir rasa jenuh, kegiatan menggambar juga dapat membantu mengasah kemampuan artistik ODD.",
+            "durasi": 30,
+            "tips": "- Pilih bahan dan alat yang berkualitas baik dan mudah digunakan untuk menggambar. - Hindari gambar yang terlalu rumit atau membutuhkan banyak detail. - Sediakan beragam tema atau objek gambar yang menarik bagi ODD. Ini dapat mencakup pemandangan alam, bunga, hewan, atau objek-objek sehari-hari yang mudah dikenali.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Merajut",
+            "deskripsi": "Kegiatan merajut bagi ODD dapat menjadi pengalaman yang menyenangkan, menenangkan, dan memperkuat keterampilan rajut mereka.",
+            "durasi": 30,
+            "tips": "- Mulailah dengan pola rajutan dasar atau proyek yang tidak terlalu rumit. - Sediakan alat dan bahan yang nyaman. - Dorong ODD untuk menikmati proses merajut dan libatkan mereka dalam pemilihan warna atau variasi pola. Biarkan mereka mengekspresikan kreativitas mereka melalui rajutan yang mereka buat.",
+            "disability_lv": 2,
+            "dementia_lv": 2,
+            "hobby": "seni"
+        },
+        {
+            "nama": "Mendengarkan Musik",
+            "deskripsi": "Penelitian jurnal Frontiers in Psychology menyatakan bahwa musik dapat membantu meningkatkan kemampuan kognitif ODD di rentang usia 60-90 tahun",
+            "durasi": 15,
+            "tips": "- Pilih musik yang memiliki tempo yang lambat dan melodi yang menenangkan. - Ajak ODD untuk berinteraksi dengan musik dengan cara bernyanyi bersama atau menggerakkan tubuh sesuai dengan irama musik. - Buatlah playlist musik yang disesuaikan dengan preferensi dan minat ODD.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "musik, seni, teknologi"
+        },
+        {
+            "nama": "Olahraga bersama",
+            "deskripsi": "Kelas olahraga bersama bermanfaat agar ODD tidak merasa kesepian dan lebih bersemangat karena melakukan olahraga bersama-sama.",
+            "durasi": 60,
+            "tips": "- Pastikan olahraga yang dipilih tidak terlalu menuntut secara fisik dan dapat disesuaikan dengan kemampuan ODD. - Bekerjasama dalam kelompok atau pasangan dapat meningkatkan semangat dan motivasi dalam berolahraga.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga, bepergian"
+        },
+        {
+            "nama": "Menari Bersama",
+            "deskripsi": "Menari bisa menjadi salah satu aktivitas menyenangkan apalagi jika dilakukan bersama-sama dengan keluarga atau teman. Selain menyenangkan, menari juga memberikan manfaat seperti meningkatkan daya ingat, melatih keseimbangan, meningkatkan kelenturan, dan menurunkan berat badan.",
+            "durasi": 60,
+            "tips": "Agar lebih menyenangkan, coba putarkan musik atau kaset yang populer di zaman dahulu sehingga mereka dapat bernostalgia.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "seni, musik, bepergian"
+        },
+        {
+            "nama": "Bermain dengan Cucu",
+            "deskripsi": "Bagi para orang tua lanjut usia, bermain bersama cucu adalah cara menyenangkan. Kehadiran anak kecil juga bisa menjadi teman mengobrol yang seru bagi orang tua sehingga memberikan perasaan damai karena bisa berkumpul bersama keluarga tercinta.",
+            "durasi": 60,
+            "tips": "Manfaatkan waktu bermain dengan cucu sebagai kesempatan untuk berinteraksi dan berbicara satu sama lain. Ajukan pertanyaan, dengarkan cerita mereka, dan berbagi pengalaman Anda. Ini dapat memperkuat hubungan emosional, membangun memori bersama, dan menciptakan momen yang berharga antara ODD dan cucu.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "bepergian"
+        },
+        {
+            "nama": "Karaoke Bersama",
+            "deskripsi": "Bernyanyi bersama orang tua dengan mendendangkan lagu-lagu tahun 60-70an yang familiar untuk mereka. Ajak saudara-saudara yang lain untuk ikut bergabung.",
+            "durasi": 60,
+            "tips": "- Pilih lagu-lagu yang dikenal dan disukai oleh ODD. Bisa memilih lagu-lagu hits dari masa lalu atau lagu-lagu dengan melodi yang mudah diingat. - Ajak semua orang untuk bergabung dalam bernyanyi dan berikan aplaus serta pujian setelah setiap penampilan. Ini akan meningkatkan kepercayaan diri dan semangat ODD untuk berpartisipasi.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "seni, musik, bepergian"
+        },
+        {
+            "nama": "Memasak dan makan bersama",
+            "deskripsi": "Kegiatan memasak dan makan bersama dengan ODD dapat menjadi pengalaman yang menyenangkan, membangun ikatan, dan memberikan kesempatan untuk menciptakan momen berharga bersama.",
+            "durasi": 60,
+            "tips": "- Pilihlah resep-resep yang sederhana dan sesuai dengan kemampuan ODD. - Manfaatkan momen saat makan bersama untuk berbincang dan bersosialisasi. Ajak ODD untuk berbagi cerita, kenangan, atau pengalaman seputar makanan yang disajikan.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "memasak, bepergian"
+        },
+        {
+            "nama": "Senam Otak",
+            "deskripsi": "Senam otak bermanfaat untuk memperbaiki kemampuan motorik, fungsi eksekutif otak, kemampuan sosial, dan performa akademik.",
+            "durasi": 15,
+            "tips": "Mulailah dengan latihan yang tidak terlalu rumit atau menantang, dan tingkatkan tingkat kesulitan seiring waktu. Hal ini akan memungkinkan ODD merasa termotivasi dan terlibat tanpa merasa kewalahan.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Trivia",
+            "deskripsi": "Kegiatan trivia akan menjadi pengalaman yang menghibur dan menantang bagi ODD. Selain itu, kegiatan ini juga membangun interaksi sosial, melatih kognisi, dan memberikan kesempatan untuk bersenang-senang bersama.",
+            "durasi": 15,
+            "tips": "- Pilih topik yang berkaitan dengan kenangan masa lalu ODD. Misalnya, pertanyaan tentang kehidupan mereka, hobi favorit, musik atau film dari era mereka. - Sertakan stimulus visual seperti gambar atau objek yang terkait dengan pertanyaan trivia.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "game"
+        },
+        {
+            "nama": "Mendengarkan Musik",
+            "deskripsi": "Penelitian jurnal Frontiers in Psychology menyatakan bahwa musik dapat membantu meningkatkan kemampuan kognitif ODD di rentang usia 60-90 tahun",
+            "durasi": 15,
+            "tips": "- Pilih musik yang memiliki tempo yang lambat dan melodi yang menenangkan. - Ajak ODD untuk berinteraksi dengan musik dengan cara bernyanyi bersama atau menggerakkan tubuh sesuai dengan irama musik. - Buatlah playlist musik yang disesuaikan dengan preferensi dan minat ODD.",
+            "disability_lv": 3,
+            "dementia_lv": 3,
+            "hobby": "musik, seni, teknologi"
+        },
+        {
+            "nama": "Menulis Jurnal",
+            "deskripsi": "ODD dapat menghabiskan 15 menit untuk menulis jurnal harian mereka. Hal ini dapat membantu mereka mengungkapkan diri, merangsang ingatan, dan meningkatkan kesejahteraan emosional.",
+            "durasi": 30,
+            "tips": "- Tentukan waktu yang konsisten untuk menulis jurnal, misalnya setiap pagi atau sebelum tidur. -  Untuk membantu memulai, berikan pertanyaan atau promp kepada ODD. Misalnya, Anda dapat memberikan pertanyaan seperti Apa yang Anda nikmati hari ini? atau Apa yang paling membuat Anda bahagia saat ini?. Pertanyaan ini dapat membantu memfokuskan pikiran mereka dan memberikan arah dalam menulis.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Senam Ringan",
+            "deskripsi": "ODD dapat melakukan beberapa gerakan senam ringan selama 15 menit, seperti peregangan, gerakan pernapasan, atau gerakan sederhana untuk menjaga fleksibilitas tubuh dan kesehatan secara umum.",
+            "durasi": 30,
+            "tips": "Gunakan panduan visual seperti gambar atau poster yang menunjukkan gerakan-gerakan senam. Hal ini dapat membantu memperjelas instruksi dan memudahkan ODD dalam mengikuti gerakan yang diarahkan.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Jalan Pagi",
+            "deskripsi": "Aktivitas fisik, seperti senam, bisa melepaskan hormon endorfin yang bertindak sebagai pereda stres dan memunculkan perasaan bahagia.",
+            "durasi": 60,
+            "tips": "Jenis olahraga ini sangat baik dilakukan selama 25 menit per hari sebagai aktivitas fisik dengan intensitas sedang. Jika dilakukan secara rutin, kebiasaan ini akan membantu tubuh lebih kuat dan mencegah berbagai risiko penyakit yang mengancam. ODD dapat melakukan aktivitas ini bersama pasangan, anggota keluarga lain, atau teman sehingga meningkatkan interaksi sosial yang mendukung kesejahteraan dan kesehatan mental.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga, bepergian"
+        },
+        {
+            "nama": "Berenang",
+            "deskripsi": "Selalu perhatikan keamanan dan kenyamanan ODD selama kegiatan berenang. Jika perlu, konsultasikan dengan tenaga medis atau instruktur renang yang berpengalaman untuk mendapatkan saran lebih lanjut sesuai dengan kondisi kesehatan mereka.",
+            "durasi": 120,
+            "tips": "Pastikan tempat berenang yang dipilih memiliki fasilitas yang aman dan ramah bagi ODD. Periksa kebersihan air, adanya pengawas yang terlatih, dan fasilitas penunjang seperti tangga atau pegangan untuk memudahkan masuk dan keluar dari kolam renang.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Yoga",
+            "deskripsi": "Yoga dapat menjadi kegiatan yang bermanfaat bagi ODD. Yoga dapat membantu meningkatkan keseimbangan, fleksibilitas, kekuatan otot, dan juga memberikan ketenangan pikiran.",
+            "durasi": 60,
+            "tips": "- Berikan instruksi verbal yang jelas dan sederhana saat melakukan gerakan yoga. Gunakan juga panduan visual seperti gambar atau poster yang menunjukkan gerakan-gerakan yoga. - Pilih musik yang lembut dan menenangkan, seperti suara alam atau musik instrumental yang menenangkan. ",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Senam",
+            "deskripsi": "Kegiatan ini melibatkan gerakan tubuh yang sederhana, peregangan otot, pernafasan yang teratur, dan interaksi sosial positif. Tujuannya adalah untuk menjaga kebugaran fisik, meningkatkan fleksibilitas, memperkuat otot, serta merangsang dan merawat pikiran.",
+            "durasi": 60,
+            "tips": "Gerakan peregangan yang melibatkan berbagai bagian tubuh dapat membantu meningkatkan fleksibilitas dan mobilitas. Fokus pada gerakan yang melibatkan tangan, kaki, leher, dan punggung. Gerakan yang sederhana seperti mengangkat lengan, mengayunkan kaki, dan memutar leher dapat dilakukan dengan mudah.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "Menyapu",
+            "deskripsi": "Sebuah studi menyebutkan bahwa membersihkan rumah dapat membantu ODD merasa lebih sehat secara fisik. Secara mental, ODD pun menjadi lebih nyaman karena tinggal di lingkungan yang bersih.",
+            "durasi": 30,
+            "tips": "Ketika melakukannya, ODD sebaiknya tetap didampingi. Ketika ODD sudah terlihat kelelahan, Anda sebaiknya menyarankan untuk segera istirahat.",
+            "disability_lv": 1,
+            "dementia_lv": 3,
+            "hobby": "olahraga"
+        },
+        {
+            "nama": "TTS",
+            "deskripsi": "Aktivitas mengasah otak bisa membantu meningkatkan fungsi kognitif ODD yang perlahan menurun",
+            "durasi": 30,
+            "tips": "Mulai permainan TTS yang sangat sederhana, misal lapar - makan, haus - minum.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "game, teknologi"
+        },
+        {
+            "nama": "Mahjong",
+            "deskripsi": "Aktivitas mengasah otak bisa membantu meningkatkan fungsi kognitif ODD yang perlahan menurun",
+            "durasi": 60,
+            "tips": "- Pilih versi Mahjong dengan aturan yang sederhana dan mudah dipahami. - Hindari varian yang terlalu kompleks atau membutuhkan pemahaman strategi yang rumit.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "game, teknologi"
+        },
+        {
+            "nama": "Puzzle",
+            "deskripsi": "Aktivitas mengasah otak bisa membantu meningkatkan fungsi kognitif ODD yang perlahan menurun",
+            "durasi": 30,
+            "tips": "- Pilih puzzle yang sesuai: Pilih puzzle dengan tingkat kesulitan yang sesuai dengan kemampuan ODD. Mulailah dengan puzzle yang memiliki jumlah dan ukuran potongan yang lebih sedikit, kemudian tingkatkan secara bertahap. - Pilih gambar yang akrab: Pilih gambar-gambar yang akrab dan berhubungan dengan minat atau pengalaman ODD. Misalnya, gambar pemandangan, hewan peliharaan, atau bunga-bunga.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "game, teknologi"
+        },
+        {
+            "nama": "Permainan Kartu",
+            "deskripsi": "Aktivitas mengasah otak bisa membantu meningkatkan fungsi kognitif ODD yang perlahan menurun",
+            "durasi": 60,
+            "tips": "- Pilih kartu yang sesuai: Gunakan kartu berukuran besar dengan gambar yang jelas dan mudah dikenali. Pastikan kartu tersebut nyaman dipegang oleh ODD. - Pilih permainan yang sederhana: Pilih permainan kartu yang sederhana dan mudah dipahami, seperti Snap atau Matching Pairs. Hindari permainan yang membutuhkan aturan yang rumit atau strategi yang kompleks.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "game, teknologi"
+        },
+        {
+            "nama": "Membuat Origami",
+            "deskripsi": "Kegiatan membuat origami bagi ODD dapat menjadi pengalaman yang menyenangkan, memicu kreativitas, dan meningkatkan interaksi sosial.",
+            "durasi": 30,
+            "tips": "- Pilihlah desain origami yang relatif sederhana dan mudah diikuti oleh ODD. - Menggunakan jenis kertas yang mudah dilipat, seperti kertas origami khusus atau kertas tipis.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "game"
+        },
+        {
+            "nama": "Membuat Scrapbook Kenangan",
+            "deskripsi": "Scrapbook kenangan dapat menjadi cara yang baik untuk mengingat dan membagikan kenangan bersama ODD. Melibatkan mereka dalam kegiatan ini dapat memberikan kegembiraan, merangsang kreativitas, dan memperkuat ikatan emosional.",
+            "durasi": 30,
+            "tips": "Pilih foto-foto yang bermakna dan penting bagi ODD. Pilihlah foto-foto keluarga, momen spesial, atau tempat-tempat yang mereka kenal. Hal ini akan membantu mereka terhubung dengan kenangan masa lalu dan merasakan kegembiraan dalam membuat scrapbook. Sediakan bahan-bahan seperti kertas, gunting, lem, dan stiker yang mudah digunakan.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni, fotografi"
+        },
+        {
+            "nama": "Membuat Doodle",
+            "deskripsi": "Dengan memberikan kesempatan kepada ODD untuk berkreasi melalui doodle, Anda dapat merangsang kreativitas mereka, meningkatkan interaksi sosial, dan memberikan pengalaman yang bermanfaat dan menyenangkan.",
+            "durasi": 30,
+            "tips": "Sediakan kertas, pensil atau pena dengan pegangan yang nyaman, dan spidol dengan ujung lebar yang mudah digunakan.  Berikan panduan sederhana tentang apa yang dapat digambar atau berikan contoh doodle yang sederhana. Misalnya, gambar garis-garis melingkar, bunga, atau pola geometris yang mudah diikuti.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Menggambar",
+            "deskripsi": "Selain mengusir rasa jenuh, kegiatan menggambar juga dapat membantu mengasah kemampuan artistik ODD.",
+            "durasi": 30,
+            "tips": "- Pilih bahan dan alat yang berkualitas baik dan mudah digunakan untuk menggambar. - Hindari gambar yang terlalu rumit atau membutuhkan banyak detail. - Sediakan beragam tema atau objek gambar yang menarik bagi ODD. Ini dapat mencakup pemandangan alam, bunga, hewan, atau objek-objek sehari-hari yang mudah dikenali.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        },
+        {
+            "nama": "Mewarnai",
+            "deskripsi": "Selain mengusir rasa jenuh, kegiatan mewarnai juga dapat membantu mengasah kemampuan artistik ODD.",
+            "durasi": 30,
+            "tips": "- Membeli buku-buku mewarnai untuk orang dewasa. - Pilih warna-warna yang disukai untuk menimbulkan rasa senang dan melatih keseimbangan otak kanan dan kiri saat memilih warna yang selaras.",
+            "disability_lv": 2,
+            "dementia_lv": 3,
+            "hobby": "membaca, menggambar, seni"
+        }
+    ]
+}
+

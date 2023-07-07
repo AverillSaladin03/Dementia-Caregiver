@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ActivityHome: View {
+    
+    @FetchRequest(sortDescriptors: []) var activity: FetchedResults<Activity>
+    
     let activityName = ["Menyiram", "Senam", "Berlari", "Asik!", "Asik!"]
+    
+    let activities = ActivityController2().getActivity()
     
     var body: some View {
         NavigationView {
@@ -58,11 +63,11 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(0 ..< 5) {item in
+                                ForEach(activities, id:\.self) {element in
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
                                             List1CardView(image: Image("contoh2"))
-                                            Text(activityName[item])
+                                            Text(element.name!)
                                                 .font(.system(size: 13))
                                                 .foregroundColor(.black)
                                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -139,7 +144,7 @@ struct AktivitasTerbaruCardView: View{
     var body: some View {
         image
             .resizable()
-            .frame(width: 350, height: 230, alignment: .leading)
+            .frame(width: 350, height: 210, alignment: .leading)
             .cornerRadius(10)
     }
 }

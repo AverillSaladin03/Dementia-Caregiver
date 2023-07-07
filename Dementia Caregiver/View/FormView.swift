@@ -99,7 +99,7 @@ struct FormView: View {
     
     let newODDController = ODDController()
     
-    let newActivityContoller = ActivityContoller2()
+    let newActivityController = ActivityController2()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
@@ -146,7 +146,7 @@ struct FormView: View {
                             
                             HStack{
                                 
-                                ForEach(0..<disabilities.count) { button in
+                                ForEach(0..<disabilities.count, id: \.self) { button in
                                     Button(action: {
                                         self.selectedDisability = button
                                     }) {
@@ -183,7 +183,7 @@ struct FormView: View {
                             Text("**Berat**: Hilangnya kemampuan berkomunikasi atau hilangnya kemampuan fisik ").font(.caption).foregroundColor(.secondary)
                             
                             HStack{
-                                ForEach(0..<levels.count) { button in
+                                ForEach(0..<levels.count, id: \.self) { button in
                                     Button(action: {
                                         self.selectedLevel = button
                                     }) {
@@ -227,24 +227,34 @@ struct FormView: View {
                         Spacer()
                     }
                     
-                    NavigationLink(destination: AktivitasLuang(), isActive: $isActive) {
-                        Button {
-                            // run your code
-                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                            
-                            newActivityContoller.addActivity()
-                            // then set
-                            isActive = true
 
-                        } label: {
-                            Text("Selanjutnya")
-                                .frame(maxWidth:340, maxHeight:30)
+                    
+                    Button(action: {
+                        isActive = true
+                        newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        ActivityController2().addActivity(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                    }) {
+                        HStack (alignment: .center){
+                            Spacer()
+
+                            Text("Selesai")
                                 .fontWeight(.bold)
-                                
+
+                            Spacer()
                         }
-                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
+                        .frame(height: 41)
+                        .background(Color("ButtonColor"))
+                        .foregroundColor(.white)
+                        .mask {
+                            RoundedRectangle(cornerRadius: 8)
+                        }
+                        .padding(.horizontal, 16)
                     }
-                    .padding(.top, 20)
+                    
+                    NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden(), isActive: $isActive) {
+                        EmptyView()
+                    }
+                    
                     
                     Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
@@ -260,10 +270,6 @@ struct FormView: View {
             .navigationTitle("Data Orang dengan Demensia")
             .navigationBarTitleDisplayMode(.inline)
             
-        }
-        .task {
-            let tes = ActivityContoller2()
-            let haha = tes.addActivity()
         }
 
     }

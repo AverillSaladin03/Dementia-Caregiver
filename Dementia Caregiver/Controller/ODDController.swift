@@ -12,7 +12,7 @@ import CoreData
 class ODDController{
     let dataManager = DataManager.shared
     
-    func addODD (date: Date, demLevel : Int, disLevel: Int, hobbies: [Items]  ) {
+    func addODD (demLevel : Int, disLevel: Int, hobbies: [Items]  ) {
         let selectedItemsString = hobbies.map { $0.rawValue }.joined(separator: ", ")
         let newODD = ODD(context: dataManager.context)
         newODD.dementia_lv = Int64(demLevel)

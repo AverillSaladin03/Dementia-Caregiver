@@ -1,8 +1,22 @@
+<<<<<<< HEAD
 ////
 ////  ActivityController.swift
 ////  Dementia Caregiver
 ////
 ////  Created by Averill Saladin Atma Setiawan on 28/06/23.
+=======
+//////
+//////  ActivityController.swift
+//////  Dementia Caregiver
+//////
+//////  Created by Averill Saladin Atma Setiawan on 28/06/23.
+//////
+////
+////import Foundation
+////import CoreData
+////
+////class ActivityController {
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 ////
 //
 //import Foundation
@@ -23,7 +37,12 @@
 //        activity.tips = "Jenis olahraga ini sangat baik dilakukan selama 25 menit per hari sebagai aktivitas fisik dengan intensitas sedang. Jika dilakukan secara rutin, kebiasaan ini akan membantu tubuh lebih kuat dan mencegah berbagai risiko penyakit yang mengancam. ODD dapat melakukan aktivitas ini bersama pasangan, anggota keluarga lain, atau teman sehingga meningkatkan interaksi sosial yang mendukung kesejahteraan dan kesehatan mental."
 //        activity.disability_lv = "1"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Menyiram Tanaman"
@@ -32,7 +51,12 @@
 //        activity.tips = "Kegiatan menyiram tanaman dapat dilakukan pada pagi hari. Paparan sinar matahari pagi selama beberapa jam (8-10) akan memberi lebih banyak vitamin D daripada segelas susu setiap malam. ODD bisa memulai berkebun dengan memanfaatkan lahan kecil di sekitar rumah. Tumbuhan yang mudah dirawat dan diawasi untuk pemula bisa berupa sayuran seperti timun dan kubis."
 //        activity.disability_lv = "2"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Belanja"
@@ -41,7 +65,12 @@
 //        activity.tips = "- Buatlah daftar belanja untuk persiapan makan selama beberapa hari.- Catat merek favorit ODD di daftar belanja agar tidak bingung dengan pilihan lain yang tak terhitung jumlahnya di lorong.- Berbelanja di toko yang besar untuk memudahkan pergerakan."
 //        activity.disability_lv = "1"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Mengajak jalan hewan peliharaan"
@@ -50,7 +79,12 @@
 //        activity.tips = "Mengajak hewan peliharaan jalan-jalan secara rutin juga bisa membakar kalori sebagai terapi penurunan berat badan."
 //        activity.disability_lv = "1"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Menanam"
@@ -59,7 +93,12 @@
 //        activity.tips = "Kegiatan menanam dapat dilakukan pada pagi hari. Paparan sinar matahari pagi selama beberapa jam (8-10) akan memberi lebih banyak vitamin D daripada segelas susu setiap malam. ODD bisa memulai berkebun dengan memanfaatkan lahan kecil di sekitar rumah. Tumbuhan yang mudah dirawat dan diawasi untuk pemula bisa berupa sayuran seperti timun dan kubis."
 //        activity.disability_lv = "1"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        //Aktivitas di Dalam Ruangan
 //        activity.id_aktivitas = UUID()
@@ -69,7 +108,12 @@
 //        activity.tips = "Jenis meditasi ada bermacam-macam seperti meditasi cinta kasih, meditasi mantra, meditasi kesadaran, dan lain-lain. Semua gaya meditasi ini sangat membantu kesehatan mental ODD. Karena praktik ini membutuhkan keterampilan dan pola pikir yang berbeda, Anda harus mempertimbangkan kebutuhan dan kepribadian ODD untuk menemukan yang paling sesuai dengan gaya hidup ODD."
 //        activity.disability_lv = "3"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Menulis"
@@ -78,7 +122,12 @@
 //        activity.tips = "Ada banyak hal yang dapat menjadi bahan tulisan ODD di masa pensiun. Salah satu hal yang paling mudah adalah dengan menuliskan pengalaman-pengalaman di masa lalu. Pengalaman tidak harus melulu soal kesuksesan pekerjaan atau kegemilangan prestasi akademik. Lansia bisa juga menulis beragam kegagalan hidup atau peluang-peluang yang mereka lewatkan semasa muda."
 //        activity.disability_lv = "2"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Memasak"
@@ -87,7 +136,12 @@
 //        activity.tips = "Memasak bisa jadi kegiatan ODD yang menyenangkan. Anda bisa mengajak orang tua atau anggota keluarga yang sudah berusia lanjut untuk melakukan kegiatan ini secara rutin. Selain mengisi waktu luang, memasak juga bisa menjadi sarana agar ODD dapat memasak makanan sehat untuk ia konsumsi guna mencukupi asupan gizinya setiap hari."
 //        activity.disability_lv = "1"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        activity.id_aktivitas = UUID()
 //        activity.nama = "Bermain Musik"
@@ -96,7 +150,12 @@
 //        activity.tips = "- Bermain musik secara rutin, apalagi bila sudah dilakukan dari kecil diketahui bagus untuk fungsi otak, yakni mencegah demensia. - Cobalah kuasai lagu-lagu yang mudah, misalnya “Bintang Kecil”. Dari situ, perlahan pembelajaran mungkin bisa ditingkatkan. Dengan begitu akan tercipta rasa puas dan kebanggaan pribadi."
 //        activity.disability_lv = "2"
 //        activity.dementia_lv = "3"
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+//        dataManager.save()
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        // Aktivitas di Malam Hari
 //        activity.id_aktivitas = UUID()
@@ -106,7 +165,11 @@
 //        activity.tips = ""
 //        activity.disability_lv = ""
 //        activity.dementia_lv = ""
+<<<<<<< HEAD
 ////        activity.link = nil
+=======
+//        //        activity.link = nil
+>>>>>>> 92ba0ac650fea05a6f4f0e0c30f7f84b0e1ea6ad
 //
 //        // Aktivitas Bersama
 //
