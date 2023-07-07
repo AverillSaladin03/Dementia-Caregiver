@@ -29,6 +29,7 @@ struct ContentView: View {
                 }
                 .tag(Tab.activity)
         }
+        .tint(Color("ButtonColor"))
     }
 }
 
