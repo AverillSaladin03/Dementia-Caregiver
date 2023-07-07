@@ -45,6 +45,7 @@ class ActivityController2{
     func addActivity(demLevel : Int, disLevel: Int, hobbies: [Items]) {
         if let activityJson = loadJson(filename: "ActivityData") {
             for activityData in activityJson {
+<<<<<<< HEAD
                 
                 print(activityData)
                 if(activityData.disability_lv > disLevel && activityData.dementia_lv > demLevel){
@@ -66,6 +67,28 @@ class ActivityController2{
                     for category in categories {
                         newActivity.addToCategory_activity(category)
                     }
+=======
+//                print(activityData.nama)
+                let newActivity = Activity(context: dataManager.context)
+                newActivity.name = activityData.nama
+                newActivity.descriptionActivity = activityData.deskripsi
+                newActivity.duration = Int64(activityData.durasi)
+                newActivity.tips = activityData.tips
+                newActivity.disabilityLevel = Int64(activityData.disability_lv)
+                newActivity.dementiaLevel = Int64(activityData.dementia_lv)
+                newActivity.hobby = activityData.hobby
+//                newActivity.addToCategory_activity(activityData.category)
+                
+                let categories = CategoryController().getCategory(idCategories: activityData.category)
+                
+                //untuk mengisi category dari activity yang baru
+//                newActivity.category_activity?.addingObjects(from: categories)
+                //untuk mengisi activity yang baru ke category yang sudah ada
+                for category in categories {
+                    newActivity.addToCategory_activity(category)
+                }
+                
+>>>>>>> 78c5f79e8c4cef91c10571b7ff72ee4b98d8dcf2
 
                     // Save the new activity to Core Data
                     dataManager.save()
