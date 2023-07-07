@@ -25,9 +25,10 @@ class ScheduleController: ObservableObject{
         return scheduleArray
     }
 
-    func addManualSchedule (start: Date, end: Date, activity :Activity) {
+    func addManualSchedule (date: Date, start: Date, end: Date, activity :Activity) {
         let newSchedule = Schedule(context: dataManager.context)
         newSchedule.id = UUID()
+        newSchedule.date = date
         newSchedule.start = start
         newSchedule.end = end
         

@@ -78,7 +78,7 @@ struct SpareTimeView: View {
                     //                                                listSpareTimes.remove(atOffsets: indexSet)
                     //                                            }
                     .padding([.vertical], 12)
-                    .background(Color("GreyColor"))
+                    .background(Color("GrayColor"))
                     .mask(RoundedRectangle(cornerRadius: 8))
                     //                    .padding(.bottom)
                     

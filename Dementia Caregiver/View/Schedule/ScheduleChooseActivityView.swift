@@ -10,7 +10,7 @@ import SwiftUI
 struct ScheduleChooseActivityView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showSheet = false
-    
+    @Binding var selectedActivity : Activity?
     @State private var searchField : String = ""
     @State private var showCancelButton: Bool = false
     let activities = ActivityController2().getActivity()
@@ -18,17 +18,10 @@ struct ScheduleChooseActivityView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                HStack{
-                    Button("Kembali") {
-                        dismiss()
-                    }
-                    .foregroundColor(Color("ButtonColor"))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
+                ZStack{
                     Text("Pilih Aktivitas")
                         .font(.system(size: 17).bold())
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    
+                        .frame(alignment: .center)
                     Button("Selesai") {
                         dismiss()
                     }
@@ -48,14 +41,39 @@ struct ScheduleChooseActivityView: View {
                         print("onCommit")
                     })
                 }
+                .padding(8)
                 .background(Color("GrayColor"))
+                .cornerRadius(10)
                 .padding(.bottom)
                 
                 List{
-                    ForEach (activities, id: \.self) { activity in
-                        Text(activity.name ?? "Not Found")
+                    withAnimation{
+                        ForEach (activities, id: \.self) { activity in
+                            HStack {
+                                VStack (alignment: .leading, spacing: 1){
+                                    Text(activity.name ?? "Not Found")
+                                    Text("\(String(activity.duration)) menit")
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(.white)
+                                Spacer()
+                                if selectedActivity?.name == activity.name{
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(Color("ButtonColor"))
+                                }
+                            }
+                            .onAppear{
+                                selectedActivity = activity
+                            }
+                            .onTapGesture {
+                                selectedActivity = activity
+                            }
+                        }
                     }
                 }
+                .listStyle(.plain)
                 
                 Button {
                     showSheet.toggle()
@@ -82,6 +100,7 @@ struct ScheduleChooseActivityView: View {
 
 struct ScheduleAdd_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleChooseActivityView()
+        let dummyActivity: Activity? = Activity()
+        return ScheduleChooseActivityView(selectedActivity: .constant(dummyActivity))
     }
 }

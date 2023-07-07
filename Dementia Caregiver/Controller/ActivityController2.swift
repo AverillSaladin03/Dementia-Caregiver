@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 
-struct ResponseData: Decodable {
+struct Activitties: Decodable {
     var activity: [Activitty]
 }
 struct Activitty : Decodable {
@@ -22,29 +22,26 @@ struct Activitty : Decodable {
     var hobby : String
 }
 
-func loadJson(filename fileName: String) -> [Activitty]? {
-    if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let jsonData = try decoder.decode(ResponseData.self, from: data)
-            return jsonData.activity
-        } catch {
-            print("error:\(error)")
-        }
-    }
-    return nil
-}
-
-
 class ActivityController2{
     let dataManager = DataManager.shared
     @Published var activities: [Activity] = []
-//
-    
+
+    func loadJson(filename fileName: String) -> [Activitty]? {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(Activitties.self, from: data)
+                return jsonData.activity
+            } catch {
+                print("error:\(error)")
+            }
+        }
+        return nil
+    }
     
     func addActivity() {
-        if let activityJson = loadJson(filename: "Reyner") {
+        if let activityJson = loadJson(filename: "ActivityData") {
             for activityData in activityJson {
                 let newActivity = Activity(context: dataManager.context)
                 newActivity.name = activityData.nama
