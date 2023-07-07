@@ -13,10 +13,9 @@ struct ScheduleAddView: View {
     @State private var currentDate = Date()
     @State private var startTime = Date()
     @State private var endTime = Date()
-    @State private var selectedActivity = Activity()
     @State private var showSheet = false
     
-    var frameworks = ["UIKit", "Core Data", "CloudKit", "SwiftUI"]
+    @State var selectedActivity : Activity?
     
     var body: some View {
         NavigationStack {
@@ -25,13 +24,16 @@ struct ScheduleAddView: View {
                     Button("Batal") {
                         dismiss()
                     }
+                    .foregroundColor(Color("ButtonColor"))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Aktivitas Baru")
+                    Text("Jadwal Baru")
                         .font(.system(size: 17).bold())
                         .frame(maxWidth: .infinity, alignment: .center)
                     Button("Tambah") {
+                        addNewSchedule(submitDate: currentDate, submitStartTime: startTime, submitEndTime: endTime, submitActivity: selectedActivity!)
                         dismiss()
                     }
+                    .foregroundColor(Color("ButtonColor"))
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 .padding(.bottom, 45)
@@ -42,26 +44,31 @@ struct ScheduleAddView: View {
                 Divider()
                 DatePicker("Berakhir:", selection: $endTime, displayedComponents: .hourAndMinute)
                 
-                Button {
-                    showSheet.toggle()
-                } label: {
-                    HStack {
-                        Text("Aktivitas")
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Picker(selection: $selectedActivity, label: Text("")){
-                            ForEach(frameworks, id: \.self) { activity in
-                                Text(activity)
+                HStack {
+                    Text("Aktivitas")
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Button {
+                        showSheet.toggle()
+                    } label: {
+                        HStack {
+                            if selectedActivity != nil {
+                                Text((selectedActivity?.name)!)
+                                    .foregroundColor(Color.gray)
+                            }else{
+                                Text("Pilih Aktivitas")
+                                    .foregroundColor(Color.gray)
                             }
-                            NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden()) {
-                                Text("Tambah Aktivitas")
-                            }
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(Color.gray)
                         }
                     }
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .sheet(isPresented: $showSheet) {
-                    ScheduleChooseActivityView()
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .sheet(isPresented: $showSheet) {
+                        ScheduleChooseActivityView(selectedActivity: $selectedActivity)
+                    }
+                    
                 }
                 .padding(.top, 30)
                 
@@ -72,8 +79,8 @@ struct ScheduleAddView: View {
     }
 }
 
-func addNewSchedule (){
-    
+func addNewSchedule (submitDate: Date, submitStartTime: Date, submitEndTime: Date, submitActivity : Activity){
+    ScheduleController().addManualSchedule(date: submitDate, start: submitStartTime, end: submitEndTime, activity: submitActivity)
 }
 
 struct ScheduleAddView_Previews: PreviewProvider {

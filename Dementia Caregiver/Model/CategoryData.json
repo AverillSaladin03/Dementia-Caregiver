@@ -1,0 +1,34 @@
+[
+    {
+        "id" : "1",
+        "name" : "Aktivitas di Luar Ruangan"
+    },
+    {
+        "id" : "2",
+        "name" : "Aktivitas di Dalam Ruangan"
+    },
+    {
+        "id" : "3",
+        "name" : "Aktivitas di Malam Hari"
+    },
+    {
+        "id" : "4",
+        "name" : "Aktivitas Bersama"
+    },
+    {
+        "id" : "5",
+        "name" : "Aktivitas 15 Menit"
+    },
+    {
+        "id" : "6",
+        "name" : "Aktivitas Fisik"
+    },
+    {
+        "id" : "7",
+        "name" : "Aktivitas Mengasah Otak"
+    },
+    {
+        "id" : "8",
+        "name" : "Aktivitas Kreatif"
+    }
+]

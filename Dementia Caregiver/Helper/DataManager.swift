@@ -26,7 +26,7 @@ class DataManager: ObservableObject{
     func save(){
         do{
             try context.save()
-            print("data saved")
+            print("data \(context.name ?? "") saved")
         } catch{
             print("we couldn't save the data")
         }

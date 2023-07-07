@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 
-struct ResponseData: Decodable {
+struct Activitties: Decodable {
     var activity: [Activitty]
 }
 struct Activitty : Decodable {
@@ -23,19 +23,16 @@ struct Activitty : Decodable {
 }
 
 
-
-
 class ActivityController2{
     let dataManager = DataManager.shared
     @Published var activities: [Activity] = []
-//
+
     func loadJson(filename fileName: String) -> [Activitty]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(ResponseData.self, from: data)
-                print(jsonData.activity)
+                let jsonData = try decoder.decode(Activitties.self, from: data)
                 return jsonData.activity
             } catch {
                 print("error:\(error)")
@@ -47,8 +44,12 @@ class ActivityController2{
     func addActivity(demLevel : Int, disLevel: Int, hobbies: [Items]) {
         if let activityJson = loadJson(filename: "ActivityData") {
             for activityData in activityJson {
-                let newActivity = Activity(context: dataManager.context)
-                if(newActivity.disabilityLevel == disLevel && newActivity.dementiaLevel == disLevel ){
+                
+                print(activityData)
+                if(activityData.disability_lv > disLevel && activityData.dementia_lv > demLevel){
+                    let newActivity = Activity(context: dataManager.context)
+                    print("disability",activityData.disability_lv)
+                    print("demLevel", activityData.dementia_lv)
                     newActivity.name = activityData.nama
                     newActivity.descriptionActivity = activityData.deskripsi
                     newActivity.duration = Int64(activityData.durasi)
