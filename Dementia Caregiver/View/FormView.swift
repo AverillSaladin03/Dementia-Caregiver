@@ -245,7 +245,7 @@ struct FormView: View {
                     Button(action: {
                         isActive = true
                         newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        ActivityController2().addActivity()
+                        ActivityController2().addActivityFromJSON()
                     }) {
                         HStack (alignment: .center){
                             Spacer()
