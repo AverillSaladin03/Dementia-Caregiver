@@ -103,12 +103,10 @@ struct SpareTimeView: View {
                 .padding(.vertical)
                 .listStyle(PlainListStyle())
                 
-                Button {
-                    print("button")
-                    submitSpareTime()
-                    ActivityController2().addActivity()
-                } label: {
-//                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    Button{
+                        submitSpareTime()
+                    }label:{
                         Spacer()
                         Text("Selesai")
                             .fontWeight(.bold)
@@ -121,59 +119,60 @@ struct SpareTimeView: View {
                         RoundedRectangle(cornerRadius: 8)
                     }
                     .padding(.horizontal, 18)
-//                }
-                
-                //                Button{
-                //                    print("button")
-                //                    submitSpareTime()
-                //                    ActivityController2().addActivity()
-                //                }label:{
-                //                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
-                //                        Spacer()
-                //                        Text("Selesai")
-                //                            .fontWeight(.bold)
-                //                        Spacer()
-                //                    }
-                //                    .frame(height: 41)
-                //                    .background(Color("ButtonColor"))
-                //                    .foregroundColor(.white)
-                //                    .mask {
-                //                        RoundedRectangle(cornerRadius: 8)
-                //                    }
-                //                    .padding(.horizontal, 18)
-                //                }
+                    //                }
+                    
+                    //                Button{
+                    //                    print("button")
+                    //                    submitSpareTime()
+                    //                    ActivityController2().addActivity()
+                    //                }label:{
+                    //                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    //                        Spacer()
+                    //                        Text("Selesai")
+                    //                            .fontWeight(.bold)
+                    //                        Spacer()
+                    //                    }
+                    //                    .frame(height: 41)
+                    //                    .background(Color("ButtonColor"))
+                    //                    .foregroundColor(.white)
+                    //                    .mask {
+                    //                        RoundedRectangle(cornerRadius: 8)
+                    //                    }
+                    //                    .padding(.horizontal, 18)
+                    //                }
+                }
+                .navigationTitle(Text("Aktivitas Luang"))
+                .padding(.bottom, 8)
             }
-            .navigationTitle(Text("Aktivitas Luang"))
-            .padding(.bottom, 8)
         }
     }
-    
-    //Fungsi Delete Spare Time
-    func deleteSpareTime(at offsets: IndexSet) {
-        listSpareTimes.remove(atOffsets: offsets)
-    }
-    
-    //Fungsi Nambah List SpareTime
-    func addSpareTime(){
-        spareTimeCount += 1
-        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
-        listSpareTimes.append(newSpareTime)
-    }
-    
-    func submitSpareTime(){
-        for i in listSpareTimes{
-            SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
-            print ("\(i.startTime)")
-            print ("\(i.endTime)")
+        //Fungsi Delete Spare Time
+        func deleteSpareTime(at offsets: IndexSet) {
+            listSpareTimes.remove(atOffsets: offsets)
         }
-        isSaved = true
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-    }
-    
-    struct AktivitasLuang_Previews: PreviewProvider {
-        static var previews: some View {
-            SpareTimeView()
+        
+        //Fungsi Nambah List SpareTime
+        func addSpareTime(){
+            spareTimeCount += 1
+            let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
+            
+            listSpareTimes.append(newSpareTime)
+        }
+        
+        func submitSpareTime(){
+            for i in listSpareTimes{
+                SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
+                print ("\(i.startTime)")
+                print ("\(i.endTime)")
+            }
+            isSaved = true
+            print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        }
+        
+        struct AktivitasLuang_Previews: PreviewProvider {
+            static var previews: some View {
+                SpareTimeView()
+            }
         }
     }
-}

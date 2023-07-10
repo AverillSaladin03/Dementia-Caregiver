@@ -20,6 +20,7 @@ var listSpareTime: [Spares] = [
 
 class SpareTimeController {
     
+    static var shared = SpareTimeController()
     let dataManager = DataManager.shared
     
     func addSpareTime(start: Date, end:Date){
@@ -34,6 +35,19 @@ class SpareTimeController {
         print(minutesBetweenDates(start, end))
         
     }
+    
+    func getSpareTime() -> [Spare] {
+        var spareArray: [Spare] = []
+        let request = NSFetchRequest<Spare>(entityName: "Spare")
+        do {
+            spareArray = try dataManager.context.fetch(request)
+        }catch {
+            print("DEBUG: Some error occured while fetching")
+        }
+        
+        return spareArray
+    }
+    
     
     func minutesBetweenDates(_ oldDate: Date, _ newDate: Date) -> Int64 {
 

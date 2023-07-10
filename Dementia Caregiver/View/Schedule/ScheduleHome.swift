@@ -12,7 +12,7 @@ struct ScheduleHome: View {
     @StateObject var taskModel: TaskModel = TaskModel()
     @Namespace var animation
     @State private var showSheet = false
-    @Binding var listSpareTimes: [Spares]
+//    @Binding var listSpareTimes: [Spares]
 
     var body: some View {
         VStack {
@@ -44,13 +44,14 @@ struct ScheduleHome: View {
                         .onTapGesture {
                             withAnimation {
                                 taskModel.currentDay = day
+                                taskModel.loadData(dateSelect: day)
                             }
                         }
                     }
                 }
                 .padding(.horizontal)
             }
-            ScheduleList(listSpareTimes: $listSpareTimes)
+            ScheduleList()
         }
        
     }
@@ -86,6 +87,6 @@ struct ScheduleHome: View {
 
 struct ScheduleHome_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleHome(listSpareTimes: .constant(listSpareTime))
+        ScheduleHome()
     }
 }

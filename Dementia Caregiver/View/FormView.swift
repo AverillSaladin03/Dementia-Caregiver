@@ -97,7 +97,7 @@ struct FormView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    let newODDController = ODDController()
+    let newODDController = ODDController.shared
     
     let newActivityController = ActivityController2()
     
@@ -234,7 +234,7 @@ struct FormView: View {
                     Button(action: {
                         isActive = true
                         newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        ActivityController2().addActivity(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        ActivityController2().addActivityFromJSON(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
                         CategoryController().addCategory()
                         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     }) {
