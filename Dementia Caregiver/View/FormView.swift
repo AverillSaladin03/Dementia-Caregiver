@@ -233,18 +233,10 @@ struct FormView: View {
                     
                     Button(action: {
                         isActive = true
-<<<<<<< HEAD
                         newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
                         ActivityController2().addActivity(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-=======
-                        newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-//                        ActivityController2().addActivity()
                         CategoryController().addCategory()
                         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-<<<<<<< HEAD
->>>>>>> 78c5f79e8c4cef91c10571b7ff72ee4b98d8dcf2
-=======
->>>>>>> 78c5f79e8c4cef91c10571b7ff72ee4b98d8dcf2
                     }) {
                         HStack (alignment: .center){
                             Spacer()

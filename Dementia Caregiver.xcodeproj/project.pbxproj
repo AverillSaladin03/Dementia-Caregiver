@@ -20,7 +20,6 @@
 		8408DC6F2A4BCE9800EF7EC9 /* ODDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC6E2A4BCE9800EF7EC9 /* ODDController.swift */; };
 		8408DC712A4BCEA200EF7EC9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */; };
 		8408DC732A4BD0BF00EF7EC9 /* SpareTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */; };
-		8410739C2A5519230070A905 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410739B2A5519220070A905 /* CategoryController.swift */; };
 		84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */; };
 		84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3A2A4136BC00512DD9 /* Assets.xcassets */; };
 		84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */; };
@@ -33,7 +32,6 @@
 		A14964492A43CA5900C62D06 /* ScheduleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964482A43CA5900C62D06 /* ScheduleList.swift */; };
 		A149644B2A43CA7100C62D06 /* ActivityHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644A2A43CA7100C62D06 /* ActivityHome.swift */; };
 		A149644F2A43CB3100C62D06 /* ScheduleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644E2A43CB3100C62D06 /* ScheduleHome.swift */; };
-		A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964502A43CE7600C62D06 /* TaskModel.swift */; };
 		A14964532A43EADE00C62D06 /* ScheduleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964522A43EADE00C62D06 /* ScheduleAddView.swift */; };
 		A1C093092A444B800037429A /* ScheduleChooseActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C093082A444B800037429A /* ScheduleChooseActivityView.swift */; };
 		A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */; };
@@ -70,8 +68,6 @@
 		8408DC6E2A4BCE9800EF7EC9 /* ODDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODDController.swift; sourceTree = "<group>"; };
 		8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareTimeController.swift; sourceTree = "<group>"; };
-		8410739A2A5514870070A905 /* CategoryData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryData.json; sourceTree = "<group>"; };
-		8410739B2A5519220070A905 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
 		84C73E3A2A4136BC00512DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +84,6 @@
 		A14964482A43CA5900C62D06 /* ScheduleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleList.swift; sourceTree = "<group>"; };
 		A149644A2A43CA7100C62D06 /* ActivityHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHome.swift; sourceTree = "<group>"; };
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
-		A14964502A43CE7600C62D06 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		A14964522A43EADE00C62D06 /* ScheduleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddView.swift; sourceTree = "<group>"; };
 		A19FAC872A4BF1A300B4904B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A1C093082A444B800037429A /* ScheduleChooseActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChooseActivityView.swift; sourceTree = "<group>"; };
@@ -136,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				A143F9FA2A4A89BB0020C592 /* DataManager.swift */,
-				A14964502A43CE7600C62D06 /* TaskModel.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -237,8 +231,6 @@
 			children = (
 				6113B8D02A4E85DA00557894 /* ActivityData.json */,
 				6DC112852A565893008FD7F7 /* CategoryData.json */,
-				84E535E52A43FFAF00FF119F /* Spares.swift */,
-				A14964502A43CE7600C62D06 /* TaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,7 +393,6 @@
 				6178F9FF2A43FC6C00CBAB1D /* FormView.swift in Sources */,
 				6122826F2A456C77003FAD92 /* DummyView.swift in Sources */,
 				84E535E42A43E22E00FF119F /* SpareTimeView.swift in Sources */,
-				84E535E62A43FFAF00FF119F /* Spares.swift in Sources */,
 				6DC112842A5657CE008FD7F7 /* CategoryController.swift in Sources */,
 				8408DC6F2A4BCE9800EF7EC9 /* ODDController.swift in Sources */,
 				A14964532A43EADE00C62D06 /* ScheduleAddView.swift in Sources */,
@@ -413,7 +404,6 @@
 				8408DC712A4BCEA200EF7EC9 /* ScheduleController.swift in Sources */,
 				6D91A32D2A49284C0034B0A3 /* ActivityList.swift in Sources */,
 				6113B8CF2A4E802A00557894 /* ActivityController2.swift in Sources */,
-				A14964512A43CE7600C62D06 /* TaskModel.swift in Sources */,
 				A149644B2A43CA7100C62D06 /* ActivityHome.swift in Sources */,
 				A14964472A43CA4300C62D06 /* ContentView.swift in Sources */,
 				A143F9FB2A4A89BB0020C592 /* DataManager.swift in Sources */,
