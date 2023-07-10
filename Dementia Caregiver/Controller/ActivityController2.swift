@@ -20,6 +20,7 @@ struct Activitty : Decodable {
     var disability_lv : Int
     var dementia_lv : Int
     var hobby : String
+    var category : [String]
 }
 
 class ActivityController2{
@@ -43,6 +44,7 @@ class ActivityController2{
     func addActivityFromJSON() {
         if let activityJson = loadJson(filename: "ActivityData") {
             for activityData in activityJson {
+//                print(activityData.nama)
                 let newActivity = Activity(context: dataManager.context)
                 newActivity.name = activityData.nama
                 newActivity.descriptionActivity = activityData.deskripsi
@@ -51,10 +53,25 @@ class ActivityController2{
                 newActivity.disabilityLevel = Int64(activityData.disability_lv)
                 newActivity.dementiaLevel = Int64(activityData.dementia_lv)
                 newActivity.hobby = activityData.hobby
+//                newActivity.addToCategory_activity(activityData.category)
+                
+                let categories = CategoryController().getCategory(idCategories: activityData.category)
+                
+                //untuk mengisi category dari activity yang baru
+//                newActivity.category_activity?.addingObjects(from: categories)
+                //untuk mengisi activity yang baru ke category yang sudah ada
+                for category in categories {
+                    newActivity.addToCategory_activity(category)
+                }
+                
 
                 // Save the new activity to Core Data
                 dataManager.save()
             }
+            print("masuk")
+        }
+        else {
+            print("tidak")
         }
     }
     

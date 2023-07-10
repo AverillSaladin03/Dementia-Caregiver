@@ -119,7 +119,27 @@ struct SpareTimeView: View {
                         RoundedRectangle(cornerRadius: 8)
                     }
                     .padding(.horizontal, 18)
-                }
+//                }
+                
+                //                Button{
+                //                    print("button")
+                //                    submitSpareTime()
+                //                    ActivityController2().addActivity()
+                //                }label:{
+                //                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                //                        Spacer()
+                //                        Text("Selesai")
+                //                            .fontWeight(.bold)
+                //                        Spacer()
+                //                    }
+                //                    .frame(height: 41)
+                //                    .background(Color("ButtonColor"))
+                //                    .foregroundColor(.white)
+                //                    .mask {
+                //                        RoundedRectangle(cornerRadius: 8)
+                //                    }
+                //                    .padding(.horizontal, 18)
+                //                }
             }
             .navigationTitle(Text("Aktivitas Luang"))
             .padding(.bottom, 8)

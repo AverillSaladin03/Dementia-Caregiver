@@ -100,6 +100,8 @@ struct FormView: View {
     let newODDController = ODDController()
     
     let newActivityController = ActivityController2()
+    
+    let newCategoryController = CategoryController()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
