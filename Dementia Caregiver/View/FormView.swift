@@ -97,7 +97,7 @@ struct FormView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    let newODDController = ODDController()
+    let newODDController = ODDController.shared
     
     let newActivityController = ActivityController2()
     
