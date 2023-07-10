@@ -56,7 +56,7 @@ class TaskModel: ObservableObject{
     
     func extractDate(date:Date, format: String) -> String{
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "id_ID") 
+        formatter.locale = Locale(identifier: "id_ID")
         formatter.dateFormat = format
         return formatter.string(from: date)
     }

@@ -66,7 +66,7 @@ class ScheduleController: ObservableObject{
 //    let getSpare = SpareTimeController.shared.getSpareTime()
     
     //2. get + filter durasi
-    let activityController = ActivityContoller2.shared
+    let activityController = ActivityController2()
     
     
     //3. masukin schedule
@@ -235,7 +235,7 @@ class ScheduleController: ObservableObject{
         newSchedule.date = date
         newSchedule.start = startResult
         newSchedule.end = endResult
-        newSchedule.addToSchedule_activity(activity)
+//        newSchedule.addToSchedule_activity(activity)
         
         print ("New Schedule Saved")
         //Save

@@ -139,20 +139,6 @@ struct FormView: View {
                 ScrollView{
                     VStack(alignment: .leading){
                         Group{
-                            Text("Tanggal lahir")
-                                .padding(.bottom, 5)
-                                .fontWeight(.semibold)
-                            HStack {
-                                DatePicker(selection: $birthDate, in: ...Date.now, displayedComponents: .date){
-                                }
-                                .frame(maxWidth: 110)
-                                
-                            }
-                            .padding(.top, 5)
-                            .padding(.bottom)
-                        }
-                        
-                        Group{
                             Text("Kelumpuhan")
                                 .padding(.bottom, 5)
                                 .fontWeight(.semibold)
@@ -243,11 +229,14 @@ struct FormView: View {
                         Spacer()
                     }
                     
+
                     
                     Button(action: {
                         isActive = true
-                        newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        ActivityController2().addActivityFromJSON()
+                        newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        ActivityController2().addActivityFromJSON(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        CategoryController().addCategory()
+                        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     }) {
                         HStack (alignment: .center){
                             Spacer()
@@ -270,30 +259,11 @@ struct FormView: View {
                         EmptyView()
                     }
                     
-//                    NavigationLink(destination: AktivitasLuang().navigationBarBackButtonHidden(), isActive: $isActive) {
-//                        Button {
-//                            // run your code
-//                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-//
-////                            newActivityContoller.addActivity()
-//                            // then set
-//                            isActive = true
-//
-//                        } label: {
-//                            Text("Selanjutnya")
-//                                .frame(maxWidth:340, maxHeight:30)
-//                                .fontWeight(.bold)
-//
-//                        }
-//                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
-//                    }
-//                    .padding(.top, 20)
                     
                     Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
                         ForEach(ODDs, id: \.self) { item in
                             Text("Item at \(item.hobbies!)")
-                            Text("\(item.birth_date!)")
                         }
                     
                 }
