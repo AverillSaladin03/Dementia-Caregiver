@@ -247,9 +247,7 @@ struct FormView: View {
                     Button(action: {
                         isActive = true
                         newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-//                        ActivityController2().addActivity()
-                        CategoryController().addCategory()
-                        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                        ActivityController2().addActivityFromJSON()
                     }) {
                         HStack (alignment: .center){
                             Spacer()

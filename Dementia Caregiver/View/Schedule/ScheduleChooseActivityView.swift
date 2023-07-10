@@ -75,21 +75,21 @@ struct ScheduleChooseActivityView: View {
                 }
                 .listStyle(.plain)
                 
-                Button {
-                    showSheet.toggle()
-                } label: {
-                    HStack {
-                        Text("+ Tambah Aktivitas Baru")
-                    }
-                    .foregroundColor(Color.white)
-                    .padding(.horizontal,32)
-                    .padding(.vertical,12)
-                    .background(Color("ButtonColor"))
-                    .cornerRadius(8)
-                }
-                .sheet(isPresented: $showSheet) {
-                    ScheduleAddManual()
-                }
+//                Button {
+//                    showSheet.toggle()
+//                } label: {
+//                    HStack {
+//                        Text("+ Tambah Aktivitas Baru")
+//                    }
+//                    .foregroundColor(Color.white)
+//                    .padding(.horizontal,32)
+//                    .padding(.vertical,12)
+//                    .background(Color("ButtonColor"))
+//                    .cornerRadius(8)
+//                }
+//                .sheet(isPresented: $showSheet) {
+//                    ScheduleAddManual()
+//                }
                 
                 Spacer()
             }

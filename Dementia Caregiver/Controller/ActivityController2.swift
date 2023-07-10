@@ -41,7 +41,7 @@ class ActivityController2{
         return nil
     }
     
-    func addActivity() {
+    func addActivityFromJSON() {
         if let activityJson = loadJson(filename: "ActivityData") {
             for activityData in activityJson {
 //                print(activityData.nama)
@@ -74,6 +74,10 @@ class ActivityController2{
             print("tidak")
         }
     }
+    
+//    func addActivity(newName: String, newDescription: String, newDuration: Int64, newTips: String, newDisabilityLevel: Int64, newDementiaLevel: Int64) {
+////
+//    }
     
     func getActivity() -> [Activity]{
         let request = NSFetchRequest<Activity>(entityName: "Activity")

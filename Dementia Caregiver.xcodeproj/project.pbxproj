@@ -22,6 +22,7 @@
 		8408DC712A4BCEA200EF7EC9 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */; };
 		8408DC732A4BD0BF00EF7EC9 /* SpareTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */; };
 		8410739C2A5519230070A905 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410739B2A5519220070A905 /* CategoryController.swift */; };
+		841073A02A5AAD330070A905 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410739F2A5AAD330070A905 /* TimeConverter.swift */; };
 		84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */; };
 		84C73E3B2A4136BC00512DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3A2A4136BC00512DD9 /* Assets.xcassets */; };
 		84C73E3E2A4136BC00512DD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareTimeController.swift; sourceTree = "<group>"; };
 		8410739A2A5514870070A905 /* CategoryData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryData.json; sourceTree = "<group>"; };
 		8410739B2A5519220070A905 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		8410739F2A5AAD330070A905 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
 		84C73E3A2A4136BC00512DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				A143F9FA2A4A89BB0020C592 /* DataManager.swift */,
 				A14964502A43CE7600C62D06 /* TaskModel.swift */,
+				8410739F2A5AAD330070A905 /* TimeConverter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				A143F9FB2A4A89BB0020C592 /* DataManager.swift in Sources */,
 				6D91A32F2A4941CC0034B0A3 /* ActivityDetail.swift in Sources */,
 				6D91A32B2A4587E30034B0A3 /* ActivityCategory.swift in Sources */,
+				841073A02A5AAD330070A905 /* TimeConverter.swift in Sources */,
 				84C73E372A4136BB00512DD9 /* Dementia_CaregiverApp.swift in Sources */,
 				A149644F2A43CB3100C62D06 /* ScheduleHome.swift in Sources */,
 			);

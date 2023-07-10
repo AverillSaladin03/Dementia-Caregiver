@@ -15,6 +15,8 @@ struct ScheduleAddView: View {
     @State private var endTime = Date()
     @State private var showSheet = false
     
+    @State private var showData = false
+    
     @State var selectedActivity : Activity?
     
     var body: some View {
@@ -29,12 +31,20 @@ struct ScheduleAddView: View {
                     Text("Jadwal Baru")
                         .font(.system(size: 17).bold())
                         .frame(maxWidth: .infinity, alignment: .center)
-                    Button("Tambah") {
-                        addNewSchedule(submitDate: currentDate, submitStartTime: startTime, submitEndTime: endTime, submitActivity: selectedActivity!)
-                        dismiss()
+                    if selectedActivity != nil {
+                        Button("Tambah") {
+//                            addNewSchedule(submitDate: currentDate, submitStartTime: startTime, submitEndTime: endTime, submitActivity: selectedActivity!)
+                            ScheduleController().addManualSchedule(date: currentDate, start: startTime, end: endTime, activity: selectedActivity!)
+                            dismiss()
+                        }
+                        .foregroundColor(Color("ButtonColor"))
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    }else{
+                        Text("Tambah")
+                        .foregroundColor(Color.gray)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                     }
-                    .foregroundColor(Color("ButtonColor"))
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    
                 }
                 .padding(.bottom, 45)
                 
@@ -73,15 +83,29 @@ struct ScheduleAddView: View {
                 .padding(.top, 30)
                 
                 Spacer()
+                Button{
+                    showData = true
+                }label: {
+                    Text("Show")
+                }
+                if showData {
+                    let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
+                    let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
+                    
+                    Text("Selected Date : \(currentDate)")
+                    Text("Start Time : \(showStart)")
+                    Text("End Time : \(showEnd)")
+                    Text("Selected Activity : \((selectedActivity?.name)!)")
+                }
             }
             .padding()
         }
     }
 }
 
-func addNewSchedule (submitDate: Date, submitStartTime: Date, submitEndTime: Date, submitActivity : Activity){
-    ScheduleController().addManualSchedule(date: submitDate, start: submitStartTime, end: submitEndTime, activity: submitActivity)
-}
+//func addNewSchedule (submitDate: Date, submitStartTime: Date, submitEndTime: Date, submitActivity : Activity){
+//    ScheduleController().addManualSchedule(date: submitDate, start: submitStartTime, end: submitEndTime, activity: submitActivity)
+//}
 
 struct ScheduleAddView_Previews: PreviewProvider {
     static var previews: some View {
