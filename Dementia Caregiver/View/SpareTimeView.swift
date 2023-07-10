@@ -10,8 +10,8 @@ import SwiftUI
 let pageDescription = "Aktivitas luang adalah aktivitas apa saja yang dimiliki ODD diluar rutinitas harian ODD seperti makan dan tidur. Aktivitas luang dapat berupa berkebun atau bermain."
 
 
-struct AktivitasLuang: View {
-    //    @Environment(\.managedObjectContext) var managedObjectContex
+struct SpareTimeView: View {
+    @Environment(\.managedObjectContext) var managedObjectContex
     
     @State var activityCount: Int = 1
     @State private var listSpareTimes: [Spares] = listSpareTime
@@ -20,7 +20,7 @@ struct AktivitasLuang: View {
     
     let dateFormatter = DateFormatter()
     
-    let newActivityContoller = ActivityContoller2()
+    let newActivityContoller = ActivityController2()
     
     var body: some View {
         NavigationStack{
@@ -78,7 +78,7 @@ struct AktivitasLuang: View {
                     //                                                listSpareTimes.remove(atOffsets: indexSet)
                     //                                            }
                     .padding([.vertical], 12)
-                    .background(Color("GreyColor"))
+                    .background(Color("GrayColor"))
                     .mask(RoundedRectangle(cornerRadius: 8))
                     //                    .padding(.bottom)
                     
@@ -103,31 +103,13 @@ struct AktivitasLuang: View {
                 .padding(.vertical)
                 .listStyle(PlainListStyle())
                 
-                //                Button("Selesai"){
-                //                    for i in listSpareTimes{
-                //                        SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
-                //                    }
-                //                    isSaved = true
-                ////                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-                //
-                //                }
-                
-                Button(action: {
-                    for i in listSpareTimes{
-                        SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
-                    }
-                    isSaved = true
-                    ScheduleController().randomSchedule()
-                    TaskModel().loadData(dateSelect: Date.now)
-
-                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-                }) {
-                    HStack (alignment: .center){
+                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    Button{
+                        submitSpareTime()
+                    }label:{
                         Spacer()
-
                         Text("Selesai")
                             .fontWeight(.bold)
-
                         Spacer()
                     }
                     .frame(height: 41)
@@ -136,83 +118,61 @@ struct AktivitasLuang: View {
                     .mask {
                         RoundedRectangle(cornerRadius: 8)
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 18)
+                    //                }
+                    
+                    //                Button{
+                    //                    print("button")
+                    //                    submitSpareTime()
+                    //                    ActivityController2().addActivity()
+                    //                }label:{
+                    //                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    //                        Spacer()
+                    //                        Text("Selesai")
+                    //                            .fontWeight(.bold)
+                    //                        Spacer()
+                    //                    }
+                    //                    .frame(height: 41)
+                    //                    .background(Color("ButtonColor"))
+                    //                    .foregroundColor(.white)
+                    //                    .mask {
+                    //                        RoundedRectangle(cornerRadius: 8)
+                    //                    }
+                    //                    .padding(.horizontal, 18)
+                    //                }
                 }
-                
-                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isSaved) {
-                    EmptyView()
-                }
-                
-                //                    NavigationLink(
-                //                        value: $isSaved,
-                //                        label: {
-                //                            EmptyView()
-                //                        },
-                //                        destination: {
-                //                            ContentView(listSpareTimes: $listSpareTimes)
-                //                                .navigationBarBackButtonHidden()
-                //                        }
-                //                    )
-                
-                
-                //Button Submit -> ke dashboard
-                //                ForEach(listSpareTimes) { index in
-                //
-                //                }
-                
-                //                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), label: {
-                //                    HStack (alignment: .center){
-                //                        Spacer()
-                //
-                //                        Text("Selesai")
-                //                            .fontWeight(.bold)
-                //
-                //
-                //                        Spacer()
-                //                    }
-                //                })
-                //                .frame(height: 41)
-                //                .background(Color("ButtonColor"))
-                //                .foregroundColor(.white)
-                //                .mask {
-                //                    RoundedRectangle(cornerRadius: 8)
-                //                }
-                //                .padding(.horizontal, 16)
+                .navigationTitle(Text("Aktivitas Luang"))
+                .padding(.bottom, 8)
             }
-            .navigationTitle(Text("Aktivitas Luang"))
-            .padding(.bottom, 8)
         }
     }
-    
-    //Fungsi Delete Spare Time
-    func deleteSpareTime(at offsets: IndexSet) {
-        listSpareTimes.remove(atOffsets: offsets)
-    }
-    
-    //Fungsi Nambah List SpareTime
-    func addSpareTime(){
-        spareTimeCount += 1
-        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
-        listSpareTimes.append(newSpareTime)
+        //Fungsi Delete Spare Time
+        func deleteSpareTime(at offsets: IndexSet) {
+            listSpareTimes.remove(atOffsets: offsets)
+        }
         
-    }
-    
-    //    func submitSpareTime(){
-    //        VStack{
-    //            Text("Activities : \(activityCount)")
-    //            Text("List Spare Time : ")
-    //            ForEach(listSpareTimes, id: \.self) { i in
-    //                Text ("Nama: \(i.name)")
-    //                Text ("Start: \(i.startTime)")
-    //                Text ("End: \(i.endTime)")
-    //            }
-    //        }
-    //    }
-    
-    struct AktivitasLuang_Previews: PreviewProvider {
-        static var previews: some View {
-            AktivitasLuang()
+        //Fungsi Nambah List SpareTime
+        func addSpareTime(){
+            spareTimeCount += 1
+            let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
+            
+            listSpareTimes.append(newSpareTime)
+        }
+        
+        func submitSpareTime(){
+            for i in listSpareTimes{
+                SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
+                print ("\(i.startTime)")
+                print ("\(i.endTime)")
+            }
+            isSaved = true
+            print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        }
+        
+        struct AktivitasLuang_Previews: PreviewProvider {
+            static var previews: some View {
+                SpareTimeView()
+            }
         }
     }
-}

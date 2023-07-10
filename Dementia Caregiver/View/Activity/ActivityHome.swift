@@ -13,6 +13,13 @@ struct ActivityHome: View {
     
     let activityName = ["Menyiram", "Senam", "Berlari", "Asik!", "Asik!"]
     
+    let activities = ActivityController2().getActivity()
+    
+    //    let categories = CategoryController().getCategory(idCategories: [])
+    let categories = CategoryController().getAllCategory()
+    
+    private var categoryImage = ["KAT01", "KAT02", "KAT03", "KAT04", "KAT05", "KAT06", "KAT07", "KAT08"]
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -44,9 +51,18 @@ struct ActivityHome: View {
                         .padding(.top, 10)
                         
                         ScrollView (.horizontal, showsIndicators: false){
+                            //                            HStack{
+                            //                                ForEach(categoryImage, id: \.self) {imageName in
+                            //                                    KategoriCardView(image: Image(imageName))
+                            //                                }
                             HStack{
-                                ForEach(0 ..< 7) {item in
-                                    KategoriCardView(image: Image("contoh2"))
+                                ForEach(categories, id: \.self) {element in
+                                    VStack{
+                                        KategoriCardView(image: Image(element.idCategory ?? "Not Found"))
+                                        Text(element.name ?? "Not Found")
+                                            .font(.system(size: 10))
+                                            .foregroundColor(.black)
+                                    }
                                 }
                             }
                             .padding(.leading, 15)
@@ -61,11 +77,11 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(activity, id:\.self) {element in
+                                ForEach(activities, id:\.self) {element in
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
-                                            List1CardView(image: Image("contoh2"))
-                                            Text(element.name!)
+                                            List1CardView(image: Image(element.name ?? "contoh"))
+                                            Text(element.name ?? "Not Found")
                                                 .font(.system(size: 13))
                                                 .foregroundColor(.black)
                                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -85,11 +101,11 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(0 ..< 5) {item in
+                                ForEach(activities, id:\.self) {element in
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
-                                            List1CardView(image: Image("contoh2"))
-                                            Text(activityName[item])
+                                            List1CardView(image: Image(element.name ?? "contoh"))
+                                            Text(element.name ?? "Not Found")
                                                 .font(.system(size: 13))
                                                 .foregroundColor(.black)
                                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -109,11 +125,11 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(0 ..< 5) {item in
+                                ForEach(activities) {element in
                                     NavigationLink(destination: ActivityDetail()) {
                                         VStack{
-                                            List1CardView(image: Image("contoh2"))
-                                            Text(activityName[item])
+                                            List1CardView(image: Image(element.name ?? "contoh"))
+                                            Text(element.name ?? "Not Found")
                                                 .font(.system(size: 13))
                                                 .foregroundColor(.black)
                                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -153,10 +169,11 @@ struct KategoriCardView: View{
         image
             .resizable()
             .frame(width: 80, height: 80, alignment: .leading)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.black, lineWidth: 1)
-            )
+            .cornerRadius(10)
+        //            .overlay(
+        //                RoundedRectangle(cornerRadius: 10)
+        //                    .stroke(.black, lineWidth: 1)
+        //            )
             .padding(2)
     }
 }
@@ -167,10 +184,11 @@ struct List1CardView: View{
         image
             .resizable()
             .frame(width: 100, height: 100, alignment: .leading)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.black, lineWidth: 1)
-            )
+            .cornerRadius(10)
+        //            .overlay(
+        //                RoundedRectangle(cornerRadius: 10)
+        //                    .stroke(.black, lineWidth: 1)
+        //            )
             .padding(2)
     }
 }
@@ -181,10 +199,11 @@ struct List2CardView: View{
         image
             .resizable()
             .frame(width: 100, height: 100, alignment: .leading)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.black, lineWidth: 1)
-            )
+            .cornerRadius(10)
+        //            .overlay(
+        //                RoundedRectangle(cornerRadius: 10)
+        //                    .stroke(.black, lineWidth: 1)
+        //            )
             .padding(2)
     }
 }
@@ -195,10 +214,11 @@ struct List3CardView: View{
         image
             .resizable()
             .frame(width: 100, height: 100, alignment: .leading)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.black, lineWidth: 1)
-            )
+            .cornerRadius(10)
+        //            .overlay(
+        //                RoundedRectangle(cornerRadius: 10)
+        //                    .stroke(.black, lineWidth: 1)
+        //            )
             .padding(2)
     }
 }

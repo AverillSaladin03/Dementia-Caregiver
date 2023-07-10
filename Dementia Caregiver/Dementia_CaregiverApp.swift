@@ -9,13 +9,12 @@ import SwiftUI
 
 @main
 struct Dementia_CaregiverApp: App {
-    @StateObject private var dataController = DataManager.shared
+    @StateObject private var dataManager = DataManager.shared
     
     var body: some Scene {
         WindowGroup {
-            FormView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
-                
+           FormView()
+                .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
 }

@@ -223,4 +223,22 @@ class ScheduleController: ObservableObject{
     }
     
     
+    func addManualSchedule (date: Date, start: Date, end: Date, activity :Activity) {
+        let newSchedule = Schedule(context: dataManager.context)
+        
+        //Time Conversion
+        let startResult = TimeConverter().timeConversion(start: start, end: end, date: date) [0]
+        let endResult = TimeConverter().timeConversion(start: start, end: end, date: date) [1]
+        
+        //Add to Core Data
+        newSchedule.id = UUID()
+        newSchedule.date = date
+        newSchedule.start = startResult
+        newSchedule.end = endResult
+        newSchedule.addToSchedule_activity(activity)
+        
+        print ("New Schedule Saved")
+        //Save
+        dataManager.save()
+    }
 }

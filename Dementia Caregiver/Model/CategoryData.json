@@ -1,0 +1,36 @@
+{
+    "category":[
+        {
+            "idCategory" : "KAT01",
+            "name" : "Aktivitas di Luar Ruangan"
+        },
+        {
+            "idCategory" : "KAT02",
+            "name" : "Aktivitas di Dalam Ruangan"
+        },
+        {
+            "idCategory" : "KAT03",
+            "name" : "Aktivitas di Malam Hari"
+        },
+        {
+            "idCategory" : "KAT04",
+            "name" : "Aktivitas Bersama"
+        },
+        {
+            "idCategory" : "KAT05",
+            "name" : "Aktivitas 15 Menit"
+        },
+        {
+            "idCategory" : "KAT06",
+            "name" : "Aktivitas Fisik"
+        },
+        {
+            "idCategory" : "KAT07",
+            "name" : "Aktivitas Mengasah Otak"
+        },
+        {
+            "idCategory" : "KAT08",
+            "name" : "Aktivitas Kreatif"
+        }
+    ]
+}
