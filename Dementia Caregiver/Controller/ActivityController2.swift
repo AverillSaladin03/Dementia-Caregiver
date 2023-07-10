@@ -46,7 +46,6 @@ class ActivityController2{
         if let activityJson = loadJson(filename: "ActivityData") {
             
             for activityData in activityJson {
-
                 
                 for hobby in hobbies{
                     
