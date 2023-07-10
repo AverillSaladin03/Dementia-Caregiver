@@ -105,7 +105,7 @@ struct AktivitasLuang: View {
                 
                 //                Button("Selesai"){
                 //                    for i in listSpareTimes{
-                //                        SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
+                //                        SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
                 //                    }
                 //                    isSaved = true
                 ////                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
@@ -114,9 +114,11 @@ struct AktivitasLuang: View {
                 
                 Button(action: {
                     for i in listSpareTimes{
-                        SpareTimeController().addActivityLuang(start: i.startTime, end: i.endTime)
+                        SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
                     }
                     isSaved = true
+                    ScheduleController().randomSchedule()
+                    TaskModel().loadData(dateSelect: Date.now)
 
                     print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                 }) {
@@ -137,7 +139,7 @@ struct AktivitasLuang: View {
                     .padding(.horizontal, 16)
                 }
                 
-                NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
+                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isSaved) {
                     EmptyView()
                 }
                 

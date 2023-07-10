@@ -12,6 +12,7 @@ import CoreData
 struct ResponseData: Decodable {
     var activity: [Activitty]
 }
+
 struct Activitty : Decodable {
     var nama: String
     var deskripsi: String
@@ -38,20 +39,19 @@ func loadJson(filename fileName: String) -> [Activitty]? {
 
 
 class ActivityContoller2{
+    
+    static var shared = ActivityContoller2()
     let dataManager = DataManager.shared
-//    @Published var activities: [Activity] = []
-//
-//    init(){
-//        getActivity()
-//    }
+    @Published var activitiesArray: [Activity] = []
     
     func addActivity() {
         if let activityJson = loadJson(filename: "Reyner") {
             for activityData in activityJson {
                 let newActivity = Activity(context: dataManager.context)
+                newActivity.id_activity = UUID()
                 newActivity.name = activityData.nama
                 newActivity.descriptionActivity = activityData.deskripsi
-                newActivity.duration = Int64(activityData.durasi)
+                newActivity.duration = Int16(activityData.durasi)
                 newActivity.tips = activityData.tips
                 newActivity.disabilityLevel = Int64(activityData.disability_lv)
                 newActivity.dementiaLevel = Int64(activityData.dementia_lv)
@@ -63,15 +63,30 @@ class ActivityContoller2{
         }
     }
     
-//    func getActivity(){
+//    func getActivity(durasi: Int) -> [Activity]{
 //        let request = NSFetchRequest<Activity>(entityName: "Activity")
 //
+//        let filter = NSPredicate(format: "duration == %i", durasi)
+//        request.predicate = filter
+//
 //        do{
-//            activities = try dataManager.context.fetch(request)
+//            activitiesArray = try dataManager.context.fetch(request)
 //        }catch let error{
 //            print("error fetching core data. \(error.localizedDescription)")
 //        }
+//        return activitiesArray
 //    }
+    
+    func getActivity() -> [Activity]{
+        let request = NSFetchRequest<Activity>(entityName: "Activity")
+
+        do{
+            activitiesArray = try dataManager.context.fetch(request)
+        }catch let error{
+            print("error fetching core data. \(error.localizedDescription)")
+        }
+        return activitiesArray
+    }
 
     
 }

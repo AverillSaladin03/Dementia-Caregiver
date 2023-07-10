@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ScheduleList: View {
     
-    @Binding var listSpareTimes: [Spares]
+//    @Binding var listSpareTimes: [Spares]
     
     @Environment(\.managedObjectContext) var managedObjectContex
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.start, order: .forward)]) var spare: FetchedResults<Spare>
+//    @FetchRequest(sortDescriptors: [SortDescriptor(\.start, order: .forward)]) var spare: FetchedResults<Spare>
+    
+    @StateObject var vm = ScheduleController.shared
     
     var body: some View {
         List{
-            ForEach(spare) { index in
+//            ForEach(vm.scheduleArray) { index in
+            ForEach(Array(vm.scheduleArray.enumerated()), id: \.offset) { offset, item in
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color("BrighterMainColor"))
@@ -30,16 +33,18 @@ struct ScheduleList: View {
                         
                         Spacer()
                         VStack{
-                            Text(formatTime(index.start!))
+                            Text(formatTime(item.start!))
                                 .font(.system(size: 11).monospaced())
                             Rectangle()
                                 .fill(.white)
                                 .frame(width: 1, height: 25)
-                            Text(formatTime(index.end!))
+                            Text(formatTime(item.end!))
                                 .font(.system(size: 11).monospaced())
+                            
+                           
                         }
                         Spacer()
-                        Text("Bermain Lego lego")
+                        Text((item.schedule_activity?.name) ?? "")
                             .font(.system(size: 17).bold())
                             .padding(.trailing)
                         Spacer()
@@ -58,7 +63,7 @@ struct ScheduleList: View {
                     .tint(.indigo)
                     
                     Button(role: .destructive) {
-//                        deleteSpareIndex(i: index)
+                        deleteSpareIndex(i: offset)
                     } label: {
                         Label("Delete", systemImage: "trash.fill")
                     }
@@ -81,25 +86,35 @@ struct ScheduleList: View {
     }
     
     func deleteSpareIndex(i: Int){
-        managedObjectContex.delete(spare[i])
-        DataManager().save()
+        print(i)
+        managedObjectContex.delete(vm.scheduleArray[i])
+        vm.scheduleArray.remove(at: i)
+        DataManager.shared.save()
     }
     
-    private func deleteSpare(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { spare[$0] }
-                .forEach(managedObjectContex.delete)
-            
-            // Saves to our database
-            DataManager().save()
-        }
-    }
+//    func deleteSpareIndex(schedule: Schedule) {
+//        if let index = vm.scheduleArray.firstIndex(of: schedule) {
+//            managedObjectContex.delete(vm.scheduleArray[index])
+//            DataManager.shared.save()
+//        }
+//    }
+
+    
+//    private func deleteSpare(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { vm.scheduleArray[$0] }
+//                .forEach(managedObjectContex.delete)
+//
+//            // Saves to our database
+//            DataManager.shared.save()
+//        }
+//    }
     
 }
 
 
 struct ScheduleList_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleList(listSpareTimes: .constant(listSpareTime))
+        ScheduleList()
     }
 }

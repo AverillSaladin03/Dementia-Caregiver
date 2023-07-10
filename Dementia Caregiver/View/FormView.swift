@@ -97,9 +97,9 @@ struct FormView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    let newODDController = ODDController()
+    let newODDController = ODDController.shared
     
-    let newActivityContoller = ActivityContoller2()
+    let newActivityContoller = ActivityContoller2.shared
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \ODD.birth_date, ascending: true)],
@@ -245,7 +245,7 @@ struct FormView: View {
                     Button(action: {
                         isActive = true
                         newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        ActivityContoller2().addActivity()
+                        ActivityContoller2.shared.addActivity()
                     }) {
                         HStack (alignment: .center){
                             Spacer()
