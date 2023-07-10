@@ -67,6 +67,7 @@ class ActivityController2{
                     newActivity.addToCategory_activity(category)
                 }
                 
+                
 
                 // Save the new activity to Core Data
                 dataManager.save()

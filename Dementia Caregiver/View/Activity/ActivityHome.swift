@@ -18,7 +18,7 @@ struct ActivityHome: View {
     //    let categories = CategoryController().getCategory(idCategories: [])
     let categories = CategoryController().getAllCategory()
     
-    private var categoryImage = ["KAT01", "KAT02", "KAT03", "KAT04", "KAT05", "KAT06", "KAT07", "KAT08"]
+    private var categoryImage = ["HKAT01", "HKAT02", "HKAT03", "HKAT04", "HKAT05", "HKAT06", "HKAT07", "HKAT08"]
     
     var body: some View {
         NavigationView {
@@ -55,6 +55,7 @@ struct ActivityHome: View {
                             //                                ForEach(categoryImage, id: \.self) {imageName in
                             //                                    KategoriCardView(image: Image(imageName))
                             //                                }
+                            
                             HStack{
                                 ForEach(categories, id: \.self) {element in
                                     VStack{
@@ -71,77 +72,137 @@ struct ActivityHome: View {
                         .padding(.bottom, 5)
                         
                         
-                        Text("Aktivitas di Luar Ruangan")
-                            .font(.system(size: 18, weight: .semibold))
-                            .padding()
-                        
-                        ScrollView (.horizontal, showsIndicators: false){
-                            HStack{
-                                ForEach(activities, id:\.self) {element in
-                                    NavigationLink(destination: ActivityDetail()) {
-                                        VStack{
-                                            List1CardView(image: Image(element.name ?? "contoh"))
-                                            Text(element.name ?? "Not Found")
-                                                .font(.system(size: 13))
-                                                .foregroundColor(.black)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                                .padding(.top, -5)
+                        VStack{
+                            ForEach(categories, id: \.self) {element in
+                                Text(element.name ?? "Not Found")
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(.black)
+                                
+                                ScrollView (.horizontal, showsIndicators: false){
+                                    HStack{
+//                                        ForEach(activities, id:\.self) {element in
+//                                        ForEach(category.categories_activity?.array as? [Activity] ?? [], id:\.self) {element in
+                                        NavigationLink(destination: ActivityDetail()) {
+                                                VStack(alignment: .leading){
+                                                    List1CardView(image: Image(element.name ?? "contoh"))
+                                                    Text(element.name ?? "Not Found")
+                                                        .font(.system(size: 13))
+                                                        .foregroundColor(.black)
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                        .padding(.top, -5)
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
-                            .padding(.leading, 15)
-                        }
-                        .padding(.top, -10)
-                        .padding(.bottom, 5)
                         
-                        Text("Aktivitas 15 Menit")
-                            .font(.system(size: 18, weight: .semibold))
-                            .padding()
                         
-                        ScrollView (.horizontal, showsIndicators: false){
-                            HStack{
-                                ForEach(activities, id:\.self) {element in
-                                    NavigationLink(destination: ActivityDetail()) {
-                                        VStack{
-                                            List1CardView(image: Image(element.name ?? "contoh"))
-                                            Text(element.name ?? "Not Found")
-                                                .font(.system(size: 13))
-                                                .foregroundColor(.black)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                                .padding(.top, -5)
-                                        }
-                                    }
-                                }
-                            }
-                            .padding(.leading, 15)
-                        }
-                        .padding(.top, -10)
-                        .padding(.bottom, 5)
                         
-                        Text("Aktivitas Malam Hari")
-                            .font(.system(size: 18, weight: .semibold))
-                            .padding()
+                        //                        ScrollView(.horizontal, showsIndicators: false){
+                        //                            VStack(alignment: .leading, spacing: 15) {
+                        //                                ForEach(1...8, id: \.self) { categories in
+                        //                                    Text("Category \(categories)")
+                        //                                        //.font(.system(size: 18, weight: .semibold))
+                        //                                        .font(.body)
+                        //                                    Text("Aktivitas di Luar Ruangan")
+                        //                                        .font(.system(size: 18, weight: .semibold))
+                        //                                        .padding()
+                        //
+                        //                                    ScrollView (.horizontal, showsIndicators: false){
+                        //                                        HStack{
+                        //                                            ForEach(activities.filter {$0.category_activity == categories}, id:\.self) {element in
+                        //                                                NavigationLink(destination: ActivityDetail(category: categories)) {
+                        //                                                    VStack{
+                        //                                                        List1CardView(image: Image(element.name ?? "contoh"))
+                        //                                                        Text(element.name ?? "Not Found")
+                        //                                                            .font(.system(size: 13))
+                        //                                                            .foregroundColor(.black)
+                        //                                                            .frame(maxWidth: .infinity, alignment: .leading)
+                        //                                                            .padding(.top, -5)
+                        //                                                    }
+                        //                                                }
+                        //                                            }
+                        //                                        }
+                        //                                        .padding(.leading, 15)
+                        //                                    }
+                        //                                    .padding(.top, -10)
+                        //                                    .padding(.bottom, 5)
+                        //                                }
+                        //                            }
+                        //                        }
                         
-                        ScrollView (.horizontal, showsIndicators: false){
-                            HStack{
-                                ForEach(activities) {element in
-                                    NavigationLink(destination: ActivityDetail()) {
-                                        VStack{
-                                            List1CardView(image: Image(element.name ?? "contoh"))
-                                            Text(element.name ?? "Not Found")
-                                                .font(.system(size: 13))
-                                                .foregroundColor(.black)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                                .padding(.top, -5)
-                                        }
-                                    }
-                                }
-                            }
-                            .padding(.leading, 15)
-                        }
-                        .padding(.top, -10)
-                        .padding(.bottom, 5)
+                        //                        Text("Aktivitas di Luar Ruangan")
+                        //                            .font(.system(size: 18, weight: .semibold))
+                        //                            .padding()
+                        //
+                        //                        ScrollView (.horizontal, showsIndicators: false){
+                        //                            HStack{
+                        //                                ForEach(activities, id:\.self) {element in
+                        //                                    NavigationLink(destination: ActivityDetail()) {
+                        //                                        VStack{
+                        //                                            List1CardView(image: Image(element.name ?? "contoh"))
+                        //                                            Text(element.name ?? "Not Found")
+                        //                                                .font(.system(size: 13))
+                        //                                                .foregroundColor(.black)
+                        //                                                .frame(maxWidth: .infinity, alignment: .leading)
+                        //                                                .padding(.top, -5)
+                        //                                        }
+                        //                                    }
+                        //                                }
+                        //                            }
+                        //                            .padding(.leading, 15)
+                        //                        }
+                        //                        .padding(.top, -10)
+                        //                        .padding(.bottom, 5)
+                        
+                        //                        Text("Aktivitas 15 Menit")
+                        //                            .font(.system(size: 18, weight: .semibold))
+                        //                            .padding()
+                        //
+                        //                        ScrollView (.horizontal, showsIndicators: false){
+                        //                            HStack{
+                        //                                ForEach(activities, id:\.self) {element in
+                        //                                    NavigationLink(destination: ActivityDetail()) {
+                        //                                        VStack{
+                        //                                            List1CardView(image: Image(element.name ?? "contoh"))
+                        //                                            Text(element.name ?? "Not Found")
+                        //                                                .font(.system(size: 13))
+                        //                                                .foregroundColor(.black)
+                        //                                                .frame(maxWidth: .infinity, alignment: .leading)
+                        //                                                .padding(.top, -5)
+                        //                                        }
+                        //                                    }
+                        //                                }
+                        //                            }
+                        //                            .padding(.leading, 15)
+                        //                        }
+                        //                        .padding(.top, -10)
+                        //                        .padding(.bottom, 5)
+                        
+                        //                        Text("Aktivitas Malam Hari")
+                        //                            .font(.system(size: 18, weight: .semibold))
+                        //                            .padding()
+                        //
+                        //                        ScrollView (.horizontal, showsIndicators: false){
+                        //                            HStack{
+                        //                                ForEach(activities) {element in
+                        //                                    NavigationLink(destination: ActivityDetail()) {
+                        //                                        VStack{
+                        //                                            List1CardView(image: Image(element.name ?? "contoh"))
+                        //                                            Text(element.name ?? "Not Found")
+                        //                                                .font(.system(size: 13))
+                        //                                                .foregroundColor(.black)
+                        //                                                .frame(maxWidth: .infinity, alignment: .leading)
+                        //                                                .padding(.top, -5)
+                        //                                        }
+                        //                                    }
+                        //                                }
+                        //                            }
+                        //                            .padding(.leading, 15)
+                        //                        }
+                        //                        .padding(.top, -10)
+                        //                        .padding(.bottom, 5)
                         
                         .navigationTitle("Aktivitas")
                     }
