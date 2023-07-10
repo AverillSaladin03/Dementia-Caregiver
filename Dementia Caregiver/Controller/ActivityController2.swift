@@ -27,7 +27,7 @@ struct Activitty : Decodable {
 class ActivityController2{
     let dataManager = DataManager.shared
     @Published var activities: [Activity] = []
-
+    
     func loadJson(filename fileName: String) -> [Activitty]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
@@ -42,33 +42,41 @@ class ActivityController2{
         return nil
     }
     
-    func addActivityFromJSON() {
+    func addActivityFromJSON(demLevel : Int, disLevel: Int, hobbies: [Items]) {
         if let activityJson = loadJson(filename: "ActivityData") {
+            
             for activityData in activityJson {
-                
-                print(activityData)
-                if(activityData.disability_lv > disLevel && activityData.dementia_lv > demLevel){
-                    let newActivity = Activity(context: dataManager.context)
-                    print("disability",activityData.disability_lv)
-                    print("demLevel", activityData.dementia_lv)
-                    newActivity.name = activityData.nama
-                    newActivity.descriptionActivity = activityData.deskripsi
-                    newActivity.duration = Int64(activityData.durasi)
-                    newActivity.tips = activityData.tips
-                    newActivity.disabilityLevel = Int64(activityData.disability_lv)
-                    newActivity.dementiaLevel = Int64(activityData.dementia_lv)
-                    newActivity.hobby = activityData.hobby
-                    let categories = CategoryController().getCategory(idCategories: activityData.category)
-                    
-                    //untuk mengisi category dari activity yang baru
-    //                newActivity.category_activity?.addingObjects(from: categories)
-                    //untuk mengisi activity yang baru ke category yang sudah ada
-                    for category in categories {
-                        newActivity.addToCategory_activity(category)
-                    }
 
-                    // Save the new activity to Core Data
-                    dataManager.save()
+                
+                for hobby in hobbies{
+                    
+                    let lowercaseHobby = hobby.rawValue.lowercased()
+                    
+                    
+                    if(activityData.disability_lv > disLevel && activityData.dementia_lv > demLevel && activityData.hobby.contains(lowercaseHobby)){
+                        print(activityData)
+                        let newActivity = Activity(context: dataManager.context)
+                        print("disability",activityData.disability_lv)
+                        print("demLevel", activityData.dementia_lv)
+                        newActivity.name = activityData.nama
+                        newActivity.descriptionActivity = activityData.deskripsi
+                        newActivity.duration = Int64(activityData.durasi)
+                        newActivity.tips = activityData.tips
+                        newActivity.disabilityLevel = Int64(activityData.disability_lv)
+                        newActivity.dementiaLevel = Int64(activityData.dementia_lv)
+                        newActivity.hobby = activityData.hobby
+                        let categories = CategoryController().getCategory(idCategories: activityData.category)
+                        
+                        //untuk mengisi category dari activity yang baru
+                        //                newActivity.category_activity?.addingObjects(from: categories)
+                        //untuk mengisi activity yang baru ke category yang sudah ada
+                        for category in categories {
+                            newActivity.addToCategory_activity(category)
+                        }
+                        
+                        // Save the new activity to Core Data
+                        dataManager.save()
+                    }
                 }
             }
             print("masuk")
@@ -78,13 +86,13 @@ class ActivityController2{
         }
     }
     
-//    func addActivity(newName: String, newDescription: String, newDuration: Int64, newTips: String, newDisabilityLevel: Int64, newDementiaLevel: Int64) {
-////
-//    }
+    //    func addActivity(newName: String, newDescription: String, newDuration: Int64, newTips: String, newDisabilityLevel: Int64, newDementiaLevel: Int64) {
+    ////
+    //    }
     
     func getActivity() -> [Activity]{
         let request = NSFetchRequest<Activity>(entityName: "Activity")
-
+        
         do{
             activities = try dataManager.context.fetch(request)
         }catch let error{
@@ -92,6 +100,6 @@ class ActivityController2{
         }
         return activities
     }
-
+    
 }
 
