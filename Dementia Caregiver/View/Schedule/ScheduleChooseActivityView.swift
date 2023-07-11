@@ -80,7 +80,7 @@ struct ScheduleChooseActivityView: View {
                     selectedActivity = activities[0]
                 }
                 
-                .listStyle(.plain)
+                .listStyle(.grouped)
                 
                 //                Button {
                 //                    showSheet.toggle()
