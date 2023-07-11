@@ -45,38 +45,31 @@ class ActivityController2{
     func addActivityFromJSON(demLevel : Int, disLevel: Int, hobbies: [Items]) {
         if let activityJson = loadJson(filename: "ActivityData") {
             
+            print ("Jumlah activity: %@", activityJson.count)
             for activityData in activityJson {
+//                print(activityData.nama)
+                let newActivity = Activity(context: dataManager.context)
+                newActivity.name = activityData.nama
+                newActivity.descriptionActivity = activityData.deskripsi
+                newActivity.duration = Int64(activityData.durasi)
+                newActivity.tips = activityData.tips
+                newActivity.disabilityLevel = Int64(activityData.disability_lv)
+                newActivity.dementiaLevel = Int64(activityData.dementia_lv)
+                newActivity.hobby = activityData.hobby
+//                newActivity.addToCategory_activity(activityData.category)
                 
-                for hobby in hobbies{
-                    
-                    let lowercaseHobby = hobby.rawValue.lowercased()
-                    
-                    
-                    if(activityData.disability_lv > disLevel && activityData.dementia_lv > demLevel && activityData.hobby.contains(lowercaseHobby)){
-                        print(activityData)
-                        let newActivity = Activity(context: dataManager.context)
-                        print("disability",activityData.disability_lv)
-                        print("demLevel", activityData.dementia_lv)
-                        newActivity.name = activityData.nama
-                        newActivity.descriptionActivity = activityData.deskripsi
-                        newActivity.duration = Int64(activityData.durasi)
-                        newActivity.tips = activityData.tips
-                        newActivity.disabilityLevel = Int64(activityData.disability_lv)
-                        newActivity.dementiaLevel = Int64(activityData.dementia_lv)
-                        newActivity.hobby = activityData.hobby
-                        let categories = CategoryController().getCategory(idCategories: activityData.category)
-                        
-                        //untuk mengisi category dari activity yang baru
-                        //                newActivity.category_activity?.addingObjects(from: categories)
-                        //untuk mengisi activity yang baru ke category yang sudah ada
-                        for category in categories {
-                            newActivity.addToCategory_activity(category)
-                        }
-                        
-                        // Save the new activity to Core Data
-                        dataManager.save()
-                    }
+                let categories = CategoryController().getCategory(idCategories: activityData.category)
+                
+                //untuk mengisi category dari activity yang baru
+//                newActivity.category_activity?.addingObjects(from: categories)
+                //untuk mengisi activity yang baru ke category yang sudah ada
+                for category in categories {
+                    newActivity.addToCategory_activity(category)
                 }
+                
+
+                // Save the new activity to Core Data
+                dataManager.save()
             }
             print("masuk")
         }
@@ -85,9 +78,9 @@ class ActivityController2{
         }
     }
     
-    //    func addActivity(newName: String, newDescription: String, newDuration: Int64, newTips: String, newDisabilityLevel: Int64, newDementiaLevel: Int64) {
-    ////
-    //    }
+//    func addActivity(newName: String, newDescription: String, newDuration: Int64, newTips: String, newDisabilityLevel: Int64, newDementiaLevel: Int64) {
+////
+//    }
     
     func getActivity() -> [Activity]{
         let request = NSFetchRequest<Activity>(entityName: "Activity")
@@ -99,31 +92,6 @@ class ActivityController2{
         }
         return activities
     }
-    
-//    func getActivityByCategory(name: String) -> [Activity] {
-//
-//        let request = NSFetchRequest(entityName: "Person")
-//        let predicate = NSPredicate(format: "school == %@ && firstName == %@", school, firstName)
-//        request.predicate = predicate
-//
-//        // we will perform the request on the context associated with the School NSManagedObject
-//        guard let context = school.managedObjectContext else {
-//            print("provided School managed object is not associated with a managed object context")
-//            return []
-//        }
-//
-//        do {
-//            return try context.executeFetchRequest(request) as? [Person] ?? []
-//        } catch {
-//            return []
-//        }
-//    }
-    
-    
-//    func getNewestActivity() -> [Activity] {
-//        let request = NSFetchRequest(entityName: "Activity")
-//        let predicate = NSPredicate(format: "school == %@ && firstName == %@", school, firstName)
-//    }
 
 }
 

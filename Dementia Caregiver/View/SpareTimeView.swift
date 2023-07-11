@@ -163,6 +163,7 @@ struct SpareTimeView: View {
         func submitSpareTime(){
             for i in listSpareTimes{
                 SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
+                ActivityController2().addActivityFromJSON()
                 print ("\(i.startTime)")
                 print ("\(i.endTime)")
             }

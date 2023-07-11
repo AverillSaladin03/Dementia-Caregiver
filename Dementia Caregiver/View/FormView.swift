@@ -259,7 +259,6 @@ struct FormView: View {
                         EmptyView()
                     }
                     
-                    
                     Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     
                         ForEach(ODDs, id: \.self) { item in
