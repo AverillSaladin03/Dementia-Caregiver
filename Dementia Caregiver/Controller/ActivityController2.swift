@@ -100,5 +100,30 @@ class ActivityController2{
         return activities
     }
     
+//    func getActivityByCategory(name: String) -> [Activity] {
+//
+//        let request = NSFetchRequest(entityName: "Person")
+//        let predicate = NSPredicate(format: "school == %@ && firstName == %@", school, firstName)
+//        request.predicate = predicate
+//
+//        // we will perform the request on the context associated with the School NSManagedObject
+//        guard let context = school.managedObjectContext else {
+//            print("provided School managed object is not associated with a managed object context")
+//            return []
+//        }
+//
+//        do {
+//            return try context.executeFetchRequest(request) as? [Person] ?? []
+//        } catch {
+//            return []
+//        }
+//    }
+    
+    
+//    func getNewestActivity() -> [Activity] {
+//        let request = NSFetchRequest(entityName: "Activity")
+//        let predicate = NSPredicate(format: "school == %@ && firstName == %@", school, firstName)
+//    }
+
 }
 

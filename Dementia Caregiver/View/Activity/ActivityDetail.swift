@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ActivityDetail: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    let activities = ActivityController2().getActivity()
+    let categories = CategoryController().getAllCategory()
     
     var body: some View {
         ScrollView{
