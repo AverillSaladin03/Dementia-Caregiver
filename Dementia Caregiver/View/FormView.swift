@@ -247,7 +247,7 @@ struct FormView: View {
                     Button(action: {
                         isActive = true
                         newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        ActivityController2().addActivityFromJSON()
+                        CategoryController().addCategory()
                     }) {
                         HStack (alignment: .center){
                             Spacer()
@@ -269,25 +269,6 @@ struct FormView: View {
                     NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden(), isActive: $isActive) {
                         EmptyView()
                     }
-                    
-//                    NavigationLink(destination: AktivitasLuang().navigationBarBackButtonHidden(), isActive: $isActive) {
-//                        Button {
-//                            // run your code
-//                            newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-//
-////                            newActivityContoller.addActivity()
-//                            // then set
-//                            isActive = true
-//
-//                        } label: {
-//                            Text("Selanjutnya")
-//                                .frame(maxWidth:340, maxHeight:30)
-//                                .fontWeight(.bold)
-//
-//                        }
-//                        .buttonStyle(CustomButtonStyle(color: Color(UIColor(hex: "#168EB3"))))
-//                    }
-//                    .padding(.top, 20)
                     
                     Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     

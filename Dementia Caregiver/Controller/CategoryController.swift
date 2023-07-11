@@ -32,12 +32,8 @@ func loadCategory(filename fileName: String) -> [Categorry]? {
 
 class CategoryController{
     let dataManager = DataManager.shared
-//    static var shared = CategoryController()
     @Published var categories: [Category] = []
-//    let getActivity = ActivityController2().activities
     
-    
-//    func addCategory(activity: Activity) {
     func addCategory() {
         if let categoryJson = loadCategory(filename: "CategoryData") {
             for categoryData in categoryJson {
@@ -45,15 +41,14 @@ class CategoryController{
                 newCategory.id = UUID()
                 newCategory.idCategory = categoryData.idCategory
                 newCategory.name = categoryData.name
-//                newCategory.addToCategory_activity(activity)
-             
+                
                 // Save the new category to Core Data
                 dataManager.save()
             }
         }
     }
     
-    func getCategory(idCategories: [String]) -> [Category] {
+    func getCategoryByID(idCategories: [String]) -> [Category] {
         var categories: [Category] = []
         let request = NSFetchRequest<Category>(entityName: "Category")
 
