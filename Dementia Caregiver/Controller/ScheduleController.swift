@@ -14,16 +14,214 @@ class ScheduleController: ObservableObject{
     let dataManager = DataManager.shared
     @Published var scheduleArray: [Schedule] = []
     
-    func getSchedule() -> [Schedule] {
+//    init(){
+//
+//        getSchedule()
+//
+//    }
+//
+//        func getSchedule(){
+//            let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+//
+//            do {
+//                scheduleArray = try dataManager.context.fetch(request)
+//            }catch {
+//                print("DEBUG: Some error occured while fetching")
+//            }
+//        }
+    
+//    func getSchedule(currentDate: Date)->[Schedule]{
+//        let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+//
+//        let filter = NSPredicate(format: "date == %@", currentDate as NSDate)
+//        request.predicate = filter
+//
+//        do {
+//            scheduleArray = try dataManager.context.fetch(request)
+//            return scheduleArray
+//        }catch {
+//            print("DEBUG: Some error occured while fetching")
+//        }
+//        return []
+//    }
+    
+    func getSchedule(forDate date: Date) {
         let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+        
+        let calendar = Calendar.current
+        let startDate = calendar.startOfDay(for: date)
+        
+        let predicate = NSPredicate(format: "date == %@ ", startDate as NSDate)
+        request.predicate = predicate
+        
         do {
             scheduleArray = try dataManager.context.fetch(request)
-        }catch {
-            print("DEBUG: Some error occured while fetching")
+        } catch {
+            print("DEBUG: Some error occurred while fetching")
+        }
+    }
+
+    
+    //1. get spare
+//    let getSpare = SpareTimeController.shared.getSpareTime()
+    
+    //2. get + filter durasi
+    let activityController = ActivityController2()
+    
+    
+    //3. masukin schedule
+    //    func addSchedule(){
+    //
+    //        for spare in getSpare{
+    //            let schedule = Schedule(context: dataManager.context)
+    //            schedule.id = UUID()
+    //            schedule.start = spare.start
+    //            schedule.end = spare.end
+    //
+    //            let randomActivity: Activity?
+    //
+    //            // Cek apakah tanggal spare sama dengan hari ini
+    //            if TaskModel().isToday(date: spare.date) {
+    //                // Jika sama, ambil elemen acak dari aktivitas
+    //                randomActivity = activityController.getActivity(durasi: Int(spare.duration)).randomElement()
+    //            } else {
+    //                // Jika berbeda, beri nilai nil pada elemen acak
+    //                randomActivity = nil
+    //            }
+    //
+    //            schedule.schedule_activity = randomActivity
+    //
+    //            dataManager.save()
+    //        }
+    //    }
+    
+//    func addSchedule(){
+//
+//        for spare in getSpare{
+//            let schedule = Schedule(context: dataManager.context)
+//            schedule.id = UUID()
+//            schedule.start = spare.start
+//            schedule.end = spare.end
+//            schedule.date = Date.now
+//            schedule.schedule_activity = activityController.getActivity().randomElement()
+//
+//            dataManager.save()
+//        }
+//    }
+//    //
+//    func addRandomSchedule(selecDate: Date){
+//        for _ in getSpare{
+//            let schedule = Schedule(context: dataManager.context)
+//            schedule.date = selecDate
+//            schedule.schedule_activity = activityController.getActivity().randomElement()
+//
+//            dataManager.save()
+//        }
+//    }
+    
+    //        func addSchedule(){
+    //
+    //            for spare in getSpare{
+    //                var scheduleUsed:[Activity] = []
+    //
+    //                let schedule = Schedule(context: dataManager.context)
+    //                schedule.id = UUID()
+    //                schedule.start = spare.start
+    //                schedule.end = spare.end
+    //                if scheduleUsed.isEmpty{
+    //                    schedule.schedule_activity = activityController.getActivity().randomElement()
+    //                    if let activity = schedule.schedule_activity {
+    //                        scheduleUsed.append(activity)
+    //                    }
+    //                } else{
+    //                    var randomActivity: Activity?
+    //
+    //                    repeat {
+    //                        randomActivity = activityController.getActivity().randomElement()
+    //                    } while randomActivity != nil && scheduleUsed.contains(randomActivity!)
+    //
+    //                    schedule.schedule_activity = randomActivity
+    //                    if let activity = randomActivity {
+    //                        scheduleUsed.append(activity)
+    //                    }
+    //                }
+    //
+    //                dataManager.save()
+    //            }
+    //        }
+    
+    
+    /*
+     Langkah untuk buat schedule:
+     1. getCurrentWeek
+     2. getSpare
+     3. Looping CurrentWeek
+        4. Looping Spare
+            5. GetRandomActivity
+                6. GetSchedule untuk tanggal di looping saat ini dan kemarin
+                    7. Cek apakah activity dari langkah 6 sama dengan hasil langkah 5
+                        -- kalau sama, ulang langkah 5
+                        -- kalah tidak sama, addSchedule
+     
+     
+     */
+    
+        let getCurrentWeek = TaskModel().currentWeek
+        let getSpare = SpareTimeController.shared.getSpareTime()
+    //
+        func randomSchedule(){
+            for date in getCurrentWeek{
+                for spareSchedule in getSpare {
+                    let schedule = Schedule(context: dataManager.context)
+                    schedule.id = UUID()
+                    schedule.start = spareSchedule.start
+                    schedule.end = spareSchedule.end
+                    schedule.date = date
+                    
+                    var randomActivity: Activity?
+                    
+                    
+                    repeat {
+                        randomActivity = activityController.getActivity().randomElement()
+                    } while !checkActivitySchedule(forDate: date, newActivity: randomActivity ?? activityController.getActivity()[0])
+                    
+                    schedule.schedule_activity = randomActivity
+                    dataManager.save()
+                }
+            }
+        }
+    
+    func subtractOneDayFromDate(_ date: Date) -> Date? {
+        let calendar = Calendar.current
+        let oneDayAgo = calendar.date(byAdding: .day, value: -1, to: date)
+        return oneDayAgo
+    }
+    
+    func checkActivitySchedule(forDate date: Date, newActivity: Activity) -> Bool {
+        var previousSchedule: [Schedule] = []
+        let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+        
+//        let calendar = Calendar.current
+//        let startDate = calendar.startOfDay(for: date)
+        
+        let yesterday = subtractOneDayFromDate(date)
+        
+        let predicate = NSPredicate(format: "date == %@ OR date == %@ ", yesterday! as CVarArg, date as CVarArg)
+        request.predicate = predicate
+        
+        do {
+            previousSchedule = try dataManager.context.fetch(request)
+        } catch {
+            print("DEBUG: Some error occurred while fetching")
         }
         
-        return scheduleArray
+        if previousSchedule.contains(where: { $0.schedule_activity == newActivity }){
+            return false
+        } else {
+            return true
+        }
     }
+    
     
     func addManualSchedule (date: Date, start: Date, end: Date, activity :Activity) {
         let newSchedule = Schedule(context: dataManager.context)
@@ -37,7 +235,7 @@ class ScheduleController: ObservableObject{
         newSchedule.date = date
         newSchedule.start = startResult
         newSchedule.end = endResult
-        newSchedule.addToSchedule_activity(activity)
+//        newSchedule.addToSchedule_activity(activity)
         
         print ("New Schedule Saved")
         //Save

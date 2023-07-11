@@ -97,7 +97,7 @@ struct FormView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    let newODDController = ODDController()
+    let newODDController = ODDController.shared
     
     let newActivityController = ActivityController2()
     
@@ -138,20 +138,6 @@ struct FormView: View {
             ZStack{
                 ScrollView{
                     VStack(alignment: .leading){
-                        Group{
-                            Text("Tanggal lahir")
-                                .padding(.bottom, 5)
-                                .fontWeight(.semibold)
-                            HStack {
-                                DatePicker(selection: $birthDate, in: ...Date.now, displayedComponents: .date){
-                                }
-                                .frame(maxWidth: 110)
-                                
-                            }
-                            .padding(.top, 5)
-                            .padding(.bottom)
-                        }
-                        
                         Group{
                             Text("Kelumpuhan")
                                 .padding(.bottom, 5)
@@ -243,11 +229,14 @@ struct FormView: View {
                         Spacer()
                     }
                     
+
                     
                     Button(action: {
                         isActive = true
-                        newODDController.addODD(date: birthDate, demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                        ActivityController2().addActivityFromJSON(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
                         CategoryController().addCategory()
+                        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
                     }) {
                         HStack (alignment: .center){
                             Spacer()
@@ -274,7 +263,6 @@ struct FormView: View {
                     
                         ForEach(ODDs, id: \.self) { item in
                             Text("Item at \(item.hobbies!)")
-                            Text("\(item.birth_date!)")
                         }
                     
                 }

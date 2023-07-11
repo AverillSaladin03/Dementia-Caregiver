@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            ScheduleHome( listSpareTimes: $listSpareTimes)
+            ScheduleHome()
                 .tabItem {
                     Label("Jadwal", systemImage: "calendar")
                 }

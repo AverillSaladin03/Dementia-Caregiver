@@ -13,6 +13,8 @@ class TaskModel: ObservableObject{
     @Published var currentWeek: [Date] = []
     @Published var currentDay: Date = Date()
     
+//    var vm = ScheduleController.shared
+    
     init() {
         self.fetchCurrentWeek()
     }
@@ -32,9 +34,29 @@ class TaskModel: ObservableObject{
         }
     }
     
+    func loadData(dateSelect: Date) {
+//        //Fetch dari core data yang sesuai dengan dateSelect
+//        vm.scheduleArray = []
+//
+//        //cek data schedule dr core data pd tgl dateselect
+//        //kalau gak ada random aktivity
+//        //save random ke core data
+//        //kalau ada langsung masukin core data ke scheduleArray
+//
+        
+//        var currentSchedule = vm.getSchedule(currentDate: dateSelect)
+//        if currentSchedule.isEmpty{
+//            vm.addRandomSchedule(selecDate: dateSelect)
+//        }
+        DispatchQueue.main.asyncAfter(deadline: .now()){
+            ScheduleController.shared.getSchedule(forDate: dateSelect)
+            print(ScheduleController.shared.scheduleArray)
+        }
+    }
+    
     func extractDate(date:Date, format: String) -> String{
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "id_ID") 
+        formatter.locale = Locale(identifier: "id_ID")
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
