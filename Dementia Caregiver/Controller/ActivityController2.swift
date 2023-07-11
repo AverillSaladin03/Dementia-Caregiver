@@ -58,7 +58,7 @@ class ActivityController2{
                 newActivity.hobby = activityData.hobby
 //                newActivity.addToCategory_activity(activityData.category)
                 
-                let categories = CategoryController().getCategory(idCategories: activityData.category)
+                let categories = CategoryController().getCategoryByID(idCategories: activityData.category)
                 
                 //untuk mengisi category dari activity yang baru
 //                newActivity.category_activity?.addingObjects(from: categories)
