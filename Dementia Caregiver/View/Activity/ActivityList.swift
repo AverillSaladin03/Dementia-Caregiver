@@ -14,6 +14,9 @@ struct ActivityList: View {
     let activityDesc = ["Asik!", "Asik!", "Asik!", "Asik!", "Asik!"]
     let activityDuration = ["30 menit", "15 menit", "30 menit", "30 menit", "15 menit"]
     
+    let activities = ActivityController2().getActivity()
+    let categories = CategoryController().getAllCategory()
+    
     var body: some View {
         List {
             ForEach(0..<imageList.count, id: \.self) { index in
