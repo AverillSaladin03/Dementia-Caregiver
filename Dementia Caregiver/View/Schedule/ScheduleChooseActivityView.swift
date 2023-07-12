@@ -34,13 +34,7 @@ struct ScheduleChooseActivityView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                     TextField("Search",
-                              text: $searchField,
-                              onEditingChanged: { isEditing in
-                        self.showCancelButton = true
-                    },
-                              onCommit: {
-                        print("onCommit")
-                    })
+                              text: $searchField)
                 }
                 .padding(8)
                 .background(Color("GrayColor"))
@@ -50,7 +44,8 @@ struct ScheduleChooseActivityView: View {
                 List{
                     ForEach (categories, id: \.self){ category in
                         Section (header: Text(category.name!)){
-                            let newActivities = category.category_activity?.allObjects as? [Activity]
+                            var newActivities = searchField.isEmpty ? category.category_activity?.allObjects as? [Activity] : activities.filter { $0.name!.localizedCaseInsensitiveContains(searchField)
+                            }
                             ForEach (searchField.isEmpty ? activities : newActivities!, id: \.self) { activity in
                                 HStack {
                                     VStack (alignment: .leading, spacing: 1){
@@ -79,8 +74,7 @@ struct ScheduleChooseActivityView: View {
                 .onAppear {
                     selectedActivity = activities[0]
                 }
-                
-                .listStyle(.grouped)
+                .listStyle(.plain)
                 
                 //                Button {
                 //                    showSheet.toggle()
