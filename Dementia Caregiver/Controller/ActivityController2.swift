@@ -23,10 +23,11 @@ struct Activitty : Decodable {
     var category : [String]
 }
 
+
 class ActivityController2{
     let dataManager = DataManager.shared
     @Published var activities: [Activity] = []
-
+    
     func loadJson(filename fileName: String) -> [Activitty]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
@@ -41,8 +42,10 @@ class ActivityController2{
         return nil
     }
     
-    func addActivityFromJSON() {
+    func addActivityFromJSON(demLevel : Int, disLevel: Int, hobbies: [Items]) {
         if let activityJson = loadJson(filename: "ActivityData") {
+            
+            print ("Jumlah activity: %@", activityJson.count)
             for activityData in activityJson {
 //                print(activityData.nama)
                 let newActivity = Activity(context: dataManager.context)
@@ -55,7 +58,7 @@ class ActivityController2{
                 newActivity.hobby = activityData.hobby
 //                newActivity.addToCategory_activity(activityData.category)
                 
-                let categories = CategoryController().getCategory(idCategories: activityData.category)
+                let categories = CategoryController().getCategoryByID(idCategories: activityData.category)
                 
                 //untuk mengisi category dari activity yang baru
 //                newActivity.category_activity?.addingObjects(from: categories)
@@ -81,7 +84,7 @@ class ActivityController2{
     
     func getActivity() -> [Activity]{
         let request = NSFetchRequest<Activity>(entityName: "Activity")
-
+        
         do{
             activities = try dataManager.context.fetch(request)
         }catch let error{
