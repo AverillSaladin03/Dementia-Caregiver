@@ -67,14 +67,6 @@ struct ScheduleChooseActivityView: View {
                                     selectedActivity = activity
                                 }
                             }
-
-//                            .onAppear{
-//                                selectedActivity = activity
-//                            }
-                            .onTapGesture {
-                                selectedActivity = activity
-                            }
-
                             .listStyle(.plain)
 
                         }

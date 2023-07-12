@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection: Tab = .schedule
-    @Binding var listSpareTimes:[Spares]
+//    @Binding var listSpareTimes:[Spares]
     enum Tab {
         case schedule
         case activity
@@ -35,6 +35,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(listSpareTimes: .constant(listSpareTime))
+        ContentView()
     }
 }
