@@ -51,6 +51,11 @@ struct ScheduleHome: View {
                 }
                 .padding(.horizontal)
             }
+            .onAppear {
+                withAnimation {
+                    taskModel.loadData(dateSelect: taskModel.currentDay)
+                }
+            }
             ScheduleList()
         }
        

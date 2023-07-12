@@ -64,9 +64,9 @@ struct ScheduleChooseActivityView: View {
                                         .foregroundColor(Color("ButtonColor"))
                                 }
                             }
-                            .onAppear{
-                                selectedActivity = activity
-                            }
+//                            .onAppear{
+//                                selectedActivity = activity
+//                            }
                             .onTapGesture {
                                 selectedActivity = activity
                             }

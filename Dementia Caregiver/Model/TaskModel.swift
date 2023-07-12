@@ -22,7 +22,9 @@ class TaskModel: ObservableObject{
     func fetchCurrentWeek(){
         
         let today = Date()
+        
         let calendar = Calendar.current
+//        calendar.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
         let week = calendar.dateInterval(of: .weekOfMonth, for: today)
         
         guard let firstWeekDay = week?.start else{ return }
@@ -56,7 +58,7 @@ class TaskModel: ObservableObject{
     
     func extractDate(date:Date, format: String) -> String{
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "id_ID") 
+        formatter.locale = Locale(identifier: "id_ID")
         formatter.dateFormat = format
         return formatter.string(from: date)
     }

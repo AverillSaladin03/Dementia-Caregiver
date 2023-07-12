@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class ScheduleController: ObservableObject{
     
@@ -48,10 +49,13 @@ class ScheduleController: ObservableObject{
     func getSchedule(forDate date: Date) {
         let request = NSFetchRequest<Schedule>(entityName: "Schedule")
         
+        let sort = NSSortDescriptor(keyPath: \Schedule.start, ascending: true)
+        request.sortDescriptors = [sort]
+        
         let calendar = Calendar.current
         let startDate = calendar.startOfDay(for: date)
         
-        let predicate = NSPredicate(format: "date == %@ ", startDate as NSDate)
+        let predicate = NSPredicate(format: "date == %@ ", startDate as CVarArg)
         request.predicate = predicate
         
         do {
@@ -66,7 +70,7 @@ class ScheduleController: ObservableObject{
 //    let getSpare = SpareTimeController.shared.getSpareTime()
     
     //2. get + filter durasi
-    let activityController = ActivityContoller2.shared
+    let activityController = ActivityController2()
     
     
     //3. masukin schedule
@@ -235,10 +239,20 @@ class ScheduleController: ObservableObject{
         newSchedule.date = date
         newSchedule.start = startResult
         newSchedule.end = endResult
-        newSchedule.addToSchedule_activity(activity)
+//        newSchedule.addToSchedule_activity(activity)
         
         print ("New Schedule Saved")
         //Save
         dataManager.save()
     }
+    
+    func editSchedule(editSchedule: Schedule, date: Date, start: Date, end: Date, activity: Activity){
+        editSchedule.date = date
+        editSchedule.start = start
+        editSchedule.end = end
+        editSchedule.schedule_activity = activity
+        
+        dataManager.save()
+    }
+    
 }
