@@ -9,16 +9,10 @@ import SwiftUI
 
 struct ActivityList: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    let imageList = ["contoh3", "contoh3", "contoh3", "contoh3", "contoh3"]
-    let activityName = ["Menyiram Tanaman", "Menyiram Tanaman", "Menyiram Tanaman", "Menyiram Tanaman", "Menyiram Tanaman"]
-    let activityDesc = ["Asik!", "Asik!", "Asik!", "Asik!", "Asik!"]
-    let activityDuration = ["30 menit", "15 menit", "30 menit", "30 menit", "15 menit"]
     
     let activities = ActivityController2().getActivity()
     let categories = CategoryController().getAllCategory()
     var category:Category
-    
-//    let newActivities =
     
     var body: some View {
         let act = category.category_activity?.allObjects as? [Activity]
@@ -37,17 +31,18 @@ struct ActivityList: View {
                                 Text(activity.name!)
                                     .font(.system(size: 17, weight: .bold))
                                     .multilineTextAlignment(.leading)
-                                Spacer()
+//                                Spacer()
                                 Text(activity.descriptionActivity!)
                                     .font(.system(size: 15, weight: .regular))
                                     .lineLimit(2)
                                     .multilineTextAlignment(.leading)
-                                Spacer()
+//                                Spacer()
                                 HStack{
                                     Image(systemName: "clock")
                                     Text("\(String(activity.duration)) menit")
                                 }
                                 .font(.system(size: 13, weight: .thin))
+                                .padding(.top,-8)
                             }
                             .padding(.leading, 10)
                             Spacer()
