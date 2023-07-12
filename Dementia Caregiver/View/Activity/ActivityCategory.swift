@@ -27,14 +27,11 @@ struct ActivityCategory: View {
                                         .opacity(0.1)
                                         .shadow(color: .black, radius: 4, x:0, y:1)
                                         .blur(radius: 4, opaque: false))
-                                
+                                    .padding(5)
                             }
-//                            .padding(.trailing, 5)
-//                            .padding(.leading, 5)
-                            .padding(.vertical, 5)
                         }
-                        .padding(.horizontal, 5)
                     }
+                        .padding(10)
             
             .navigationBarTitle("Kategori Aktivitas", displayMode: .inline)
             .navigationBarBackButtonHidden(true)

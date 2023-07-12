@@ -14,8 +14,6 @@ struct ActivityHome: View {
     let activities = ActivityController2().getActivity()
     let categories = CategoryController().getAllCategory()
     
-    private var categoryImage = ["HKAT01", "HKAT02", "HKAT03", "HKAT04", "HKAT05", "HKAT06", "HKAT07", "HKAT08"]
-    
     var body: some View {
         NavigationView {
             ZStack{
@@ -60,11 +58,13 @@ struct ActivityHome: View {
                                             VStack(alignment: .leading){
                                                 KategoriCardView(image: Image(element.idCategory ?? "Not Found"))
                                                 Text(element.name ?? "Not Found")
+                                                    .multilineTextAlignment(.leading)
                                                     .frame(width: 80, alignment: .leading)
                                                     .font(.system(size: 10))
                                                     .foregroundColor(.black)
                                                 Spacer()
                                             }
+                                            .frame(width: 84)
                                         })
                                     }
                                 }
@@ -88,7 +88,6 @@ struct ActivityHome: View {
                                                 VStack(alignment: .leading){
                                                     List1CardView(image: Image(activity.name ?? "contoh"))
                                                     Text(activity.name ?? "Not Found")
-//                                                        .fixedSize(horizontal: false, vertical: true)
                                                         .multilineTextAlignment(.leading)
                                                         .lineLimit(2)
                                                         .font(.system(size: 11))
