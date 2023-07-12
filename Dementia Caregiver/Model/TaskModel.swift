@@ -22,7 +22,9 @@ class TaskModel: ObservableObject{
     func fetchCurrentWeek(){
         
         let today = Date()
+        
         let calendar = Calendar.current
+//        calendar.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
         let week = calendar.dateInterval(of: .weekOfMonth, for: today)
         
         guard let firstWeekDay = week?.start else{ return }
