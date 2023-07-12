@@ -77,6 +77,7 @@ struct ScheduleHome: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
             .sheet(isPresented: $showSheet) {
                 ScheduleAddView()
+                    .preferredColorScheme(.light)
             }
         }
         .padding()

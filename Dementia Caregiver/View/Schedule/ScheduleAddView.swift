@@ -33,7 +33,6 @@ struct ScheduleAddView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     if selectedActivity != nil {
                         Button("Tambah") {
-//                            addNewSchedule(submitDate: currentDate, submitStartTime: startTime, submitEndTime: endTime, submitActivity: selectedActivity!)
                             ScheduleController().addManualSchedule(date: currentDate, start: startTime, end: endTime, activity: selectedActivity!)
                             dismiss()
                         }
@@ -41,8 +40,8 @@ struct ScheduleAddView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                     }else{
                         Text("Tambah")
-                        .foregroundColor(Color.gray)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                            .foregroundColor(Color.gray)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     
                 }
@@ -77,6 +76,7 @@ struct ScheduleAddView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .sheet(isPresented: $showSheet) {
                         ScheduleChooseActivityView(selectedActivity: $selectedActivity)
+                            .preferredColorScheme(.light)
                     }
                     
                 }
@@ -103,9 +103,6 @@ struct ScheduleAddView: View {
     }
 }
 
-//func addNewSchedule (submitDate: Date, submitStartTime: Date, submitEndTime: Date, submitActivity : Activity){
-//    ScheduleController().addManualSchedule(date: submitDate, start: submitStartTime, end: submitEndTime, activity: submitActivity)
-//}
 
 struct ScheduleAddView_Previews: PreviewProvider {
     static var previews: some View {
