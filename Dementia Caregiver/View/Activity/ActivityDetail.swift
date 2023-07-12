@@ -12,34 +12,38 @@ struct ActivityDetail: View {
     let activities = ActivityController2().getActivity()
     let categories = CategoryController().getAllCategory()
     
+    var activity:Activity
+    var category:Category
+    
     var body: some View {
         ScrollView{
             VStack{
-                Image("contoh")
+                Image(activity.name!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 VStack(alignment: .leading){
-                    Text("Menyiram Tanaman")
+                    Text(activity.name!)
                         .font(.system(size: 25, weight: .bold))
-                    Text("Aktivitas luar ruangan")
+                    Text(category.name!)
                     HStack{
                         Image(systemName: "clock")
-                        Text("50 Menit")
+                        Text("\(String(activity.duration)) menit")
                     }
                     .font(.system(size: 15, weight: .thin))
                     Divider()
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut ullamcorper libero. Sed quis laoreet erat. Sed facilisis porta placerat. In a dui dolor. Mauris pulvinar dolor enim, sit amet mattis velit hendrerit eu.")
+                    Text(activity.descriptionActivity!)
                     HStack{
                         Image(systemName: "lightbulb")
                         Text("Tips")
                     }
                     .font(.system(size: 25, weight: .semibold))
                     .padding(.top)
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut ullamcorper libero. Sed quis laoreet erat. Sed facilisis porta placerat. In a dui dolor.")
+                    Text(activity.tips!)
                 }
-                .padding(.leading, 25)
+                .padding(.horizontal, 25)
             }
         }
+        .accentColor(Color("ButtonColor"))
         .navigationBarTitle("Detail Aktivitas", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -54,7 +58,8 @@ struct ActivityDetail: View {
 }
 
 struct ActivityDetail_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ActivityDetail()
+        ActivityDetail(activity: ActivityController2().getActivity()[0], category: CategoryController().getAllCategory()[0])
     }
 }
