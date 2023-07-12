@@ -14,8 +14,9 @@ struct Dementia_CaregiverApp: App {
     var body: some Scene {
         WindowGroup {
 //           ScheduleAddView()
-            ContentView()
+//            ContentView()
 //            FormView()
+            OnBoardingView()
                 .environment(\.colorScheme, .light)
                 .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
