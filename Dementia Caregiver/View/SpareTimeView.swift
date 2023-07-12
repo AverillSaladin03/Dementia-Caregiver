@@ -18,6 +18,7 @@ struct SpareTimeView: View {
     @State var spareTimeCount: Int = 1
     @State var isSaved = false
     
+    @AppStorage("userFlag") var isNewDownloaded = false
     let dateFormatter = DateFormatter()
     
     let newActivityContoller = ActivityController2()
@@ -39,9 +40,10 @@ struct SpareTimeView: View {
                             Text(listSpareTimes[i].name)
                                 .fontWeight(.bold)
                                 .font(.system(size: 17))
+                            Spacer()
                             VStack {
                                 DatePicker(
-                                    "Tes",
+                                    "Mulai",
                                     selection: $listSpareTimes[i].startTime,
                                     displayedComponents: .hourAndMinute
                                 )
@@ -56,6 +58,7 @@ struct SpareTimeView: View {
                                 DatePicker(
                                     "Selesai",
                                     selection: $listSpareTimes[i].endTime,
+                                    in: listSpareTimes[i].startTime...,
                                     displayedComponents: .hourAndMinute
                                 )
                                 .background(.white)
@@ -65,6 +68,7 @@ struct SpareTimeView: View {
                                     .font(.system(size: 13))
                             }
                         }
+                        .frame(maxWidth: .infinity)
                         .padding([.horizontal], 16)
                         .listRowSeparator(.hidden)
                         .swipeActions(allowsFullSwipe: false) {
@@ -76,20 +80,14 @@ struct SpareTimeView: View {
                         }
                         
                     }
-                    //                                            .onDelete { indexSet in
-                    //                                                listSpareTimes.remove(atOffsets: indexSet)
-                    //                                            }
                     .padding([.vertical], 12)
                     .background(Color("GrayColor"))
                     .mask(RoundedRectangle(cornerRadius: 8))
-                    //                    .padding(.bottom)
                     
                     
                     //Button Tambah Aktivitas Luang
                     Button{
                         addSpareTime()
-                        //                        submitSpareTime()
-                        //                        print("jml list \(listSpareTimes.count)")
                     }label: {
                         HStack (alignment: .center){
                             Spacer()
@@ -122,31 +120,10 @@ struct SpareTimeView: View {
                 }
                 .padding(.horizontal, 18)
                 
-                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isSaved) {
+                NavigationLink(destination: HomeView().navigationBarBackButtonHidden(), isActive: $isSaved) {
                 }
-                //                }
-                
-                //                Button{
-                //                    print("button")
-                //                    submitSpareTime()
-                //                    ActivityController2().addActivity()
-                //                }label:{
-                //                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
-                //                        Spacer()
-                //                        Text("Selesai")
-                //                            .fontWeight(.bold)
-                //                        Spacer()
-                //                    }
-                //                    .frame(height: 41)
-                //                    .background(Color("ButtonColor"))
-                //                    .foregroundColor(.white)
-                //                    .mask {
-                //                        RoundedRectangle(cornerRadius: 8)
-                //                    }
-                //                    .padding(.horizontal, 18)
-                //                }
-                
                 .navigationTitle(Text("Aktivitas Luang"))
+                .navigationBarTitleDisplayMode(.large)
                 .padding(.bottom, 8)
             }
         }
@@ -160,12 +137,13 @@ struct SpareTimeView: View {
     //Fungsi Nambah List SpareTime
     func addSpareTime(){
         spareTimeCount += 1
-        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
+        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas Luang \(spareTimeCount)")
         
         listSpareTimes.append(newSpareTime)
     }
     
     func submitSpareTime(){
+        isNewDownloaded = false
         for i in listSpareTimes{
             SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
             print ("\(i.startTime)")
@@ -173,7 +151,7 @@ struct SpareTimeView: View {
         }
         isSaved = true
         ScheduleController.shared.randomSchedule()
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        
     }
     
     struct AktivitasLuang_Previews: PreviewProvider {

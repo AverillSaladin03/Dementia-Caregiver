@@ -15,7 +15,7 @@ struct Spares: Hashable{
 }
 
 var listSpareTime: [Spares] = [
-    Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas 1")
+    Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas Luang 1")
 ]
 
 class SpareTimeController {
