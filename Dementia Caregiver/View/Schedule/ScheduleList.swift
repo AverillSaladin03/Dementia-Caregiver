@@ -45,9 +45,9 @@ struct ScheduleList: View {
                                 RoundedRectangle(cornerRadius: 10)
 //                                    .fill(Color("BrighterMainColor"))
                                     .fill(getColor(for: item))
-                                
+
                                     .frame(width: 343, height: 100)
-                                
+
                                 HStack(spacing: 10){
                                     Image((item.schedule_activity?.name)!)
                                         .resizable()
@@ -64,7 +64,7 @@ struct ScheduleList: View {
                                         Text(formatTime(item.end!))
                                             .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
                                             .font(.system(size: 11).monospaced())
-                                        
+
                                     }
 
                                     Spacer()
@@ -89,7 +89,7 @@ struct ScheduleList: View {
                                     Label("Edit", systemImage: "pencil")
                                 }
                                 .tint(.indigo)
-                                
+
                                 Button(role: .destructive) {
                                     deleteSpareIndex(i: offset)
                                 } label: {
@@ -102,9 +102,11 @@ struct ScheduleList: View {
                                 ScheduleEditView(schedule: item)
                             }
                             
-                        NavigationLink(destination: ActivityDetail()) {
+                        let category = item.schedule_activity?.category_activity as? Set<Category> ?? []
+                        NavigationLink(destination: ActivityDetail(activity: item.schedule_activity!, category: category.first!)) {
                             EmptyView()
-                        }.opacity(0)
+                        }
+                            .opacity(0)
                     }
                     
             }
