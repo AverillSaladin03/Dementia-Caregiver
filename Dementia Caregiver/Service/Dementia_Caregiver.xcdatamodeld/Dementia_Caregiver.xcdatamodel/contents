@@ -13,6 +13,7 @@
         <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="schedule_activity" inverseEntity="Schedule"/>
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionCategory" optional="YES" attributeType="String"/>
         <attribute name="icon" optional="YES" attributeType="URI"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="idCategory" optional="YES" attributeType="String"/>

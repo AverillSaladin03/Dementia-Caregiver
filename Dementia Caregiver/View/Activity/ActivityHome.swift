@@ -39,7 +39,7 @@ struct ActivityHome: View {
                         // CATEGORY LIST
                         HStack{
                             Text("Kategori")
-                                .font(.system(size: 17, weight: .semibold))
+                                .font(.system(size: 18, weight: .semibold))
                                 .padding()
                             Spacer()
                             NavigationLink(destination: ActivityCategory(), label: {
@@ -54,15 +54,15 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(categories, id: \.self) {element in
+                                ForEach(categories, id: \.self) {category in
                                     VStack{
-                                        NavigationLink(destination: ActivityCategory(), label: {
+                                        NavigationLink(destination: ActivityList(category: category), label: {
                                             VStack(alignment: .leading){
-                                                KategoriCardView(image: Image(element.idCategory ?? "Not Found"))
-                                                Text(element.name ?? "Not Found")
+                                                KategoriCardView(image: Image(category.idCategory ?? "Not Found"))
+                                                Text(category.name ?? "Not Found")
                                                     .multilineTextAlignment(.leading)
                                                     .frame(width: 80, alignment: .leading)
-                                                    .font(.system(size: 10))
+                                                    .font(.system(size: 13))
                                                     .foregroundColor(.black)
                                                 Spacer()
                                             }
@@ -93,7 +93,7 @@ struct ActivityHome: View {
                                                     Text(activity.name ?? "Not Found")
                                                         .multilineTextAlignment(.leading)
                                                         .lineLimit(2)
-                                                        .font(.system(size: 11))
+                                                        .font(.system(size: 13))
                                                         .foregroundColor(.black)
                                                         .padding(.top, -5)
                                                         .padding(.bottom, 10)
