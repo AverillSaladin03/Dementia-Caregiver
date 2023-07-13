@@ -17,48 +17,50 @@ struct ScheduleHome: View {
     @StateObject var vm = ScheduleController.shared
 
     var body: some View {
-        VStack {
-            HeaderView()
-            ScrollView(.horizontal){
-                HStack(spacing: 7){
-                    ForEach(taskModel.currentWeek, id: \.self) { day in
-                        VStack(spacing: 10){
-                            let dateString = taskModel.extractDate(date: day, format: "EEE")
-                            let firstCharacter = String(dateString.prefix(1))
-                            Text(firstCharacter)
-                            
-                            Text(taskModel.extractDate(date: day, format: "dd"))
-                        }
-                        .font(.system(size: 17).bold())
-                        .foregroundStyle(taskModel.isToday(date: day) ? .primary : .secondary)
-                        .foregroundColor(taskModel.isToday(date: day) ? .white : .black)
-                        .frame(width: 45, height: 85)
-                        .background(
-                            ZStack{
-                                if taskModel.isToday(date: day){
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .fill(Color("ButtonColor"))
-                                        .matchedGeometryEffect(id: "", in: animation)
-                                }
+        NavigationStack {
+            VStack {
+                HeaderView()
+                ScrollView(.horizontal){
+                    HStack(spacing: 7){
+                        ForEach(taskModel.currentWeek, id: \.self) { day in
+                            VStack(spacing: 10){
+                                let dateString = taskModel.extractDate(date: day, format: "EEE")
+                                let firstCharacter = String(dateString.prefix(1))
+                                Text(firstCharacter)
+                                
+                                Text(taskModel.extractDate(date: day, format: "dd"))
                             }
-                        )
-                        .contentShape(Capsule())
-                        .onTapGesture {
-                            withAnimation {
-                                taskModel.currentDay = day
-                                taskModel.loadData(dateSelect: day)
+                            .font(.system(size: 17).bold())
+                            .foregroundStyle(taskModel.isToday(date: day) ? .primary : .secondary)
+                            .foregroundColor(taskModel.isToday(date: day) ? .white : .black)
+                            .frame(width: 45, height: 85)
+                            .background(
+                                ZStack{
+                                    if taskModel.isToday(date: day){
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .fill(Color("ButtonColor"))
+                                            .matchedGeometryEffect(id: "", in: animation)
+                                    }
+                                }
+                            )
+                            .contentShape(Capsule())
+                            .onTapGesture {
+                                withAnimation {
+                                    taskModel.currentDay = day
+                                    taskModel.loadData(dateSelect: day)
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
-            }
-            .onAppear {
-                withAnimation {
-                    taskModel.loadData(dateSelect: taskModel.currentDay)
+                .onAppear {
+                    withAnimation {
+                        taskModel.loadData(dateSelect: taskModel.currentDay)
+                    }
                 }
+                ScheduleList()
             }
-            ScheduleList()
         }
        
     }
