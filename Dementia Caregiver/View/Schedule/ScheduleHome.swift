@@ -29,6 +29,10 @@ struct ScheduleHome: View {
                                 Text(firstCharacter)
                                 
                                 Text(taskModel.extractDate(date: day, format: "dd"))
+                                Circle()
+                                    .fill(Color("ButtonColor"))
+                                    .frame(width: 8, height: 8)
+                                    .opacity(taskModel.nowToday(date: day) ? 1 : 0)
                             }
                             .font(.system(size: 17).bold())
                             .foregroundStyle(taskModel.isToday(date: day) ? .primary : .secondary)
@@ -41,9 +45,11 @@ struct ScheduleHome: View {
                                             .fill(Color("ButtonColor"))
                                             .matchedGeometryEffect(id: "", in: animation)
                                     }
+                                    
+                                   
                                 }
                             )
-                            .contentShape(Capsule())
+//                            .contentShape(Capsule())
                             .onTapGesture {
                                 withAnimation {
                                     taskModel.currentDay = day

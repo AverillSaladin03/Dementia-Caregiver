@@ -61,4 +61,9 @@ class TaskModel: ObservableObject{
         return calendar.isDate(currentDay, inSameDayAs: date)
     }
     
+    func nowToday(date: Date)->Bool{
+        let calendar = Calendar.current
+        return calendar.isDate(Date.now, inSameDayAs: date)
+    }
+    
 }
