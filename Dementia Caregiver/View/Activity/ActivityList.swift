@@ -31,12 +31,10 @@ struct ActivityList: View {
                                 Text(activity.name!)
                                     .font(.system(size: 17, weight: .bold))
                                     .multilineTextAlignment(.leading)
-//                                Spacer()
                                 Text(activity.descriptionActivity!)
                                     .font(.system(size: 15, weight: .regular))
                                     .lineLimit(2)
                                     .multilineTextAlignment(.leading)
-//                                Spacer()
                                 HStack{
                                     Image(systemName: "clock")
                                     Text("\(String(activity.duration)) menit")

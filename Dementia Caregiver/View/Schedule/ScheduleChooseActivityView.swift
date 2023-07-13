@@ -16,6 +16,8 @@ struct ScheduleChooseActivityView: View {
     let activities = ActivityController2().getActivity()
     let categories = CategoryController().getAllCategory()
     
+    var activity: Activity?
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -100,9 +102,9 @@ struct ScheduleChooseActivityView: View {
     }
 }
 
-struct ScheduleAdd_Previews: PreviewProvider {
-    static var previews: some View {
-        let dummyActivity: Activity? = Activity()
-        return ScheduleChooseActivityView(selectedActivity: .constant(dummyActivity))
-    }
-}
+//struct ScheduleAdd_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let dummyActivity: Activity? = Activity()
+//        return ScheduleChooseActivityView(selectedActivity: .constant(dummyActivity), activity: activity)
+//    }
+//}
