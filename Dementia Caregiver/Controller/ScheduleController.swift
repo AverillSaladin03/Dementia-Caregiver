@@ -15,36 +15,36 @@ class ScheduleController: ObservableObject{
     let dataManager = DataManager.shared
     @Published var scheduleArray: [Schedule] = []
     
-//    init(){
-//
-//        getSchedule()
-//
-//    }
-//
-//        func getSchedule(){
-//            let request = NSFetchRequest<Schedule>(entityName: "Schedule")
-//
-//            do {
-//                scheduleArray = try dataManager.context.fetch(request)
-//            }catch {
-//                print("DEBUG: Some error occured while fetching")
-//            }
-//        }
+    //    init(){
+    //
+    //        getSchedule()
+    //
+    //    }
+    //
+    //        func getSchedule(){
+    //            let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+    //
+    //            do {
+    //                scheduleArray = try dataManager.context.fetch(request)
+    //            }catch {
+    //                print("DEBUG: Some error occured while fetching")
+    //            }
+    //        }
     
-//    func getSchedule(currentDate: Date)->[Schedule]{
-//        let request = NSFetchRequest<Schedule>(entityName: "Schedule")
-//
-//        let filter = NSPredicate(format: "date == %@", currentDate as NSDate)
-//        request.predicate = filter
-//
-//        do {
-//            scheduleArray = try dataManager.context.fetch(request)
-//            return scheduleArray
-//        }catch {
-//            print("DEBUG: Some error occured while fetching")
-//        }
-//        return []
-//    }
+    //    func getSchedule(currentDate: Date)->[Schedule]{
+    //        let request = NSFetchRequest<Schedule>(entityName: "Schedule")
+    //
+    //        let filter = NSPredicate(format: "date == %@", currentDate as NSDate)
+    //        request.predicate = filter
+    //
+    //        do {
+    //            scheduleArray = try dataManager.context.fetch(request)
+    //            return scheduleArray
+    //        }catch {
+    //            print("DEBUG: Some error occured while fetching")
+    //        }
+    //        return []
+    //    }
     
     func getSchedule(forDate date: Date) {
         let request = NSFetchRequest<Schedule>(entityName: "Schedule")
@@ -53,9 +53,13 @@ class ScheduleController: ObservableObject{
         request.sortDescriptors = [sort]
         
         let calendar = Calendar.current
-        let startDate = calendar.startOfDay(for: date)
+        let today = calendar.startOfDay(for: date)
+        let tommorow = calendar.date(byAdding: .day, value: 1, to: date)!
         
-        let predicate = NSPredicate(format: "date == %@ ", startDate as CVarArg)
+        let filterKey = "date"
+        
+        let predicate = NSPredicate(format: "\(filterKey) >= %@ AND \(filterKey) < %@", argumentArray:
+        [today, tommorow])
         request.predicate = predicate
         
         do {
@@ -67,7 +71,7 @@ class ScheduleController: ObservableObject{
 
     
     //1. get spare
-//    let getSpare = SpareTimeController.shared.getSpareTime()
+    //    let getSpare = SpareTimeController.shared.getSpareTime()
     
     //2. get + filter durasi
     let activityController = ActivityController2()
@@ -99,29 +103,29 @@ class ScheduleController: ObservableObject{
     //        }
     //    }
     
-//    func addSchedule(){
-//
-//        for spare in getSpare{
-//            let schedule = Schedule(context: dataManager.context)
-//            schedule.id = UUID()
-//            schedule.start = spare.start
-//            schedule.end = spare.end
-//            schedule.date = Date.now
-//            schedule.schedule_activity = activityController.getActivity().randomElement()
-//
-//            dataManager.save()
-//        }
-//    }
-//    //
-//    func addRandomSchedule(selecDate: Date){
-//        for _ in getSpare{
-//            let schedule = Schedule(context: dataManager.context)
-//            schedule.date = selecDate
-//            schedule.schedule_activity = activityController.getActivity().randomElement()
-//
-//            dataManager.save()
-//        }
-//    }
+    //    func addSchedule(){
+    //
+    //        for spare in getSpare{
+    //            let schedule = Schedule(context: dataManager.context)
+    //            schedule.id = UUID()
+    //            schedule.start = spare.start
+    //            schedule.end = spare.end
+    //            schedule.date = Date.now
+    //            schedule.schedule_activity = activityController.getActivity().randomElement()
+    //
+    //            dataManager.save()
+    //        }
+    //    }
+    //    //
+    //    func addRandomSchedule(selecDate: Date){
+    //        for _ in getSpare{
+    //            let schedule = Schedule(context: dataManager.context)
+    //            schedule.date = selecDate
+    //            schedule.schedule_activity = activityController.getActivity().randomElement()
+    //
+    //            dataManager.save()
+    //        }
+    //    }
     
     //        func addSchedule(){
     //
@@ -160,57 +164,64 @@ class ScheduleController: ObservableObject{
      1. getCurrentWeek
      2. getSpare
      3. Looping CurrentWeek
-        4. Looping Spare
-            5. GetRandomActivity
-                6. GetSchedule untuk tanggal di looping saat ini dan kemarin
-                    7. Cek apakah activity dari langkah 6 sama dengan hasil langkah 5
-                        -- kalau sama, ulang langkah 5
-                        -- kalah tidak sama, addSchedule
+     4. Looping Spare
+     5. GetRandomActivity
+     6. GetSchedule untuk tanggal di looping saat ini dan kemarin
+     7. Cek apakah activity dari langkah 6 sama dengan hasil langkah 5
+     -- kalau sama, ulang langkah 5
+     -- kalah tidak sama, addSchedule
      
      
      */
     
-        let getCurrentWeek = TaskModel().currentWeek
-        let getSpare = SpareTimeController.shared.getSpareTime()
+    let getCurrentWeek = TaskModel().currentWeek
+    let getSpare = SpareTimeController.shared.getSpareTime()
     //
-        func randomSchedule(){
-            for date in getCurrentWeek{
-                for spareSchedule in getSpare {
-                    let schedule = Schedule(context: dataManager.context)
-                    schedule.id = UUID()
-                    schedule.start = spareSchedule.start
-                    schedule.end = spareSchedule.end
-                    schedule.date = date
-                    
-                    var randomActivity: Activity?
-                    
-                    
-                    repeat {
-                        randomActivity = activityController.getActivity().randomElement()
-                    } while !checkActivitySchedule(forDate: date, newActivity: randomActivity ?? activityController.getActivity()[0])
-                    
-                    schedule.schedule_activity = randomActivity
-                    dataManager.save()
-                }
+    func randomSchedule(){
+        for date in getCurrentWeek{
+            for spareSchedule in getSpare {
+                let schedule = Schedule(context: dataManager.context)
+                schedule.id = UUID()
+                schedule.start = spareSchedule.start
+                schedule.end = spareSchedule.end
+                schedule.date = date
+                
+                var randomActivity: Activity?
+                
+                
+                repeat {
+                    randomActivity = activityController.getActivity().randomElement()
+                } while !checkActivitySchedule(forDate: date, newActivity: randomActivity ?? activityController.getActivity()[0])
+                
+                schedule.schedule_activity = randomActivity
+                dataManager.save()
             }
         }
-    
-    func subtractOneDayFromDate(_ date: Date) -> Date? {
-        let calendar = Calendar.current
-        let oneDayAgo = calendar.date(byAdding: .day, value: -1, to: date)
-        return oneDayAgo
     }
+    
+//    func subtractOneDayFromDate(_ date: Date) -> Date? {
+//        let calendar = Calendar.current
+//        let oneDayAgo = calendar.date(byAdding: .day, value: -1, to: date)
+//        return oneDayAgo
+//    }
     
     func checkActivitySchedule(forDate date: Date, newActivity: Activity) -> Bool {
         var previousSchedule: [Schedule] = []
         let request = NSFetchRequest<Schedule>(entityName: "Schedule")
         
-//        let calendar = Calendar.current
-//        let startDate = calendar.startOfDay(for: date)
+//        let yesterday = subtractOneDayFromDate(date)
+//
+//        let predicate = NSPredicate(format: "date == %@ OR date == %@ ", yesterday! as CVarArg, date as CVarArg)
+//        request.predicate = predicate
         
-        let yesterday = subtractOneDayFromDate(date)
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: date)
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: date)!
         
-        let predicate = NSPredicate(format: "date == %@ OR date == %@ ", yesterday! as CVarArg, date as CVarArg)
+        let filterKey = "date"
+        
+        let predicate = NSPredicate(format: "\(filterKey) == %@ AND \(filterKey) == %@", argumentArray:
+        [yesterday, today])
         request.predicate = predicate
         
         do {
@@ -227,23 +238,25 @@ class ScheduleController: ObservableObject{
     }
     
     
-    func addManualSchedule (date: Date, start: Date, end: Date, activity :Activity) {
+    func addManualSchedule (date: Date, start: Date, end: Date, activity: Activity) {
+        //        print("act: \(activity.name)")
         let newSchedule = Schedule(context: dataManager.context)
         
         //Time Conversion
-        let startResult = TimeConverter().timeConversion(start: start, end: end, date: date) [0]
-        let endResult = TimeConverter().timeConversion(start: start, end: end, date: date) [1]
+        //        let startResult = TimeConverter().timeConversion(start: start, end: end, date: date) [0]
+        //        let endResult = TimeConverter().timeConversion(start: start, end: end, date: date) [1]
         
         //Add to Core Data
         newSchedule.id = UUID()
         newSchedule.date = date
-        newSchedule.start = startResult
-        newSchedule.end = endResult
-//        newSchedule.addToSchedule_activity(activity)
-        
-        print ("New Schedule Saved")
-        //Save
+        newSchedule.start = start
+        newSchedule.end = end
+        newSchedule.schedule_activity = activity
+        //        print("newdate:\(date)")
         dataManager.save()
+        
+        //        getSchedule(forDate: date)
+        //        print(scheduleArray.count)
     }
     
     func editSchedule(editSchedule: Schedule, date: Date, start: Date, end: Date, activity: Activity){

@@ -72,9 +72,9 @@ struct ScheduleChooseActivityView: View {
                         }
                     }
                 }
-                .onAppear {
-                    selectedActivity = activities[0]
-                }
+//                .onAppear {
+//                    selectedActivity = activities[0]
+//                }
                 .listStyle(.plain)
                 
                 //                Button {
