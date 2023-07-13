@@ -37,10 +37,9 @@ struct ScheduleList: View {
             //            ForEach(vm.scheduleArray) { index in
             ForEach(Array(vm.scheduleArray.enumerated()), id: \.offset) { offset, item in
                 ZStack {
-                    
                     ZStack(alignment: .leading){
                         RoundedRectangle(cornerRadius: 10)
-                        //                                    .fill(Color("BrighterMainColor"))
+                        //.fill(Color("BrighterMainColor"))
                             .fill(getColor(for: item))
                         
                             .frame(width: 343, height: 100)
@@ -51,21 +50,21 @@ struct ScheduleList: View {
                                 .frame(width: 100, height: 100)
                                 .cornerRadius(10)
                             
-                            //                                Spacer()
+                            //Spacer()
                             VStack{
                                 Text(formatTime(item.start!))
                                     .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
-                                    .font(.system(size: 11).monospaced())
+                                    .font(.system(size: 12))
                                 Rectangle()
                                     .fill(item.start! < Date.now ? Color.white : Color.black)
                                     .frame(width: 1, height: 25)
                                 Text(formatTime(item.end!))
                                     .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
-                                    .font(.system(size: 11).monospaced())
+                                    .font(.system(size: 12))
                                 
                             }
                             
-                            //                                Spacer()
+                            //Spacer()
                             Text((item.schedule_activity?.name) ?? "")
                                 .font(.system(size: 17).bold())
                                 .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
@@ -86,13 +85,14 @@ struct ScheduleList: View {
                         } label: {
                             Label("Edit", systemImage: "pencil")
                         }
-                        .tint(.indigo)
+                        .tint(Color("ButtonColor"))
                         
                         Button(role: .destructive) {
                             deleteSpareIndex(i: offset)
                         } label: {
                             Label("Hapus", systemImage: "trash.fill")
                         }
+                        .tint(.red)
                     }
                     .sheet(item: $selectedSchedule) {
                         vm.getSchedule(forDate: selectedDate)
