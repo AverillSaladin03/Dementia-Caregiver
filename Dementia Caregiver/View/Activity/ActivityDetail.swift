@@ -13,18 +13,23 @@ struct ActivityDetail: View {
     let categories = CategoryController().getAllCategory()
     
     var activity:Activity
-    var category:Category
+    var category:Category?
+    
+    @State private var showSheet = false
     
     var body: some View {
         ScrollView{
             VStack{
                 Image(activity.name!)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 400, height: 220, alignment: .center)
+                    .cornerRadius(0)
+                    .padding()
                 VStack(alignment: .leading){
                     Text(activity.name!)
                         .font(.system(size: 25, weight: .bold))
-                    Text(category.name!)
+                    Text(category!.name!)
                     HStack{
                         Image(systemName: "clock")
                         Text("\(String(activity.duration)) menit")
@@ -40,7 +45,32 @@ struct ActivityDetail: View {
                     .padding(.top)
                     Text(activity.tips!)
                 }
-                .padding(.horizontal, 25)
+                .padding(.horizontal, 40)
+                
+                Button {
+                    showSheet.toggle()
+                } label: {
+                    HStack (alignment: .center){
+                        Spacer()
+                        
+                        Text("Tambah Aktivitas")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    .frame(width: 300, height: 41)
+                    .background(Color("ButtonColor"))
+                    .foregroundColor(.white)
+                    .mask {
+                        RoundedRectangle(cornerRadius: 8)
+                    }
+                    
+                }
+                .padding(.vertical, 20)
+                .sheet(isPresented: $showSheet) {
+                    ScheduleAddView(selectedActivity: activity)
+                        .preferredColorScheme(.light)
+                }
+                
             }
         }
         .accentColor(Color("ButtonColor"))

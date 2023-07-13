@@ -15,6 +15,7 @@ struct PageFirst: View {
                     .resizable()
                     .scaledToFit()
                     .ignoresSafeArea()
+                    .offset(y: -30)
                 
                 VStack {
                     Section {
@@ -31,7 +32,7 @@ struct PageFirst: View {
                         .padding(.trailing, 35)
                         .padding(.bottom)
                     } header: {
-                        NavigationLink(destination: PageThird().navigationBarBackButtonHidden(), label: {
+                        NavigationLink(destination: FormView().navigationBarBackButtonHidden(), label: {
                             Text("Lewati")
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)

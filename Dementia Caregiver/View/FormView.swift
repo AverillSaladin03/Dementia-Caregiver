@@ -128,12 +128,7 @@ struct FormView: View {
     
     @State private var isActive = false
     
-    
-    
-    
-    
     var body: some View {
-        
         NavigationView{
             ZStack{
                 ScrollView{
@@ -170,10 +165,7 @@ struct FormView: View {
                             }
                             .padding(.top, 5)
                             .padding(.bottom)
-                        
-                            
                         }
-                        
                         
                         Group{
                             Text("Level Demensia")
@@ -207,8 +199,6 @@ struct FormView: View {
                             }
                             .padding(.top, 5)
                             .padding(.bottom)
-                            
-
                         }
                         
                         Group{
@@ -225,20 +215,36 @@ struct FormView: View {
                             }
                             .frame(height: 200)
                         }
-                        
                         Spacer()
                     }
-                    
+                    if (selectedItems.count > 2) {
+                        Button(action: {
+                            isActive = true
+                            newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                            CategoryController().addCategory()
+                            ActivityController2().addActivityFromJSON(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
+                            
+    //      print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+                        }) {
+                            HStack (alignment: .center){
+                                Spacer()
 
-                    
-                    Button(action: {
-                        isActive = true
-                        newODDController.addODD(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        CategoryController().addCategory()
-                        ActivityController2().addActivityFromJSON(demLevel: selectedLevel, disLevel: selectedDisability, hobbies: selectedItems)
-                        
-                        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-                    }) {
+                                Text("Selesai")
+                                    .fontWeight(.bold)
+
+                                Spacer()
+                            }
+                            .frame(height: 41)
+                            .background(Color("ButtonColor"))
+                            .foregroundColor(.white)
+                            .mask {
+                                RoundedRectangle(cornerRadius: 8)
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.top, 16)
+                        }
+                    }
+                    else {
                         HStack (alignment: .center){
                             Spacer()
 
@@ -248,24 +254,18 @@ struct FormView: View {
                             Spacer()
                         }
                         .frame(height: 41)
-                        .background(Color("ButtonColor"))
+                        .background(.gray)
                         .foregroundColor(.white)
                         .mask {
                             RoundedRectangle(cornerRadius: 8)
                         }
                         .padding(.horizontal, 16)
+                        .padding(.top, 16)
                     }
                     
                     NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden(), isActive: $isActive) {
                         EmptyView()
                     }
-                    
-//                    Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-//
-//                        ForEach(ODDs, id: \.self) { item in
-//                            Text("Item at \(item.hobbies!)")
-//                        }
-                    
                 }
                 .padding(.leading, 20)
                 .padding(.trailing, 20)

@@ -184,8 +184,11 @@ class ScheduleController: ObservableObject{
                 let endResult = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [1]
                 let schedule = Schedule(context: dataManager.context)
                 schedule.id = UUID()
-                schedule.start = startResult
-                schedule.end = endResult
+
+                let showStart = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [0]
+                let showEnd = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [1]
+                schedule.start = showStart
+                schedule.end = showEnd
                 schedule.date = date
                 
                 var randomActivity: Activity?

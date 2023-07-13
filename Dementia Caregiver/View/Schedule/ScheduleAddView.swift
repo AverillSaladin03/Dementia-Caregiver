@@ -19,6 +19,10 @@ struct ScheduleAddView: View {
     
     @State var selectedActivity : Activity?
     
+    let dateFormatterToTime = DateFormatter()
+    @State var formattedEndTime: String = ""
+    let calendar = Calendar.current
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -33,7 +37,9 @@ struct ScheduleAddView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     if selectedActivity != nil {
                         Button("Tambah") {
-                            ScheduleController.shared.addManualSchedule(date: currentDate, start: startTime, end: endTime, activity: selectedActivity!)
+                            let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
+                            let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
+                            ScheduleController.shared.addManualSchedule(date: currentDate, start: showStart, end: showEnd, activity: selectedActivity!)
                             dismiss()
                         }
                         .foregroundColor(Color("ButtonColor"))
@@ -50,9 +56,12 @@ struct ScheduleAddView: View {
                 DatePicker("Tanggal:", selection: $currentDate, displayedComponents: .date)
                 Divider()
                 DatePicker("Mulai:", selection: $startTime, displayedComponents: .hourAndMinute)
+//                    .onAppear(){
+//                        UIDatePicker.appearance ().minuteInterval = 5
+//                    }
+                    
                 Divider()
-                DatePicker("Berakhir:", selection: $endTime, displayedComponents: .hourAndMinute)
-                
+                DatePicker("Berakhir:", selection: $endTime, in:endTime...endTime , displayedComponents: .hourAndMinute)
                 HStack {
                     Text("Aktivitas:")
                         .foregroundColor(.black)
@@ -77,8 +86,10 @@ struct ScheduleAddView: View {
                     .sheet(isPresented: $showSheet) {
                         ScheduleChooseActivityView(selectedActivity: $selectedActivity)
                             .preferredColorScheme(.light)
+                    }.onChange(of: selectedActivity){ _ in
+//                        print("change:\(selectedActivity)")
+                        endTime = calendar.date(byAdding: .minute, value: Int((selectedActivity?.duration)!), to: startTime)!
                     }
-                    
                 }
                 .padding(.top, 30)
                 

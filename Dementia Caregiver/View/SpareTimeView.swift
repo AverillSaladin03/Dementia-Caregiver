@@ -18,6 +18,7 @@ struct SpareTimeView: View {
     @State var spareTimeCount: Int = 1
     @State var isSaved = false
     
+    @AppStorage("userFlag") var isNewDownloaded = false
     let dateFormatter = DateFormatter()
     
     let newActivityContoller = ActivityController2()
@@ -39,16 +40,20 @@ struct SpareTimeView: View {
                             Text(listSpareTimes[i].name)
                                 .fontWeight(.bold)
                                 .font(.system(size: 17))
+                            Spacer()
                             VStack {
                                 DatePicker(
-                                    "Tes",
+                                    "Mulai",
                                     selection: $listSpareTimes[i].startTime,
                                     displayedComponents: .hourAndMinute
                                 )
-//                                .environment(\.timeZone, TimeZone(identifier: "id_ID")!)
                                 .background(.white)
                                 .cornerRadius(12)
                                 .labelsHidden()
+                                .onAppear(){
+                                    UIDatePicker.appearance ().minuteInterval = 5
+                                }
+                                
                                 Text("Mulai")
                                     .font(.system(size: 13))
                             }
@@ -56,15 +61,21 @@ struct SpareTimeView: View {
                                 DatePicker(
                                     "Selesai",
                                     selection: $listSpareTimes[i].endTime,
+                                    in: listSpareTimes[i].startTime...,
                                     displayedComponents: .hourAndMinute
                                 )
                                 .background(.white)
                                 .cornerRadius(12)
                                 .labelsHidden()
+                                .onAppear(){
+                                    UIDatePicker.appearance ().minuteInterval = 5
+                                }
+                                
                                 Text("Selesai")
                                     .font(.system(size: 13))
                             }
                         }
+                        .frame(maxWidth: .infinity)
                         .padding([.horizontal], 16)
                         .listRowSeparator(.hidden)
                         .swipeActions(allowsFullSwipe: false) {
@@ -76,20 +87,14 @@ struct SpareTimeView: View {
                         }
                         
                     }
-                    //                                            .onDelete { indexSet in
-                    //                                                listSpareTimes.remove(atOffsets: indexSet)
-                    //                                            }
                     .padding([.vertical], 12)
                     .background(Color("GrayColor"))
                     .mask(RoundedRectangle(cornerRadius: 8))
-                    //                    .padding(.bottom)
                     
                     
                     //Button Tambah Aktivitas Luang
                     Button{
                         addSpareTime()
-                        //                        submitSpareTime()
-                        //                        print("jml list \(listSpareTimes.count)")
                     }label: {
                         HStack (alignment: .center){
                             Spacer()
@@ -105,50 +110,46 @@ struct SpareTimeView: View {
                 .padding(.vertical)
                 .listStyle(PlainListStyle())
                 
-                
-                Button{
-                    submitSpareTime()
-                }label:{
-                    Spacer()
-                    Text("Selesai")
-                        .fontWeight(.bold)
-                    Spacer()
+                if (listSpareTimes.count != 0) {
+                    Button{
+                        submitSpareTime()
+                    }label:{
+                        Spacer()
+                        Text("Selesai")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    .frame(height: 41)
+                    .background(Color("ButtonColor"))
+                    .foregroundColor(.white)
+                    .mask {
+                        RoundedRectangle(cornerRadius: 8)
+                    }
+                    .padding(.horizontal, 18)
+                    
+                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    }
+                    .navigationTitle(Text("Aktivitas Luang"))
+                    .navigationBarTitleDisplayMode(.large)
+                    .padding(.bottom, 8)
+                } else {
+                    HStack (alignment: .center){
+                        Spacer()
+
+                        Text("Selesai")
+                            .fontWeight(.bold)
+
+                        Spacer()
+                    }
+                    .frame(height: 41)
+                    .background(.gray)
+                    .foregroundColor(.white)
+                    .mask {
+                        RoundedRectangle(cornerRadius: 8)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
                 }
-                .frame(height: 41)
-                .background(Color("ButtonColor"))
-                .foregroundColor(.white)
-                .mask {
-                    RoundedRectangle(cornerRadius: 8)
-                }
-                .padding(.horizontal, 18)
-                
-                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isSaved) {
-                    EmptyView()
-                }
-                //                }
-                
-                //                Button{
-                //                    print("button")
-                //                    submitSpareTime()
-                //                    ActivityController2().addActivity()
-                //                }label:{
-                //                    NavigationLink(destination: ContentView(listSpareTimes: $listSpareTimes).navigationBarBackButtonHidden(), isActive: $isSaved) {
-                //                        Spacer()
-                //                        Text("Selesai")
-                //                            .fontWeight(.bold)
-                //                        Spacer()
-                //                    }
-                //                    .frame(height: 41)
-                //                    .background(Color("ButtonColor"))
-                //                    .foregroundColor(.white)
-                //                    .mask {
-                //                        RoundedRectangle(cornerRadius: 8)
-                //                    }
-                //                    .padding(.horizontal, 18)
-                //                }
-                
-                .navigationTitle(Text("Aktivitas Luang"))
-                .padding(.bottom, 8)
             }
         }
     }
@@ -167,6 +168,7 @@ struct SpareTimeView: View {
     }
     
     func submitSpareTime(){
+        isNewDownloaded = false
         for i in listSpareTimes{
             SpareTimeController.shared.addSpareTime(start: i.startTime, end: i.endTime)
             print ("\(i.startTime)")
@@ -174,7 +176,7 @@ struct SpareTimeView: View {
         }
         isSaved = true
         ScheduleController.shared.randomSchedule()
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        
     }
     
     struct AktivitasLuang_Previews: PreviewProvider {

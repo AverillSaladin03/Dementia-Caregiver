@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ActivityHome: View {
-    //    @FetchRequest(sortDescriptors: []) var activity: FetchedResults<Activity>
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Category.name, ascending: true)], animation: .default) private var cats: FetchedResults<Category>
     
     let activities = ActivityController2().getActivity()
     let categories = CategoryController().getAllCategory()
+    //    var category:Category
     
     var body: some View {
         NavigationView {
@@ -25,13 +25,15 @@ struct ActivityHome: View {
                         
                         ScrollView (.horizontal, showsIndicators: false){
                             HStack{
-                                ForEach(activities.prefix(3)) {activity in
-                                    NavigationLink(destination: ActivityCategory(), label: {
-                                        AktivitasTerbaruCardView(image: Image(activity.name ?? "contoh"))
+                                let recommendationActivity = activities
+                                ForEach(recommendationActivity.shuffled().prefix(3)) {activity in
+                                    var choosenActivityCategory = (activity.category_activity?.allObjects)![0] as! Category
+                                    NavigationLink(destination: ActivityDetail(activity: activity, category: choosenActivityCategory), label: {
+                                        RecommendationActivityCardView(image: Image(activity.name ?? "contoh"), activity: activity)
                                     }
                                     )}
                             }
-                            .padding(.leading, 15)
+                            .padding(.horizontal, 15)
                         }
                         
                         // CATEGORY LIST
@@ -69,7 +71,7 @@ struct ActivityHome: View {
                                     }
                                 }
                             }
-                            .padding(.leading, 15)
+                            .padding(.horizontal, 15)
                         }
                         .padding(.top, -10)
                         .padding(.bottom, 5)
@@ -80,6 +82,7 @@ struct ActivityHome: View {
                                 Text(category.name ?? "Not Found")
                                     .font(.system(size: 18, weight: .semibold))
                                     .foregroundColor(.black)
+                                    .padding(.leading, 15)
                                 ScrollView (.horizontal, showsIndicators: false){
                                     HStack{
                                         let newActivities = category.category_activity?.allObjects as? [Activity]
@@ -94,16 +97,18 @@ struct ActivityHome: View {
                                                         .foregroundColor(.black)
                                                         .padding(.top, -5)
                                                         .padding(.bottom, 10)
-                                                        
+                                                    
                                                     Spacer()
-                                                }.frame(width: 104)
+                                                }
+                                                .frame(width: 104)
                                             }
                                         }
                                     }
+                                    .padding(.horizontal, 15)
                                 }
                             }
                         }
-                        .padding()
+                        //                        .padding()
                         .navigationTitle("Aktivitas")
                     }
                 }
@@ -113,13 +118,16 @@ struct ActivityHome: View {
         }
     }
     
-    struct AktivitasTerbaruCardView: View{
+    struct RecommendationActivityCardView: View{
         let image: Image
+        let activity:Activity
         var body: some View {
             image
                 .resizable()
-                .frame(width: 350, height: 210, alignment: .leading)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 350, height: 210, alignment: .center)
                 .cornerRadius(10)
+                .overlay(ImageOverlay(activity: activity), alignment: .bottomLeading)
         }
     }
     
@@ -146,9 +154,35 @@ struct ActivityHome: View {
         }
     }
     
-    struct ActivityHome_Previews: PreviewProvider {
-        static var previews: some View {
-            ActivityHome()
+    struct ImageOverlay: View {
+        var activity:Activity
+        let gradient = Gradient(colors: [.clear, .black])
+        var body: some View {
+            ZStack{
+                LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom)
+                    .cornerRadius(10)
+                VStack(alignment: .leading){
+                    Spacer()
+                    Text(activity.name!)
+                        .font(.system(size:25, weight: .bold))
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+                    Text(activity.descriptionActivity!)
+                        .font(.system(size:15, weight: .medium))
+                        .foregroundColor(.white)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(16)
+                .cornerRadius(10)
+            }
         }
     }
 }
+
+//    struct ActivityHome_Previews: PreviewProvider {
+//        static var previews: some View {
+//            ActivityHome()
+//        }
+//    }
+//}
