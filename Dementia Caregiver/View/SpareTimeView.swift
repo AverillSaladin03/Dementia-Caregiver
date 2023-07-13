@@ -110,28 +110,46 @@ struct SpareTimeView: View {
                 .padding(.vertical)
                 .listStyle(PlainListStyle())
                 
-                
-                Button{
-                    submitSpareTime()
-                }label:{
-                    Spacer()
-                    Text("Selesai")
-                        .fontWeight(.bold)
-                    Spacer()
+                if (listSpareTimes.count != 0) {
+                    Button{
+                        submitSpareTime()
+                    }label:{
+                        Spacer()
+                        Text("Selesai")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    .frame(height: 41)
+                    .background(Color("ButtonColor"))
+                    .foregroundColor(.white)
+                    .mask {
+                        RoundedRectangle(cornerRadius: 8)
+                    }
+                    .padding(.horizontal, 18)
+                    
+                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(), isActive: $isSaved) {
+                    }
+                    .navigationTitle(Text("Aktivitas Luang"))
+                    .navigationBarTitleDisplayMode(.large)
+                    .padding(.bottom, 8)
+                } else {
+                    HStack (alignment: .center){
+                        Spacer()
+
+                        Text("Selesai")
+                            .fontWeight(.bold)
+
+                        Spacer()
+                    }
+                    .frame(height: 41)
+                    .background(.gray)
+                    .foregroundColor(.white)
+                    .mask {
+                        RoundedRectangle(cornerRadius: 8)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
                 }
-                .frame(height: 41)
-                .background(Color("ButtonColor"))
-                .foregroundColor(.white)
-                .mask {
-                    RoundedRectangle(cornerRadius: 8)
-                }
-                .padding(.horizontal, 18)
-                
-                NavigationLink(destination: HomeView().navigationBarBackButtonHidden(), isActive: $isSaved) {
-                }
-                .navigationTitle(Text("Aktivitas Luang"))
-                .navigationBarTitleDisplayMode(.large)
-                .padding(.bottom, 8)
             }
         }
     }
