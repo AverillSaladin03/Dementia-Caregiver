@@ -70,7 +70,7 @@ struct ScheduleList: View {
                                 .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
                                 .padding(.trailing)
                             
-                            //                                Spacer()
+                                                            Spacer()
                             //                                Spacer()
                         }
                         .foregroundColor(.white)
