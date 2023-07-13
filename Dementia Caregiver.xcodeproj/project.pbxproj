@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ABE24C42A5E4AC3007AFC12 /* PageFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE24C32A5E4AC3007AFC12 /* PageFirst.swift */; };
+		5ABE24C62A5E4AD1007AFC12 /* PageSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE24C52A5E4AD1007AFC12 /* PageSecond.swift */; };
+		5ABE24C82A5E4AEA007AFC12 /* PageThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE24C72A5E4AEA007AFC12 /* PageThird.swift */; };
+		5ABE24CA2A5E4B05007AFC12 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE24C92A5E4B05007AFC12 /* OnBoardingView.swift */; };
 		6113B8CF2A4E802A00557894 /* ActivityController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6113B8CE2A4E802A00557894 /* ActivityController2.swift */; };
 		6113B8D12A4E85DA00557894 /* ActivityData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6113B8D02A4E85DA00557894 /* ActivityData.json */; };
 		6122826F2A456C77003FAD92 /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6122826E2A456C77003FAD92 /* DummyView.swift */; };
@@ -58,6 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5ABE24BF2A5E4977007AFC12 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABE24C02A5E4977007AFC12 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABE24C12A5E4977007AFC12 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABE24C32A5E4AC3007AFC12 /* PageFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFirst.swift; sourceTree = "<group>"; };
+		5ABE24C52A5E4AD1007AFC12 /* PageSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSecond.swift; sourceTree = "<group>"; };
+		5ABE24C72A5E4AEA007AFC12 /* PageThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThird.swift; sourceTree = "<group>"; };
+		5ABE24C92A5E4B05007AFC12 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		6113B8CE2A4E802A00557894 /* ActivityController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController2.swift; sourceTree = "<group>"; };
 		6113B8D02A4E85DA00557894 /* ActivityData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivityData.json; sourceTree = "<group>"; };
 		6122826E2A456C77003FAD92 /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
@@ -73,14 +84,11 @@
 		8408DC702A4BCEA200EF7EC9 /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		8408DC722A4BD0BF00EF7EC9 /* SpareTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareTimeController.swift; sourceTree = "<group>"; };
 		8410739F2A5AAD330070A905 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
-		84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Dementia Caregiver.app"; path = "/Users/yusronalfauzi/Documents/Apple UC/MC2/Dementia-Caregiver/build/Debug-iphoneos/Dementia Caregiver.app"; sourceTree = "<absolute>"; };
 		84C73E362A4136BB00512DD9 /* Dementia_CaregiverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverApp.swift; sourceTree = "<group>"; };
 		84C73E3A2A4136BC00512DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C73E3D2A4136BC00512DD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84C73E442A4136BC00512DD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C73E492A4136BD00512DD9 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Dementia CaregiverTests.xctest"; path = "/Users/yusronalfauzi/Documents/Apple UC/MC2/Dementia-Caregiver/build/Debug-iphoneos/Dementia CaregiverTests.xctest"; sourceTree = "<absolute>"; };
 		84C73E4D2A4136BD00512DD9 /* Dementia_CaregiverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverTests.swift; sourceTree = "<group>"; };
-		84C73E532A4136BD00512DD9 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Dementia CaregiverUITests.xctest"; path = "/Users/yusronalfauzi/Documents/Apple UC/MC2/Dementia-Caregiver/build/Debug-iphoneos/Dementia CaregiverUITests.xctest"; sourceTree = "<absolute>"; };
 		84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITests.swift; sourceTree = "<group>"; };
 		84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84E535E32A43E22E00FF119F /* SpareTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareTimeView.swift; sourceTree = "<group>"; };
@@ -120,6 +128,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5ABE24C22A5E4AAD007AFC12 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE24C52A5E4AD1007AFC12 /* PageSecond.swift */,
+				5ABE24C32A5E4AC3007AFC12 /* PageFirst.swift */,
+				5ABE24C72A5E4AEA007AFC12 /* PageThird.swift */,
+				5ABE24C92A5E4B05007AFC12 /* OnBoardingView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		8408DC6B2A4BCE7C00EF7EC9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +174,9 @@
 				84C73E352A4136BB00512DD9 /* Dementia Caregiver */,
 				84C73E4C2A4136BD00512DD9 /* Dementia CaregiverTests */,
 				84C73E562A4136BD00512DD9 /* Dementia CaregiverUITests */,
+				5ABE24BF2A5E4977007AFC12 /* Dementia Caregiver.app */,
+				5ABE24C02A5E4977007AFC12 /* Dementia CaregiverTests.xctest */,
+				5ABE24C12A5E4977007AFC12 /* Dementia CaregiverUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +228,7 @@
 				6122826E2A456C77003FAD92 /* DummyView.swift */,
 				84E535E32A43E22E00FF119F /* SpareTimeView.swift */,
 				A14964462A43CA4300C62D06 /* ContentView.swift */,
+				5ABE24C22A5E4AAD007AFC12 /* OnBoarding */,
 				A149644D2A43CA8100C62D06 /* Schedule */,
 				A149644C2A43CA7700C62D06 /* Activity */,
 			);
@@ -263,7 +286,7 @@
 			);
 			name = "Dementia Caregiver";
 			productName = "Dementia Caregiver";
-			productReference = 84C73E332A4136BB00512DD9 /* Dementia Caregiver.app */;
+			productReference = 5ABE24BF2A5E4977007AFC12 /* Dementia Caregiver.app */;
 			productType = "com.apple.product-type.application";
 		};
 		84C73E482A4136BD00512DD9 /* Dementia CaregiverTests */ = {
@@ -281,7 +304,7 @@
 			);
 			name = "Dementia CaregiverTests";
 			productName = "Dementia CaregiverTests";
-			productReference = 84C73E492A4136BD00512DD9 /* Dementia CaregiverTests.xctest */;
+			productReference = 5ABE24C02A5E4977007AFC12 /* Dementia CaregiverTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		84C73E522A4136BD00512DD9 /* Dementia CaregiverUITests */ = {
@@ -299,7 +322,7 @@
 			);
 			name = "Dementia CaregiverUITests";
 			productName = "Dementia CaregiverUITests";
-			productReference = 84C73E532A4136BD00512DD9 /* Dementia CaregiverUITests.xctest */;
+			productReference = 5ABE24C12A5E4977007AFC12 /* Dementia CaregiverUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -381,23 +404,24 @@
 				6178F9FF2A43FC6C00CBAB1D /* FormView.swift in Sources */,
 				61DFEE322A5BC95800919EF5 /* TaskModel.swift in Sources */,
 				6122826F2A456C77003FAD92 /* DummyView.swift in Sources */,
-
-				8408DC6D2A4BCE8B00EF7EC9 /* ActivityController.swift in Sources */,
 				A12F3C642A5D016F008163BD /* ScheduleEditView.swift in Sources */,
-
 				84E535E42A43E22E00FF119F /* SpareTimeView.swift in Sources */,
 				6DC112842A5657CE008FD7F7 /* CategoryController.swift in Sources */,
 				8408DC6F2A4BCE9800EF7EC9 /* ODDController.swift in Sources */,
 				A14964532A43EADE00C62D06 /* ScheduleAddView.swift in Sources */,
 				A1C093092A444B800037429A /* ScheduleChooseActivityView.swift in Sources */,
+				5ABE24CA2A5E4B05007AFC12 /* OnBoardingView.swift in Sources */,
 				A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */,
 				8408DBF72A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
 				8408DC732A4BD0BF00EF7EC9 /* SpareTimeController.swift in Sources */,
 				A14964492A43CA5900C62D06 /* ScheduleList.swift in Sources */,
 				8408DC712A4BCEA200EF7EC9 /* ScheduleController.swift in Sources */,
+				5ABE24C62A5E4AD1007AFC12 /* PageSecond.swift in Sources */,
 				6D91A32D2A49284C0034B0A3 /* ActivityList.swift in Sources */,
+				5ABE24C82A5E4AEA007AFC12 /* PageThird.swift in Sources */,
 				6113B8CF2A4E802A00557894 /* ActivityController2.swift in Sources */,
 				A149644B2A43CA7100C62D06 /* ActivityHome.swift in Sources */,
+				5ABE24C42A5E4AC3007AFC12 /* PageFirst.swift in Sources */,
 				A14964472A43CA4300C62D06 /* ContentView.swift in Sources */,
 				A143F9FB2A4A89BB0020C592 /* DataManager.swift in Sources */,
 				6D91A32F2A4941CC0034B0A3 /* ActivityDetail.swift in Sources */,
