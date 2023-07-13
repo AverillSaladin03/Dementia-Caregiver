@@ -87,9 +87,6 @@
 		84C73E572A4136BD00512DD9 /* Dementia_CaregiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITests.swift; sourceTree = "<group>"; };
 		84C73E592A4136BD00512DD9 /* Dementia_CaregiverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dementia_CaregiverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84DB52442A5E5494008785C3 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		84DB52462A5FA13D008785C3 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84DB52472A5FA13D008785C3 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84DB52482A5FA13D008785C3 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E535E32A43E22E00FF119F /* SpareTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareTimeView.swift; sourceTree = "<group>"; };
 		A12F3C632A5D016F008163BD /* ScheduleEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEditView.swift; sourceTree = "<group>"; };
 		A143F9FA2A4A89BB0020C592 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -99,11 +96,9 @@
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
 		A14964522A43EADE00C62D06 /* ScheduleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddView.swift; sourceTree = "<group>"; };
 		A1C093082A444B800037429A /* ScheduleChooseActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChooseActivityView.swift; sourceTree = "<group>"; };
-		A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddManual.swift; sourceTree = "<group>"; };
 		A1E926A82A5F9AD100BAD1E1 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E926A92A5F9AD100BAD1E1 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E926AA2A5F9AD100BAD1E1 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,7 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Dementia Caregiver/Preview Content\"";
-				DEVELOPMENT_TEAM = 2KW4763FM3;
+				DEVELOPMENT_TEAM = VW59CHPRG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dailytia;
@@ -618,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Dementia Caregiver/Preview Content\"";
-				DEVELOPMENT_TEAM = 2KW4763FM3;
+				DEVELOPMENT_TEAM = VW59CHPRG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dailytia;
