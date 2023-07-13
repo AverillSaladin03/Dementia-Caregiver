@@ -104,8 +104,8 @@ struct ScheduleAddView: View {
 }
 
 
-struct ScheduleAddView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleAddView()
-    }
-}
+//struct ScheduleAddView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScheduleAddView()
+//    }
+//}
