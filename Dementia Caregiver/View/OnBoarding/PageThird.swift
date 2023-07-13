@@ -15,6 +15,7 @@ struct PageThird: View {
                     .resizable()
                     .scaledToFit()
                     .ignoresSafeArea()
+                    .offset(y: -30)
 
                 VStack(alignment: .leading, spacing: 10){
                     Spacer()
