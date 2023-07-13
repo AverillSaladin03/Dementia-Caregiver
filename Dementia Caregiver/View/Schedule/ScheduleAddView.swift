@@ -23,10 +23,6 @@ struct ScheduleAddView: View {
     @State var formattedEndTime: String = ""
     let calendar = Calendar.current
     
-    init(){
-        dateFormatterToTime.dateFormat = "HH:mm"
-    }
-    
     var body: some View {
         NavigationStack {
             VStack{
