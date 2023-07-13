@@ -15,6 +15,7 @@ struct PageFirst: View {
                     .resizable()
                     .scaledToFit()
                     .ignoresSafeArea()
+                    .offset(y: -30)
                 
                 VStack {
                     Section {

@@ -41,7 +41,6 @@
 		A149644F2A43CB3100C62D06 /* ScheduleHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149644E2A43CB3100C62D06 /* ScheduleHome.swift */; };
 		A14964532A43EADE00C62D06 /* ScheduleAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14964522A43EADE00C62D06 /* ScheduleAddView.swift */; };
 		A1C093092A444B800037429A /* ScheduleChooseActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C093082A444B800037429A /* ScheduleChooseActivityView.swift */; };
-		A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +99,6 @@
 		A149644E2A43CB3100C62D06 /* ScheduleHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHome.swift; sourceTree = "<group>"; };
 		A14964522A43EADE00C62D06 /* ScheduleAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddView.swift; sourceTree = "<group>"; };
 		A1C093082A444B800037429A /* ScheduleChooseActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleChooseActivityView.swift; sourceTree = "<group>"; };
-		A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddManual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,7 +262,6 @@
 				A14964522A43EADE00C62D06 /* ScheduleAddView.swift */,
 				A12F3C632A5D016F008163BD /* ScheduleEditView.swift */,
 				A1C093082A444B800037429A /* ScheduleChooseActivityView.swift */,
-				A1D10B7D2A444F580057E753 /* ScheduleAddManual.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -411,7 +408,6 @@
 				A14964532A43EADE00C62D06 /* ScheduleAddView.swift in Sources */,
 				A1C093092A444B800037429A /* ScheduleChooseActivityView.swift in Sources */,
 				5ABE24CA2A5E4B05007AFC12 /* OnBoardingView.swift in Sources */,
-				A1D10B7E2A444F580057E753 /* ScheduleAddManual.swift in Sources */,
 				8408DBF72A49288300EF7EC9 /* Dementia_Caregiver.xcdatamodeld in Sources */,
 				8408DC732A4BD0BF00EF7EC9 /* SpareTimeController.swift in Sources */,
 				A14964492A43CA5900C62D06 /* ScheduleList.swift in Sources */,

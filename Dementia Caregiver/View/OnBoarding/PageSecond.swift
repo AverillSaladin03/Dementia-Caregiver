@@ -15,6 +15,7 @@ struct PageSecond: View {
                     .resizable()
                     .scaledToFit()
                     .ignoresSafeArea()
+                    .offset(y: -30)
                 VStack {
                     Section {
                         VStack(alignment: .leading, spacing: 10){
