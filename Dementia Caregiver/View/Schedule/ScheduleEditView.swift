@@ -86,6 +86,7 @@ struct ScheduleEditView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .sheet(isPresented: $showSheet) {
                         ScheduleChooseActivityView(selectedActivity: $selectedActivity)
+                            .preferredColorScheme(.light)
                     }
                     
                 }
