@@ -32,6 +32,7 @@ struct PageThird: View {
                     NavigationLink(destination: FormView().navigationBarBackButtonHidden(), label: {
                         Text("Yuk, Mulai!")
                             .font(.system(size: 17))
+                            .bold()
                             .foregroundColor(Color("OnBoardingColor"))
                             .frame(width: 349, height: 41, alignment: .center)
                             .background(.white)
