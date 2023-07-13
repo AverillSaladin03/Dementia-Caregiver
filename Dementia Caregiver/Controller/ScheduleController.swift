@@ -180,10 +180,12 @@ class ScheduleController: ObservableObject{
     func randomSchedule(){
         for date in getCurrentWeek{
             for spareSchedule in getSpare {
+                let startResult = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [0]
+                let endResult = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [1]
                 let schedule = Schedule(context: dataManager.context)
                 schedule.id = UUID()
-                schedule.start = spareSchedule.start
-                schedule.end = spareSchedule.end
+                schedule.start = startResult
+                schedule.end = endResult
                 schedule.date = date
                 
                 var randomActivity: Activity?

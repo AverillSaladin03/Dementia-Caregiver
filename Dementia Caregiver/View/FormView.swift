@@ -260,11 +260,11 @@ struct FormView: View {
                         EmptyView()
                     }
                     
-                    Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-                    
-                        ForEach(ODDs, id: \.self) { item in
-                            Text("Item at \(item.hobbies!)")
-                        }
+//                    Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+//
+//                        ForEach(ODDs, id: \.self) { item in
+//                            Text("Item at \(item.hobbies!)")
+//                        }
                     
                 }
                 .padding(.leading, 20)
