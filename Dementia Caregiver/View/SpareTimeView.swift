@@ -47,10 +47,13 @@ struct SpareTimeView: View {
                                     selection: $listSpareTimes[i].startTime,
                                     displayedComponents: .hourAndMinute
                                 )
-//                                .environment(\.timeZone, TimeZone(identifier: "id_ID")!)
                                 .background(.white)
                                 .cornerRadius(12)
                                 .labelsHidden()
+                                .onAppear(){
+                                    UIDatePicker.appearance ().minuteInterval = 5
+                                }
+                                
                                 Text("Mulai")
                                     .font(.system(size: 13))
                             }
@@ -64,6 +67,10 @@ struct SpareTimeView: View {
                                 .background(.white)
                                 .cornerRadius(12)
                                 .labelsHidden()
+                                .onAppear(){
+                                    UIDatePicker.appearance ().minuteInterval = 5
+                                }
+                                
                                 Text("Selesai")
                                     .font(.system(size: 13))
                             }
@@ -137,7 +144,7 @@ struct SpareTimeView: View {
     //Fungsi Nambah List SpareTime
     func addSpareTime(){
         spareTimeCount += 1
-        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas Luang \(spareTimeCount)")
+        let newSpareTime = Spares(startTime: Date.now, endTime: Date.now, name: "Aktivitas \(spareTimeCount)")
         
         listSpareTimes.append(newSpareTime)
     }

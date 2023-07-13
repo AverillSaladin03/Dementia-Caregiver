@@ -19,6 +19,14 @@ struct ScheduleAddView: View {
     
     @State var selectedActivity : Activity?
     
+    let dateFormatterToTime = DateFormatter()
+    @State var formattedEndTime: String = ""
+    let calendar = Calendar.current
+    
+    init(){
+        dateFormatterToTime.dateFormat = "HH:mm"
+    }
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -50,9 +58,12 @@ struct ScheduleAddView: View {
                 DatePicker("Tanggal:", selection: $currentDate, displayedComponents: .date)
                 Divider()
                 DatePicker("Mulai:", selection: $startTime, displayedComponents: .hourAndMinute)
+//                    .onAppear(){
+//                        UIDatePicker.appearance ().minuteInterval = 5
+//                    }
+                    
                 Divider()
-                DatePicker("Berakhir:", selection: $endTime, displayedComponents: .hourAndMinute)
-                
+                DatePicker("Berakhir:", selection: $endTime, in:endTime...endTime , displayedComponents: .hourAndMinute)
                 HStack {
                     Text("Aktivitas")
                         .foregroundColor(.black)
@@ -77,12 +88,16 @@ struct ScheduleAddView: View {
                     .sheet(isPresented: $showSheet) {
                         ScheduleChooseActivityView(selectedActivity: $selectedActivity)
                             .preferredColorScheme(.light)
+                    }.onChange(of: selectedActivity){ _ in
+//                        print("change:\(selectedActivity)")
+                        endTime = calendar.date(byAdding: .minute, value: Int((selectedActivity?.duration)!), to: startTime)!
                     }
-                    
                 }
                 .padding(.top, 30)
                 
                 Spacer()
+                
+                
                 Button{
                     showData = true
                 }label: {
