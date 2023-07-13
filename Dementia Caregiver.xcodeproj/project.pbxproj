@@ -62,9 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5ABE24BF2A5E4977007AFC12 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dementia Caregiver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ABE24C02A5E4977007AFC12 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ABE24C12A5E4977007AFC12 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dementia CaregiverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABE24BF2A5E4977007AFC12 /* Dementia Caregiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Dementia Caregiver.app"; path = "/Users/yusronalfauzi/Documents/Apple UC/MC2/Dementia-Caregiver/build/Debug-iphoneos/Dementia Caregiver.app"; sourceTree = "<absolute>"; };
+		5ABE24C02A5E4977007AFC12 /* Dementia CaregiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Dementia CaregiverTests.xctest"; path = "/Users/yusronalfauzi/Documents/Apple UC/MC2/Dementia-Caregiver/build/Debug-iphoneos/Dementia CaregiverTests.xctest"; sourceTree = "<absolute>"; };
+		5ABE24C12A5E4977007AFC12 /* Dementia CaregiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Dementia CaregiverUITests.xctest"; path = "/Users/yusronalfauzi/Documents/Apple UC/MC2/Dementia-Caregiver/build/Debug-iphoneos/Dementia CaregiverUITests.xctest"; sourceTree = "<absolute>"; };
 		5ABE24C32A5E4AC3007AFC12 /* PageFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFirst.swift; sourceTree = "<group>"; };
 		5ABE24C52A5E4AD1007AFC12 /* PageSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSecond.swift; sourceTree = "<group>"; };
 		5ABE24C72A5E4AEA007AFC12 /* PageThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThird.swift; sourceTree = "<group>"; };
@@ -174,9 +174,6 @@
 				84C73E352A4136BB00512DD9 /* Dementia Caregiver */,
 				84C73E4C2A4136BD00512DD9 /* Dementia CaregiverTests */,
 				84C73E562A4136BD00512DD9 /* Dementia CaregiverUITests */,
-				5ABE24BF2A5E4977007AFC12 /* Dementia Caregiver.app */,
-				5ABE24C02A5E4977007AFC12 /* Dementia CaregiverTests.xctest */,
-				5ABE24C12A5E4977007AFC12 /* Dementia CaregiverUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -587,7 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dementia Caregiver/Preview Content\"";
-				DEVELOPMENT_TEAM = 2KW4763FM3;
+				DEVELOPMENT_TEAM = VW59CHPRG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dailytia;
@@ -617,7 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dementia Caregiver/Preview Content\"";
-				DEVELOPMENT_TEAM = 2KW4763FM3;
+				DEVELOPMENT_TEAM = VW59CHPRG8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dailytia;

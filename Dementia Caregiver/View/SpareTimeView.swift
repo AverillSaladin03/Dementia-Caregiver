@@ -152,7 +152,7 @@ struct SpareTimeView: View {
     func submitSpareTime(){
         isNewDownloaded = false
         for i in listSpareTimes{
-            SpareTimeController().addSpareTime(start: i.startTime, end: i.endTime)
+            SpareTimeController.shared.addSpareTime(start: i.startTime, end: i.endTime)
             print ("\(i.startTime)")
             print ("\(i.endTime)")
         }

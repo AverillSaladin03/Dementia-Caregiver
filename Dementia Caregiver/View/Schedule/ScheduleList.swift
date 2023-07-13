@@ -12,65 +12,104 @@ struct ScheduleList: View {
     //    @Binding var listSpareTimes: [Spares]
     
     @Environment(\.managedObjectContext) var managedObjectContex
-    //    @FetchRequest(sortDescriptors: [SortDescriptor(\.start, order: .forward)]) var spare: FetchedResults<Spare>
     
     @StateObject var vm = ScheduleController.shared
         
     @State var selectedSchedule: Schedule? = nil
+//    @State var isShowEdit: Bool = false
+    @State var selectedDate: Date = Date()
     
     var body: some View {
+        
+        if vm.scheduleArray.isEmpty{
+            VStack(alignment: .center){
+                                Image("empty view")
+                    .resizable()
+                    .frame(width: 250, height: 300)
+                    .padding(.bottom)
+                
+                Text("Tidak ada aktivitas!")
+                    .foregroundColor(.black)
+                    .font(.system(size: 16))
+                
+            }
+        }
+        
         NavigationStack{
             List{
                 //            ForEach(vm.scheduleArray) { index in
                 ForEach(Array(vm.scheduleArray.enumerated()), id: \.offset) { offset, item in
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("BrighterMainColor"))
-                            .frame(width: 343, height: 100)
+                    ZStack {
                         
-                        HStack(spacing: 10){
-                            Image("contoh")
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .cornerRadius(10)
-                            
-                            Spacer()
-                            VStack{
-                                Text(formatTime(item.start!))
-                                    .font(.system(size: 11).monospaced())
-                                Rectangle()
-                                    .fill(.white)
-                                    .frame(width: 1, height: 25)
-                                Text(formatTime(item.end!))
-                                    .font(.system(size: 11).monospaced())
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 10)
+//                                    .fill(Color("BrighterMainColor"))
+                                    .fill(getColor(for: item))
 
+                                    .frame(width: 343, height: 100)
+
+                                HStack(spacing: 10){
+                                    Image((item.schedule_activity?.name)!)
+                                        .resizable()
+                                        .frame(width: 100, height: 100)
+                                        .cornerRadius(10)
+                                    Spacer()
+                                    VStack{
+                                        Text(formatTime(item.start!))
+                                            .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
+                                            .font(.system(size: 11).monospaced())
+                                        Rectangle()
+                                            .fill(item.start! < Date.now ? Color.white : Color.black)
+                                            .frame(width: 1, height: 25)
+                                        Text(formatTime(item.end!))
+                                            .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
+                                            .font(.system(size: 11).monospaced())
+
+                                    }
+
+                                    Spacer()
+                                    Text((item.schedule_activity?.name) ?? "")
+                                        .font(.system(size: 15).bold())
+                                        .foregroundColor(item.start! < Date.now ? Color.white : Color.black)
+                                        .padding(.trailing)
+
+                                    Spacer()
+                                    Spacer()
+                                }
+                                .foregroundColor(.white)
+                                //                    .padding(.horizontal)
                             }
-                            Spacer()
-                            Text((item.schedule_activity?.name) ?? "")
-                                .font(.system(size: 17).bold())
-                                .padding(.trailing)
-                            Spacer()
-                            Spacer()
+                            .listRowSeparator(.hidden)
+                            .swipeActions(allowsFullSwipe: false) {
+                                Button {
+                                    self.selectedSchedule = item
+                                    self.selectedDate = item.date ?? Date()
+                                    //                            self.isShowEdit = true
+                                } label: {
+                                    Label("Edit", systemImage: "pencil")
+                                }
+                                .tint(.indigo)
+
+                                Button(role: .destructive) {
+                                    deleteSpareIndex(i: offset)
+                                } label: {
+                                    Label("Hapus", systemImage: "trash.fill")
+                                }
+                            }
+                            .sheet(item: $selectedSchedule) {
+                                vm.getSchedule(forDate: selectedDate)
+                            } content: { item in
+                                ScheduleEditView(schedule: item)
+                            }
+                            
+                        let category = item.schedule_activity?.category_activity as? Set<Category> ?? []
+                        NavigationLink(destination: ActivityDetail(activity: item.schedule_activity!, category: category.first!)) {
+                            EmptyView()
                         }
-                        .foregroundColor(.white)
-                        //                    .padding(.horizontal)
+                            .opacity(0)
                     }
-                    .listRowSeparator(.hidden)
-                    .swipeActions(allowsFullSwipe: false) {
-                        Button {
-                            self.selectedSchedule = item
-                        } label: {
-                            Label("Edit", systemImage: "pencil")
-                        }
-                        .tint(.indigo)
-                        
-                        Button(role: .destructive) {
-                            deleteSpareIndex(i: offset)
-                        } label: {
-                            Label("Hapus", systemImage: "trash.fill")
-                        }
-                    }
-                }
+                    
+            }
                 //            .onDelete(perform: deleteSpare)
                 .listRowBackground(Color.clear)
                 
@@ -78,11 +117,14 @@ struct ScheduleList: View {
             .background(.white)
             .scrollContentBackground(.hidden)
             .listStyle(PlainListStyle())
-            .sheet(item: $selectedSchedule, onDismiss: {
-                vm.getSchedule(forDate: selectedSchedule?.date ?? Date.now)
-            }) { item in
-                ScheduleEditView(schedule: item)
-            }
+//            .sheet(item: $selectedSchedule, onDismiss: {
+//                print("schedule:\(selectedSchedule)")
+//                print("dismiss:\(selectedSchedule?.date)")
+//                vm.getSchedule(forDate: (selectedSchedule?.date) ?? Date.now)
+//            }) { item in
+//                let a = print("show:\(item.date)")
+//                ScheduleEditView(schedule: $selectedSchedule)
+//            }
 
             
             
@@ -105,6 +147,18 @@ struct ScheduleList: View {
         vm.scheduleArray.remove(at: i)
         DataManager.shared.save()
     }
+    
+    func getColor(for time: Schedule) -> Color {
+        // Periksa kondisi waktu dan kembalikan warna yang sesuai
+        if time.end! < Date.now{
+            return Color.gray
+        } else if time.start! > Date.now{
+            return Color("GrayColor")
+        } else {
+            return Color("BrighterMainColor")
+        }
+    }
+
     
     //    func deleteSpareIndex(schedule: Schedule) {
     //        if let index = vm.scheduleArray.firstIndex(of: schedule) {

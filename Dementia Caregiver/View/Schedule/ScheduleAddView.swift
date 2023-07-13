@@ -41,7 +41,7 @@ struct ScheduleAddView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     if selectedActivity != nil {
                         Button("Tambah") {
-                            ScheduleController().addManualSchedule(date: currentDate, start: startTime, end: endTime, activity: selectedActivity!)
+                            ScheduleController.shared.addManualSchedule(date: currentDate, start: startTime, end: endTime, activity: selectedActivity!)
                             dismiss()
                         }
                         .foregroundColor(Color("ButtonColor"))
@@ -65,7 +65,7 @@ struct ScheduleAddView: View {
                 Divider()
                 DatePicker("Berakhir:", selection: $endTime, in:endTime...endTime , displayedComponents: .hourAndMinute)
                 HStack {
-                    Text("Aktivitas")
+                    Text("Aktivitas:")
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Button {
@@ -96,22 +96,20 @@ struct ScheduleAddView: View {
                 .padding(.top, 30)
                 
                 Spacer()
-                
-                
-                Button{
-                    showData = true
-                }label: {
-                    Text("Show")
-                }
-                if showData {
-                    let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
-                    let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
-                    
-                    Text("Selected Date : \(currentDate)")
-                    Text("Start Time : \(showStart)")
-                    Text("End Time : \(showEnd)")
-                    Text("Selected Activity : \((selectedActivity?.name)!)")
-                }
+//                Button{
+//                    showData = true
+//                }label: {
+//                    Text("Show")
+//                }
+//                if showData {
+//                    let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
+//                    let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
+//
+//                    Text("Selected Date : \(currentDate)")
+//                    Text("Start Time : \(showStart)")
+//                    Text("End Time : \(showEnd)")
+//                    Text("Selected Activity : \((selectedActivity?.name)!)")
+//                }
             }
             .padding()
         }
@@ -119,8 +117,8 @@ struct ScheduleAddView: View {
 }
 
 
-struct ScheduleAddView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleAddView()
-    }
-}
+//struct ScheduleAddView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScheduleAddView()
+//    }
+//}

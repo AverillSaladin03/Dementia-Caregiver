@@ -11,8 +11,10 @@ struct ScheduleHome: View {
     
     @StateObject var taskModel: TaskModel = TaskModel()
     @Namespace var animation
-    @State private var showSheet = false
+    @State private var isShowAdd = false
 //    @Binding var listSpareTimes: [Spares]
+    
+    @StateObject var vm = ScheduleController.shared
 
     var body: some View {
         VStack {
@@ -74,13 +76,15 @@ struct ScheduleHome: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Button {
-                showSheet.toggle()
+                isShowAdd.toggle()
             } label: {
                 Image(systemName: "plus")
                     .foregroundColor(Color("ButtonColor"))
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
-            .sheet(isPresented: $showSheet) {
+            .sheet(isPresented: $isShowAdd, onDismiss: {
+                vm.getSchedule(forDate: taskModel.currentDay)
+            }) {
                 ScheduleAddView()
                     .preferredColorScheme(.light)
             }

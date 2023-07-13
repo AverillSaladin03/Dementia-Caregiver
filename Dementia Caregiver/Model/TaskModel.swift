@@ -24,36 +24,29 @@ class TaskModel: ObservableObject{
         let today = Date()
         
         let calendar = Calendar.current
+//        calendar.locale = Locale(identifier: "id_ID")
 //        calendar.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
         let week = calendar.dateInterval(of: .weekOfMonth, for: today)
         
         guard let firstWeekDay = week?.start else{ return }
         
-        (1...7).forEach { day in
+        (0...6).forEach { day in
             if let weekday = calendar.date(byAdding: .day, value: day, to: firstWeekDay) {
                 currentWeek.append(weekday)
+                print(weekday)
+                
+                if Calendar.current.isDate(currentDay, equalTo: weekday, toGranularity: .day) {
+                    currentDay = weekday
+                }
             }
         }
     }
     
     func loadData(dateSelect: Date) {
-//        //Fetch dari core data yang sesuai dengan dateSelect
-//        vm.scheduleArray = []
-//
-//        //cek data schedule dr core data pd tgl dateselect
-//        //kalau gak ada random aktivity
-//        //save random ke core data
-//        //kalau ada langsung masukin core data ke scheduleArray
-//
-        
-//        var currentSchedule = vm.getSchedule(currentDate: dateSelect)
-//        if currentSchedule.isEmpty{
-//            vm.addRandomSchedule(selecDate: dateSelect)
-//        }
-        DispatchQueue.main.asyncAfter(deadline: .now()){
+//        DispatchQueue.main.asyncAfter(deadline: .now()){
             ScheduleController.shared.getSchedule(forDate: dateSelect)
             print(ScheduleController.shared.scheduleArray)
-        }
+//        }
     }
     
     func extractDate(date:Date, format: String) -> String{
