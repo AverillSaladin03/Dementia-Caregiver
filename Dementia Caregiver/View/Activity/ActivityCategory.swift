@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActivityCategory: View {
-//    private var categoryImage = ["CKAT01", "CKAT02", "CKAT03", "CKAT04", "CKAT05", "CKAT06", "CKAT07", "CKAT08"]
+    //    private var categoryImage = ["CKAT01", "CKAT02", "CKAT03", "CKAT04", "CKAT05", "CKAT06", "CKAT07", "CKAT08"]
     let categories = CategoryController().getAllCategory()
     
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible())]
@@ -30,10 +30,16 @@ struct ActivityCategory: View {
                                     .blur(radius: 4, opaque: false))
                                 .padding(5)
                             Text(category.name!)
-                                .font(.system(size:13, weight:.bold))
+                                .font(.system(size:13, weight: .bold))
                                 .foregroundColor(Color(.black))
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                            Text(category.descriptionCategory!)
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(Color(.gray))
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
+                        .padding(.vertical, 3)
                     }
                 }
             }

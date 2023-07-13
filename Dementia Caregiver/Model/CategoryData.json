@@ -2,35 +2,44 @@
     "category":[
         {
             "idCategory" : "KAT01",
-            "name" : "Aktivitas di Luar Ruangan"
+            "name" : "Aktivitas di Luar Ruangan",
+            "descriptionCategory" : "Berjalan-jalan dan mencari udara segar!"
         },
         {
             "idCategory" : "KAT02",
-            "name" : "Aktivitas di Dalam Ruangan"
+            "name" : "Aktivitas di Dalam Ruangan",
+            "descriptionCategory" : "Di rumahpun juga bisa jadi seru..."
+            
         },
         {
             "idCategory" : "KAT03",
-            "name" : "Aktivitas di Malam Hari"
+            "name" : "Aktivitas di Malam Hari",
+            "descriptionCategory" : "Tetap produktif di saat menjelang tidur..."
         },
         {
             "idCategory" : "KAT04",
-            "name" : "Aktivitas Bersama"
+            "name" : "Aktivitas Bersama",
+            "descriptionCategory" : "Bermain sambil bersosialisasi, woohoo~"
         },
         {
             "idCategory" : "KAT05",
-            "name" : "Aktivitas 15 Menit"
+            "name" : "Aktivitas 15 Menit",
+            "descriptionCategory" : "Di waktu senggang tetap aktif"
         },
         {
             "idCategory" : "KAT06",
-            "name" : "Aktivitas Fisik"
+            "name" : "Aktivitas Fisik",
+            "descriptionCategory" : "Waktunya melangkah dan bergerak!"
         },
         {
             "idCategory" : "KAT07",
-            "name" : "Aktivitas Mengasah Otak"
+            "name" : "Aktivitas Mengasah Otak",
+            "descriptionCategory" : "Meningkatkan kemampuan daya ingat"
         },
         {
             "idCategory" : "KAT08",
-            "name" : "Aktivitas Kreatif"
+            "name" : "Aktivitas Kreatif",
+            "descriptionCategory" : "Tetap inovatif dan kreatif, ini menyenangkan!"
         }
     ]
 }

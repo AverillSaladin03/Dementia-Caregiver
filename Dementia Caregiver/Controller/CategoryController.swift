@@ -14,6 +14,7 @@ struct CategoryModel: Decodable {
 struct Categorry : Decodable {
     var idCategory: String
     var name: String
+    var descriptionCategory: String
 }
 
 func loadCategory(filename fileName: String) -> [Categorry]? {
@@ -41,6 +42,7 @@ class CategoryController{
                 newCategory.id = UUID()
                 newCategory.idCategory = categoryData.idCategory
                 newCategory.name = categoryData.name
+                newCategory.descriptionCategory = categoryData.descriptionCategory
                 
                 // Save the new category to Core Data
                 dataManager.save()
