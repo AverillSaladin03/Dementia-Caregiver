@@ -28,7 +28,7 @@ struct ActivityHome: View {
                                 let recommendationActivity = activities
                                 ForEach(recommendationActivity.shuffled().prefix(3)) {activity in
                                     var choosenActivityCategory = (activity.category_activity?.allObjects)![0] as! Category
-                                    NavigationLink(destination: ActivityDetail(activity: activity, category: choosenActivityCategory), label: {
+                                    NavigationLink(destination: ActivityDetail(activity: activity, category: choosenActivityCategory, fromSchedule: false), label: {
                                         RecommendationActivityCardView(image: Image(activity.name ?? "contoh"), activity: activity)
                                     }
                                     )}
@@ -87,7 +87,7 @@ struct ActivityHome: View {
                                     HStack{
                                         let newActivities = category.category_activity?.allObjects as? [Activity]
                                         ForEach(newActivities!, id:\.self) {activity in
-                                            NavigationLink(destination: ActivityDetail(activity: activity, category:category)) {
+                                            NavigationLink(destination: ActivityDetail(activity: activity, category:category, fromSchedule: false)) {
                                                 VStack(alignment: .leading){
                                                     List1CardView(image: Image(activity.name ?? "contoh"))
                                                     Text(activity.name ?? "Not Found")

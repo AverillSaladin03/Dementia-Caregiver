@@ -14,6 +14,7 @@ struct ActivityDetail: View {
     
     var activity:Activity
     var category:Category?
+    var fromSchedule : Bool
     
     @State private var showSheet = false
     
@@ -47,30 +48,31 @@ struct ActivityDetail: View {
                 }
                 .padding(.horizontal, 40)
                 
-                Button {
-                    showSheet.toggle()
-                } label: {
-                    HStack (alignment: .center){
-                        Spacer()
+                if !fromSchedule {
+                    Button {
+                        showSheet.toggle()
+                    } label: {
+                        HStack (alignment: .center){
+                            Spacer()
+                            
+                            Text("Tambah Aktivitas")
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        .frame(width: 300, height: 41)
+                        .background(Color("ButtonColor"))
+                        .foregroundColor(.white)
+                        .mask {
+                            RoundedRectangle(cornerRadius: 8)
+                        }
                         
-                        Text("Tambah Aktivitas")
-                            .fontWeight(.bold)
-                        Spacer()
                     }
-                    .frame(width: 300, height: 41)
-                    .background(Color("ButtonColor"))
-                    .foregroundColor(.white)
-                    .mask {
-                        RoundedRectangle(cornerRadius: 8)
+                    .padding(.vertical, 20)
+                    .sheet(isPresented: $showSheet) {
+                        ScheduleAddView(selectedActivity: activity)
+                            .preferredColorScheme(.light)
                     }
-                    
                 }
-                .padding(.vertical, 20)
-                .sheet(isPresented: $showSheet) {
-                    ScheduleAddView(selectedActivity: activity)
-                        .preferredColorScheme(.light)
-                }
-                
             }
         }
         .accentColor(Color("ButtonColor"))
@@ -90,6 +92,6 @@ struct ActivityDetail: View {
 struct ActivityDetail_Previews: PreviewProvider {
     
     static var previews: some View {
-        ActivityDetail(activity: ActivityController2().getActivity()[0], category: CategoryController().getAllCategory()[0])
+        ActivityDetail(activity: ActivityController2().getActivity()[0], category: CategoryController().getAllCategory()[0], fromSchedule: false)
     }
 }

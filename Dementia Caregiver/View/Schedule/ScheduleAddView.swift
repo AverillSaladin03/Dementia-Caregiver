@@ -53,13 +53,17 @@ struct ScheduleAddView: View {
                 }
                 .padding(.bottom, 45)
                 
-                DatePicker("Tanggal:", selection: $currentDate, displayedComponents: .date)
+                DatePicker("Tanggal:", selection: $currentDate, in:Date()... , displayedComponents: .date)
+                
                 Divider()
                 DatePicker("Mulai:", selection: $startTime, displayedComponents: .hourAndMinute)
-//                    .onAppear(){
-//                        UIDatePicker.appearance ().minuteInterval = 5
-//                    }
-                    
+                    .onChange(of: startTime){ _ in
+                        endTime = calendar.date(byAdding: .minute, value: Int((selectedActivity?.duration ?? 0)), to: startTime)!
+                    }
+                //                    .onAppear(){
+                //                        UIDatePicker.appearance ().minuteInterval = 5
+                //                    }
+                
                 Divider()
                 DatePicker("Berakhir:", selection: $endTime, in:endTime...endTime , displayedComponents: .hourAndMinute)
                 HStack {
@@ -87,27 +91,26 @@ struct ScheduleAddView: View {
                         ScheduleChooseActivityView(selectedActivity: $selectedActivity)
                             .preferredColorScheme(.light)
                     }.onChange(of: selectedActivity){ _ in
-//                        print("change:\(selectedActivity)")
                         endTime = calendar.date(byAdding: .minute, value: Int((selectedActivity?.duration)!), to: startTime)!
                     }
                 }
                 .padding(.top, 30)
                 
                 Spacer()
-//                Button{
-//                    showData = true
-//                }label: {
-//                    Text("Show")
-//                }
-//                if showData {
-//                    let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
-//                    let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
-//
-//                    Text("Selected Date : \(currentDate)")
-//                    Text("Start Time : \(showStart)")
-//                    Text("End Time : \(showEnd)")
-//                    Text("Selected Activity : \((selectedActivity?.name)!)")
-//                }
+                //                Button{
+                //                    showData = true
+                //                }label: {
+                //                    Text("Show")
+                //                }
+                //                if showData {
+                //                    let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
+                //                    let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
+                //
+                //                    Text("Selected Date : \(currentDate)")
+                //                    Text("Start Time : \(showStart)")
+                //                    Text("End Time : \(showEnd)")
+                //                    Text("Selected Activity : \((selectedActivity?.name)!)")
+                //                }
             }
             .padding()
         }

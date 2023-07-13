@@ -103,7 +103,7 @@ struct ScheduleList: View {
                         }
                         
                         let category = item.schedule_activity?.category_activity as? Set<Category> ?? []
-                        NavigationLink(destination: ActivityDetail(activity: item.schedule_activity!, category: category.first!)) {
+                        NavigationLink(destination: ActivityDetail(activity: item.schedule_activity!, category: category.first!, fromSchedule: true)) {
                             EmptyView()
                         }
                         .opacity(0)

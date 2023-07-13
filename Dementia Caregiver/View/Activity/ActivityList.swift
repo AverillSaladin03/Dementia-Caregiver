@@ -19,7 +19,7 @@ struct ActivityList: View {
         VStack{
             ScrollView {
                 ForEach(act!, id: \.self) { activity in
-                    NavigationLink(destination: ActivityDetail(activity: activity, category: category)) {
+                    NavigationLink(destination: ActivityDetail(activity: activity, category: category, fromSchedule: false)) {
                         HStack {
                             Image(activity.name!)
                                 .resizable()
