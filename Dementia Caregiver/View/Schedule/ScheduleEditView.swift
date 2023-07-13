@@ -35,8 +35,9 @@ struct ScheduleEditView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     if selectedActivity != nil {
                         Button("Selesai") {
-                            ScheduleController.shared.editSchedule(editSchedule: schedule, date: currentDate, start: startTime, end: endTime, activity: selectedActivity!)
-                            
+                            let showStart = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [0]
+                            let showEnd = TimeConverter().timeConversion(start: startTime, end: endTime, date: currentDate) [1]
+                            ScheduleController.shared.addManualSchedule(date: currentDate, start: showStart, end: showEnd, activity: selectedActivity!)
                             dismiss()
                         }
                         .foregroundColor(Color("ButtonColor"))
