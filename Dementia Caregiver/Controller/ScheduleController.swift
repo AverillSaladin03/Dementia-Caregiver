@@ -180,13 +180,12 @@ class ScheduleController: ObservableObject{
     func randomSchedule(){
         for date in getCurrentWeek{
             for spareSchedule in getSpare {
-                let startResult = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [0]
-                let endResult = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [1]
-                let schedule = Schedule(context: dataManager.context)
-                schedule.id = UUID()
-
+                
                 let showStart = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [0]
                 let showEnd = TimeConverter().timeConversion(start: spareSchedule.start!, end: spareSchedule.end!, date: date) [1]
+                
+                let schedule = Schedule(context: dataManager.context)
+                schedule.id = UUID()
                 schedule.start = showStart
                 schedule.end = showEnd
                 schedule.date = date
