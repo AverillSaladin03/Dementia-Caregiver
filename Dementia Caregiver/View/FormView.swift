@@ -266,11 +266,6 @@ struct FormView: View {
                     NavigationLink(destination: SpareTimeView().navigationBarBackButtonHidden(), isActive: $isActive) {
                         EmptyView()
                     }
-//  Text(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-//
-//                        ForEach(ODDs, id: \.self) { item in
-//                            Text("Item at \(item.hobbies!)")
-//                        }
                 }
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
